@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chorn Chhery | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="py-12 md:py-24">
+
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row gap-16 items-start">
+            
+            <!-- LEFT SIDE: Profile & Bio (Sticky) -->
+            <aside class="md:w-1/3 text-center sticky-sidebar">
+                <div class="mb-6">
+                    <h1 class="text-3xl font-bold text-blue-800 leading-tight">Chorn<br>Chhery</h1>
+                </div>
+
+                <div class="profile-ring mb-8">
+                    <img src="me.png" alt="Chorn Chhery" class="w-48 h-48 rounded-full object-cover border border-slate-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-48 h-48 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden border border-slate-200" style="display: none;">
+                        <i data-lucide="user" class="w-20 h-20 text-slate-300"></i>
+                    </div>
+                </div>
+
+                <div class="flex justify-center gap-3 mb-8">
+                    <a href="ChornChhery_Resume.pdf" class="sidebar-link">Resume</a>
+                    <span class="text-slate-300">|</span>
+                    <a href="https://www.linkedin.com/in/chhery-chorn/" target="_blank" class="sidebar-link">LinkedIn</a>
+                    <span class="text-slate-300">|</span>
+                    <a href="https://github.com/ChornChhery" target="_blank" class="sidebar-link">GitHub</a>
+                    <span class="text-slate-300">|</span>
+                    <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Ft.me%2Fchornchhery%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExSjFBOGNlcElIZFNvWGZhVXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4VZ-RAZfRlsLdh80fi_JWRHVb3v0tT_DibMSYY1EggbiPux__cTOdeEFY8mQ_aem_ozxt3k5ea08Pg_kqhvnaHg&h=AT0TSWLsOhzXVnfdSmaz82sE3dUHozGnp-XYoRqNjssW3mIfosIzlz068Du-Vjcd3WLmxiU71zSBI1-5RX7fVcNptIC5DjFeNnME9RhlSfoy_-9dkEwcrk1pQIzTwvMMqVwqqQ" target="_blank" class="sidebar-link">Telegram</a>
+                </div>
+
+                <div class="text-slate-600 text-sm leading-relaxed mb-8 max-w-xs mx-auto">
+                I am a junior Full-Stack Developer with a strong interest in backend systems, data, and AI applications. I enjoy building practical products that connect software, data, and intelligent systems to solve real-world problems.
+                </div>
+                <div class="text-xs text-slate-500 font-medium">
+                    email - chherychorn@gmail.com
+                </div>
+            </aside>
+
+            <!-- RIGHT SIDE: Resume Content (Scrolls) -->
+            <main class="md:w-2/3">
+                
+                <!-- Skills Section -->
+                <section id="skills" class="mb-12">
+                    <h2 class="section-heading">Skills</h2>
+                    <ul class="text-sm space-y-3">
+                        <li>
+                            <span class="skill-label">Programming languages:</span> Python, SQL, C#, JavaScript, PHP, Java, C, C++, Golang, Dart
+                        </li>
+                        <li>
+                            <span class="skill-label">Web & Frameworks:</span> React, .NET Core, Flutter, Bootstrap, HTMX, HTML, CSS
+                        </li>
+                        <li>
+                            <span class="skill-label">Databases:</span> PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Qdrant, SQLite
+                        </li>
+                        <li>
+                            <span class="skill-label">AI & Machine Learning:</span> RAG, NLP, K-Means, Decision Tree, XGBoost, Scikit-learn
+                        </li>
+                        <li>
+                            <span class="skill-label">Other:</span> Docker, Git, GitHub, Azure DevOps, Postman, Figma, Spark, Pandas, Numpy, Matplotlib, Streamlit
+                        </li>
+                        <li>
+                            <span class="skill-label">Communication Languages:</span> Khmer (Native), English (Intermediate), Thai (Advanced)
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Education Section -->
+                <section id="education" class="mb-12">
+                    <h2 class="section-heading">Education</h2>
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
+                        <h3 class="font-bold text-slate-800"><a href="https://www.psu.ac.th/en/" target="_blank" class="university-link">Prince of Songkla University</a>, Pattani Campus</h3>
+                        <span class="text-xs text-slate-500 font-bold uppercase">Jul 2022 - Present</span>
+                    </div>
+                    <p class="text-sm text-slate-600 font-medium">Bachelor of Mathematics and Computer Science</p>
+                    <p class="text-sm text-slate-600 font-medium">Major: <a href="https://www.facebook.com/MCSPSUPattani/" target="_blank" class="department-link">Data Science</a></p>
+                    <div class="mt-2 space-y-1">
+                        <p class="text-xs text-blue-600 font-bold">Cumulative GPA: 3.68/4.0 | First Class Honors | <a href="transcript.pdf" target="_blank" class="transcript-link">View Transcript</a></p>
+                        <p class="text-xs text-slate-500">Expected official graduation - April 2026</p>
+                    </div>
+                </section>
+
+                <!-- Work Experience Section -->
+                <section id="experience" class="mb-12">
+                    <h2 class="section-heading">Work Experience</h2>
+                    <div class="mb-10">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">AI Engineer Cooperative Internship at <a href="https://www.jobthai.com/en/company/231960" target="_blank" class="company-link">Max Savings (Thailand) Co., LTD</a> <span class="font-normal text-slate-600">(Bangkok, Thailand)</span></h3>
+                        <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">November 2025 - March 2026 (4 months)</p>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Built intelligent customer service chatbot using Retrieval-Augmented Generation (RAG) to provide context-aware responses.</p>
+                        <p class="text-sm font-bold text-slate-700 mb-2 italic">Accomplishments:</p>
+                        <ul class="text-sm text-slate-600">
+                            <li>Designed responsive RAG chatbot UI for desktop and mobile using <a href="https://www.figma.com/" target="_blank" class="tech-link">Figma</a>, ensuring optimal user experience across devices.</li>
+                            <li>Architected end-to-end RAG chatbot using <a href="https://dotnet.microsoft.com/en-us/apps/aspnet" target="_blank" class="tech-link">.NET Core</a> backend, integrating document processing, embedding generation, and LLM-powered response generation for intelligent customer support.</li>
+                            <li>Implemented chunking strategies <a href="https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-chunk-documents" target="_blank" class="tech-link">(fixed-size and semantic)</a> to optimize document retrieval, storing embeddings in <a href="https://qdrant.tech/" target="_blank" class="tech-link">Qdrant</a> vector database for efficient similarity search.</li>
+                            <li>Verified RAG accuracy using <a href="https://learn.microsoft.com/en-us/dotnet/ai/evaluation/libraries" target="_blank" class="tech-link">NLP evaluation libraries</a> (BLEU, GLEU, F1 scores), establishing benchmarks for continuous improvement.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-10">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">Full Stack Developer at <a href="https://www.biomassx.com/" target="_blank" class="company-link">Biomass Exchange Co., LTD</a> <span class="font-normal text-slate-600">(Bangkok, Thailand)</span></h3>
+                        <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">April 2025 - July 2025 (3 months)</p>
+                        <p class="text-sm font-bold text-slate-700 mb-2 italic">Accomplishments:</p>
+                        <ul class="text-sm text-slate-600">
+                            <li>Redesigned responsive web UI and notification features using <a href="https://www.figma.com/" target="_blank" class="tech-link">Figma</a>, improving cross-device compatibility and enhancing user experience across mobile and desktop platforms.</li>
+                            <li>Developed high-throughput asynchronous email system using <a href="https://go.dev/" target="_blank" class="tech-link">Golang</a>, automating user communications and notification delivery to streamline customer engagement workflows.</li>
+                            <li>Led database schema design for notification features, ensuring data integrity and scalability to support growing transaction volumes.</li>
+                            <li>Built a booking history feature with full CRUD operations (edit, update, delete), making the platform more functional and improving user workflows.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-10">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">Technical Assistant at <a href="https://www.psu.ac.th/en/" target="_blank" class="company-link">Prince of Songkla University, Hat Yai Campus</a> <span class="font-normal text-slate-600">(Hat Yai, Thailand)</span></h3>
+                        <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">13 December 2024 - 15 December 2024</p>
+                        <ul class="text-sm text-slate-600">
+                            <li>Supported workshops on <a href="https://www.python.org/" target="_blank" class="tech-link">Python</a> and robotics for 50+ students at Programming Camp.</li>
+                            <li>Assisted participants with debugging, problem-solving, and logic development.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Leadership Section -->
+                <section id="leadership" class="mb-12">
+                    <h2 class="section-heading">Leadership Experience & Activities</h2>
+                    <div class="mb-6">
+                        <h3 class="font-bold text-slate-800 text-lg mb-1">International English Exchange Program (Universiti Malaysia Kelantan), Kelantan, Malaysia</h3>
+                        <p class="text-xs font-bold text-slate-500 mb-3 uppercase tracking-wider">08 September 2025 - 14 September 2025</p>
+                        <ul class="text-sm text-slate-600">
+                            <li>Enhanced English communication skills through international workplace training.</li>
+                            <li>Led group discussions and team projects to build mutual understanding and effective participation.</li>
+                            <li>Built international relationships while representing Cambodian culture.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="mb-12">
+                    <h2 class="section-heading">Projects</h2>
+                    
+                    <!-- Chicken Farm Project -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Chicken-Farm-IOT" target="_blank" class="project-link">IoT-Based Chicken Farm Monitoring System</a></h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">February 2024</span>
+                        </div>
+                        
+                        <!-- GitHub Badges -->
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <a href="https://github.com/ChornChhery/Chicken-Farm-IOT" target="_blank">
+                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
+                            </a>
+                            <img src="https://img.shields.io/github/stars/ChornChhery/Chicken-Farm-IOT?style=social" alt="GitHub stars">
+                        </div>
+
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">Automated farm monitoring system with data streaming, validation, and intelligent alerting.</p>
+                        
+                        <!-- Media Placeholder -->
+                        <div class="project-media mb-4">
+                            <div class="w-full h-64 bg-slate-50 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400 media-placeholder" style="display: none;">
+                                <div class="text-center">
+                                    <i data-lucide="image" class="w-12 h-12 mx-auto mb-2"></i>
+                                    <p class="text-sm">Architecture diagram / demo video placeholder</p>
+                                    <p class="text-xs">Add 'chicken-farm-architecture.png' or 'chicken-farm-demo.mp4'</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Designed a real-time IoT monitoring system with automated data ingestion into MongoDB, enabling continuous tracking of poultry growth metrics for farm optimization.</li>
+                            <li>Developed a data validation pipeline filtering sensor readings to ensure 95% data accuracy, cleaning and preparing raw data for reliable analytics and insights.</li>
+                            <li>Built a real-time dashboard visualization and automated LINE notifications for growth anomalies, enabling proactive farm management and faster response to issues.</li>
+                            <li>Built an Interactive Analytics Dashboard using Shiny and Plotly, transforming raw time-series data into actionable insights through dual-line trend visualization and daily status classification.</li>
+                        </ul>
+                        
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Backend & Database:</span> <a href="https://www.mongodb.com/" target="_blank" class="tech-link">MongoDB</a>, <a href="https://ubuntu.com/server" target="_blank" class="tech-link">Ubuntu Server</a></li>
+                            <li><span class="tech-category">Data Visualization:</span> <a href="https://shiny.posit.co/" target="_blank" class="tech-link">Shiny</a>, <a href="https://plotly.com/" target="_blank" class="tech-link">Plotly</a></li>
+                            <li><span class="tech-category">IoT & Notifications:</span> IoT Sensors, <a href="https://www.line.me/en/" target="_blank" class="tech-link">LINE Notify API</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Jamoon Laundry Project -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Laundry-Management-System" target="_blank" class="project-link">Jamoon Laundry Management System</a></h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">March 2024</span>
+                        </div>
+                        
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <a href="https://github.com/ChornChhery/Laundry-Management-System" target="_blank">
+                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
+                            </a>
+                            <img src="https://img.shields.io/github/stars/ChornChhery/Laundry-Management-System?style=social" alt="GitHub stars">
+                            <a href="https://jamoon.free.nf/" target="_blank">
+                                <img src="https://img.shields.io/badge/View_on_Website-181717?style=flat&logo=github&logoColor=white" alt="View on Website">
+                            </a>
+                        </div>
+
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">A web-based laundry management system designed for student-run laundry services, providing real-time machine availability, booking, and administrative analytics.</p>
+                        
+                        <div class="project-media mb-4">
+                            <img src="jamoon.png" alt="Jamoon Architecture" class="w-full rounded-lg border border-slate-200 media-image" onerror="this.style.display='none'; this.parentElement.querySelector('.media-video').style.display='block';">
+                            <img src="jamoon1.png" alt="Jamoon Architecture" class="w-full rounded-lg border border-slate-200 media-image" onerror="this.style.display='none'; this.parentElement.querySelector('.media-video').style.display='block';">
+                            <video controls class="w-full rounded-lg border border-slate-200 media-video" style="display: none;" onerror="this.style.display='none'; this.parentElement.querySelector('.media-placeholder').style.display='flex';">
+                                <source src="jamoon-demo.mp4" type="video/mp4">
+                            </video>
+                            <div class="w-full h-64 bg-slate-50 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400 media-placeholder" style="display: none;">
+                                <div class="text-center">
+                                    <i data-lucide="image" class="w-12 h-12 mx-auto mb-2"></i>
+                                    <p class="text-sm">Architecture diagram / demo video placeholder</p>
+                                    <p class="text-xs">Add 'jamoon-architecture.png' or 'jamoon-demo.mp4'</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Real-time washing machine status updates using AJAX without requiring page reloads.</li>
+                            <li>Engineered a "Smart-Reservation" logic featuring a 30-minute activation window with automated server-side cancellation, optimizing machine turnover and operational efficiency.</li>
+                            <li>Designed a relational database schema with complex foreign key constraints across user profiles, machine specifications, and transaction logs to ensure 100% data integrity.</li>
+                            <li>Developed an Administrative ERP Dashboard using Chart.js, transforming raw transaction data into actionable business intelligence through revenue analytics and usage pattern reporting.</li>
+                        </ul>
+                        
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Backend:</span> <a href="https://www.php.net/" target="_blank" class="tech-link">PHP</a></li>
+                            <li><span class="tech-category">Frontend:</span> <a href="https://www.w3schools.com/js/" target="_blank" class="tech-link">JavaScript</a>, <a href="https://www.w3schools.com/php/php_ajax_php.asp" target="_blank" class="tech-link">AJAX</a>, <a href="https://www.w3schools.com/html/" target="_blank" class="tech-link">HTML</a>, <a href="https://www.w3schools.com/css/default.asp" target="_blank" class="tech-link">CSS</a></li>
+                            <li><span class="tech-category">Database:</span> <a href="https://www.mysql.com/" target="_blank" class="tech-link">MySQL</a></li>
+                            <li><span class="tech-category">Data Visualization:</span> <a href="https://www.chartjs.org/" target="_blank" class="tech-link">Chart.js</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Jame Project -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Jame" target="_blank" class="project-link">Jame - All-in-One Inventory & Sales Management App</a></h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">September 2025</span>
+                        </div>
+                        
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <a href="https://github.com/ChornChhery/Jame" target="_blank">
+                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
+                            </a>
+                            <img src="https://img.shields.io/github/stars/ChornChhery/Jame?style=social" alt="GitHub stars">
+                        </div>
+
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">End-to-end mobile point-of-sale system with analytics dashboard and inventory management.</p>
+                        
+                        <div class="project-media mb-4">
+                            <div class="w-full h-64 bg-slate-50 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400 media-placeholder" style="display: none;">
+                                <div class="text-center">
+                                    <i data-lucide="image" class="w-12 h-12 mx-auto mb-2"></i>
+                                    <p class="text-sm">Architecture diagram / demo video placeholder</p>
+                                    <p class="text-xs">Add 'jame-architecture.png' or 'jame-demo.mp4'</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Developed a comprehensive POS mobile application for department business management, integrating real-time barcode scanning and automated PDF receipt generation.</li>
+                            <li>Built an analytics dashboard with visual insights into revenue trends, product stocks, best-selling items, and profit margins to support data-driven business decisions.</li>
+                            <li>Managed product inventory with barcode-based stock updates, automated low-stock alerts, and real-time pricing calculations to streamline operations.</li>
+                        </ul>
+                        
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Mobile Framework:</span> <a href="https://flutter.dev/" target="_blank" class="tech-link">Flutter</a>, <a href="https://dart.dev/" target="_blank" class="tech-link">Dart</a></li>
+                            <li><span class="tech-category">Database:</span> <a href="https://www.sqlite.org/" target="_blank" class="tech-link">SQLite</a>, <a href="https://www.mysql.com/" target="_blank" class="tech-link">MySQL</a></li>
+                            <li><span class="tech-category">Features:</span> Barcode Scanner, PDF Generation</li>
+                        </ul>
+                    </div>
+
+                    <!-- RAG App Project -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Rag-AI-Agent" target="_blank" class="project-link">RAG App – Document Question Answering System</a></h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">October 2025</span>
+                        </div>
+                        
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <a href="https://github.com/ChornChhery/Rag-AI-Agent" target="_blank">
+                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
+                            </a>
+                            <img src="https://img.shields.io/github/stars/ChornChhery/Rag-AI-Agent?style=social" alt="GitHub stars">
+                        </div>
+
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">A Retrieval-Augmented Generation (RAG) application that enables intelligent question answering over uploaded PDF documents using local AI models.</p>
+                        
+                        <div class="project-media mb-4">
+                            <img src="app.png" alt="RAG App Architecture" class="w-full rounded-lg border border-slate-200 media-image" onerror="this.style.display='none'; this.parentElement.querySelector('.media-video').style.display='block';">
+                            <video controls class="w-full rounded-lg border border-slate-200 media-video" style="display: none;" onerror="this.style.display='none'; this.parentElement.querySelector('.media-placeholder').style.display='flex';">
+                                <source src="rag-app-demo.mp4" type="video/mp4">
+                            </video>
+                            <div class="w-full h-64 bg-slate-50 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400 media-placeholder" style="display: none;">
+                                <div class="text-center">
+                                    <i data-lucide="image" class="w-12 h-12 mx-auto mb-2"></i>
+                                    <p class="text-sm">Architecture diagram / demo video placeholder</p>
+                                    <p class="text-xs">Add 'rag-app-architecture.png' or 'rag-app-demo.mp4'</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Designed and implemented a Retrieval-Augmented Generation (RAG) application for intelligent question-answering over PDF documents.</li>
+                            <li>Built a FastAPI backend to handle document upload, ingestion, and query APIs.</li>
+                            <li>Implemented PDF parsing, text chunking, and embedding pipelines using LlamaIndex.</li>
+                            <li>Generated document embeddings using Ollama (nomic-embed-text) and stored vectors in Qdrant for efficient similarity search.</li>
+                            <li>Integrated local LLM inference with Ollama (llama3.2) to generate privacy-focused AI responses without external APIs.</li>
+                            <li>Developed an interactive Streamlit UI for document upload and question querying.</li>
+                            <li>Containerized the vector database using Docker for consistent local deployment.</li>
+                        </ul>
+                        
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Backend API:</span> <a href="https://www.python.org/" target="_blank" class="tech-link">Python</a>, <a href="https://fastapi.tiangolo.com/" target="_blank" class="tech-link">FastAPI</a></li>
+                            <li><span class="tech-category">RAG Framework:</span> <a href="https://www.llamaindex.ai/" target="_blank" class="tech-link">LlamaIndex</a></li>
+                            <li><span class="tech-category">LLM & Embeddings:</span> <a href="https://ollama.com/" target="_blank" class="tech-link">Ollama</a> (llama3.2, nomic-embed-text)</li>
+                            <li><span class="tech-category">Vector Database:</span> <a href="https://qdrant.tech/" target="_blank" class="tech-link">Qdrant</a></li>
+                            <li><span class="tech-category">Web Interface:</span> <a href="https://streamlit.io/" target="_blank" class="tech-link">Streamlit</a></li>
+                            <li><span class="tech-category">Deployment:</span> <a href="https://www.docker.com/" target="_blank" class="tech-link">Docker</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Skincare E-commerce Project -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank" class="project-link">Skincare E-commerce Platform with Admin Dashboard</a></h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">August 2025</span>
+                        </div>
+                        
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank">
+                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
+                            </a>
+                            <img src="https://img.shields.io/github/stars/ChornChhery/Ecommerce-Skincare?style=social" alt="GitHub stars">
+                        </div>
+
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">A full-featured e-commerce web application supporting both customer-facing functionality and a comprehensive administrative management system.</p>
+                        
+                        <div class="project-media mb-4">
+                            <img src="skincare.png" alt="E-commerce Architecture" class="w-full rounded-lg border border-slate-200 media-image" onerror="this.style.display='none'; this.parentElement.querySelector('.media-video').style.display='block';">
+                            <img src="skincare1.png" alt="E-commerce Architecture" class="w-full rounded-lg border border-slate-200 media-image" onerror="this.style.display='none'; this.parentElement.querySelector('.media-video').style.display='block';">
+                            <video controls class="w-full rounded-lg border border-slate-200 media-video" style="display: none;" onerror="this.style.display='none'; this.parentElement.querySelector('.media-placeholder').style.display='flex';">
+                                <source src="ecommerce-demo.mp4" type="video/mp4">
+                            </video>
+                            <div class="w-full h-64 bg-slate-50 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400 media-placeholder" style="display: none;">
+                                <div class="text-center">
+                                    <i data-lucide="image" class="w-12 h-12 mx-auto mb-2"></i>
+                                    <p class="text-sm">Architecture diagram / demo video placeholder</p>
+                                    <p class="text-xs">Add 'ecommerce-architecture.png' or 'ecommerce-demo.mp4'</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Customer-facing features including product catalog, product detail pages, shopping cart, wishlist, user authentication, and order history.</li>
+                            <li>Implemented customer-facing features including product browsing, product details, shopping cart, wishlist, user registration, login, profile management, and order history.</li>
+                            <li>Built a comprehensive admin panel with separate routing and layout for managing products, orders, customers, categories, inventory, coupons, reviews, and system settings.</li>
+                            <li>Dynamic routing for products, orders, and customer detail pages using Next.js App Router.</li>
+                            <li>Integrated a mock API and API abstraction layer to support development and testing workflows.</li>
+                            <li>Designed the application with responsive layouts to support desktop, tablet, and mobile devices.</li>
+                            <li>Support 2 languages (English and Khmer) using i18next.</li>
+                        </ul>
+                        
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Framework:</span> <a href="https://nextjs.org/" target="_blank" class="tech-link">Next.js</a></li>
+                            <li><span class="tech-category">Frontend:</span> <a href="https://react.dev/" target="_blank" class="tech-link">React</a>, <a href="https://www.typescriptlang.org/" target="_blank" class="tech-link">TypeScript</a>, <a href="https://tailwindcss.com/" target="_blank" class="tech-link">Tailwind CSS</a></li>
+                            <li><span class="tech-category">State Management:</span> Context API</li>
+                            <li><span class="tech-category">Internationalization:</span> <a href="https://www.i18next.com/" target="_blank" class="tech-link">i18next</a></li>
+                            <li><span class="tech-category">Data Visualization:</span> <a href="https://www.chartjs.org/" target="_blank" class="tech-link">Chart.js</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        
+        // Initialize media placeholders
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.project-media').forEach(function(media) {
+                const img = media.querySelector('.media-image');
+                const video = media.querySelector('.media-video');
+                const placeholder = media.querySelector('.media-placeholder');
+                
+                // Check if image loads
+                if (img && img.complete && img.naturalHeight === 0) {
+                    img.style.display = 'none';
+                    if (video) video.style.display = 'block';
+                }
+                
+                // If neither image nor video loads, show placeholder
+                setTimeout(function() {
+                    if ((img && img.style.display === 'none') && (video && video.style.display === 'none')) {
+                        placeholder.style.display = 'flex';
+                    }
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
