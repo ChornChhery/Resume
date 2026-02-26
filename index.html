@@ -294,7 +294,127 @@
                 <!-- Projects Section -->
                 <section id="projects" class="mb-12">
                     <h2 class="section-heading">Projects</h2>
-                    
+
+                    <!-- ChatBotRAG -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/RAG-" target="_blank" class="project-link">ChatBotRAG — Document Question Answering Chatbot</a></h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">February 2025</span>
+                        </div>
+
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <a href="https://github.com/ChornChhery/RAG-" target="_blank">
+                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
+                            </a>
+                            <img src="https://img.shields.io/github/stars/ChornChhery/RAG-?style=social" alt="GitHub stars">
+                        </div>
+
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            A full-stack RAG chatbot built with .NET 10, Blazor WebAssembly, and SignalR. Upload PDF, TXT, or Markdown files and chat with them in real time using local Ollama models — no cloud dependency, full privacy.
+                        </p>
+
+                        <!-- Summary bullets -->
+                        <p class="text-sm font-bold text-slate-700 mb-2 italic">Highlights:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Built a full-stack web application using Blazor WebAssembly and ASP.NET Core with real-time token-by-token streaming chat via SignalR.</li>
+                            <li>Implemented hybrid search (Vector + BM25 with configurable weights) fusing semantic and keyword retrieval for more accurate document answers.</li>
+                            <li>Supported 3 chunking strategies (FixedSize, ContentAware, Semantic) with multilingual tokenization for English, Thai, and Khmer.</li>
+                            <li>Built a RAG evaluation pipeline scoring answer quality automatically using BLEU, GLEU, F1, and LLM Judge — no reference answer required.</li>
+                            <li>Engineered an in-memory embedding cache with startup pre-warming, eliminating repeated database round trips at query time.</li>
+                        </ul>
+
+                        <!-- Full Details Toggle -->
+                        <button class="toggle-btn" onclick="toggleSection('chatbotrag-details')">
+                            <span>Full Technical Details</span>
+                            <span class="chevron">▼</span>
+                        </button>
+
+                        <div id="chatbotrag-details" class="collapsible mt-4">
+
+                            <!-- RAG Architecture -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">RAG Architecture (How It Works)</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li><strong>Upload</strong> — Document split into chunks using the selected strategy.</li>
+                                    <li><strong>Embed</strong> — Each chunk converted to a 1024-dim vector via <code class="text-xs bg-slate-100 px-1 rounded">mxbai-embed-large</code>.</li>
+                                    <li><strong>Store</strong> — Vectors saved in SQL Server with chunk text and chunking method.</li>
+                                    <li><strong>Cache</strong> — Vectors loaded into RAM on first query and stay cached until restart.</li>
+                                    <li><strong>Query</strong> — User question embedded and hybrid search runs:
+                                        <ul class="ml-4 mt-1 space-y-1">
+                                            <li>Vector search — cosine similarity against cached embeddings (70% weight)</li>
+                                            <li>BM25 search — keyword matching against chunk text (30% weight)</li>
+                                            <li>Fusion — scores combined: <code class="text-xs bg-slate-100 px-1 rounded">final = 0.7 × vector + 0.3 × bm25</code></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Retrieve</strong> — Top-K chunks above similarity threshold returned.</li>
+                                    <li><strong>Generate</strong> — Retrieved chunks sent to <code class="text-xs bg-slate-100 px-1 rounded">llama3.2:3b</code> as context.</li>
+                                    <li><strong>Stream</strong> — LLM response sent token-by-token to client via SignalR.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Chunking Strategies -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Chunking Strategies</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li><strong>FixedSize</strong> — Splits text into fixed 500-char chunks with 100-char overlap. Fast, works for most documents.</li>
+                                    <li><strong>ContentAware</strong> — Respects sentence boundaries, markdown structure, and paragraphs (100–1000 chars). Best for structured documents.</li>
+                                    <li><strong>Semantic</strong> — Groups sentences by topic coherence using word-overlap similarity (150–1200 chars). Best for dense research papers.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Multilingual Support -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Multilingual Support (English, Thai, Khmer)</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>English — word tokenization with stop word removal for BM25.</li>
+                                    <li>Thai & Khmer — character trigram (n-gram) tokenization since these languages have no spaces between words.</li>
+                                    <li>Auto-detects script per text segment, handling mixed-language documents correctly.</li>
+                                    <li>All 3 chunking strategies support language-specific sentence boundaries (Thai ๆ/ๆ markers, Khmer ។ terminator).</li>
+                                </ul>
+                            </div>
+
+                            <!-- Embedding Cache -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">In-Memory Embedding Cache</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>Registered as a Singleton — holds shared RAM state across all requests.</li>
+                                    <li>On first query: loads ALL ready chunks from SQL Server, deserializes embeddings into <code class="text-xs bg-slate-100 px-1 rounded">float[]</code>, stores in <code class="text-xs bg-slate-100 px-1 rounded">ConcurrentDictionary</code>.</li>
+                                    <li>Every query after: reads directly from RAM — no DB queries, no JSON parsing.</li>
+                                    <li>Partial updates: uploading a new document adds only new chunks; deleting removes only that document's chunks.</li>
+                                    <li>Startup pre-warming via <code class="text-xs bg-slate-100 px-1 rounded">WarmUpAsync()</code> so the first user query is already fast.</li>
+                                    <li>Cache stats available at <code class="text-xs bg-slate-100 px-1 rounded">GET /api/documents/cache-stats</code> — shows total chunks, documents, and estimated RAM usage.</li>
+                                </ul>
+                            </div>
+
+                            <!-- RAG Evaluation -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">RAG Evaluation Pipeline</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>No reference answer needed — the system auto-generates one from retrieved chunks via LLM.</li>
+                                    <li>Pipeline: Hybrid search → LLM generates reference answer → LLM generates RAG answer → BLEU/GLEU/F1 compare both → LLM Judge scores semantic quality.</li>
+                                    <li><strong>BLEU</strong> — n-gram precision, checks factual phrase accuracy.</li>
+                                    <li><strong>GLEU</strong> — balanced precision + recall, penalizes wrong additions and missing content.</li>
+                                    <li><strong>F1</strong> — token overlap, standard QA benchmark metric (SQuAD).</li>
+                                    <li><strong>LLM Judge</strong> — semantic quality scored by LLM (0–10 normalized to 0–1), reliable for Thai and Khmer.</li>
+                                    <li>Evaluation makes 3 LLM calls: reference generation, RAG answer generation, and LLM judge scoring.</li>
+                                </ul>
+                            </div>
+
+                        </div> <!-- end collapsible -->
+
+                        <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Frontend:</span> Blazor WebAssembly (.NET 10)</li>
+                            <li><span class="tech-category">Backend:</span> ASP.NET Core Web API (.NET 10), SignalR, Entity Framework Core</li>
+                            <li><span class="tech-category">LLM & Embeddings:</span> <a href="https://ollama.com/" target="_blank" class="tech-link">Ollama</a> (llama3.2:3b, mxbai-embed-large), OllamaSharp, Microsoft.Extensions.AI</li>
+                            <li><span class="tech-category">Database:</span> SQL Server / LocalDB</li>
+                            <li><span class="tech-category">PDF Parsing:</span> PdfPig</li>
+                            <li><span class="tech-category">Markdown:</span> Markdig</li>
+                            <li><span class="tech-category">Search:</span> Hybrid Vector + BM25 with RRF fusion</li>
+                            <li><span class="tech-category">Languages Supported:</span> English, Thai, Khmer</li>
+                        </ul>
+                    </div>
+
                     <!-- Chicken Farm -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
@@ -385,7 +505,7 @@
                     <!-- RAG App -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Rag-AI-Agent" target="_blank" class="project-link">RAG App – Document Question Answering System</a></h3>
+                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Rag-AI-Agent" target="_blank" class="project-link">RAG App</a></h3>
                             <span class="text-xs text-slate-500 font-bold uppercase">October 2025</span>
                         </div>
                         <div class="flex gap-2 mb-4 flex-wrap">
