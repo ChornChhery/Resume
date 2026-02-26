@@ -313,7 +313,7 @@
                         </p>
 
                         <!-- Summary bullets -->
-                        <p class="text-sm font-bold text-slate-700 mb-2 italic">Highlights:</p>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
                         <ul class="text-sm text-slate-600 mb-4">
                             <li>Built a full-stack web application using Blazor WebAssembly and ASP.NET Core with real-time token-by-token streaming chat via SignalR.</li>
                             <li>Implemented hybrid search (Vector + BM25 with configurable weights) fusing semantic and keyword retrieval for more accurate document answers.</li>
@@ -434,7 +434,88 @@
                             <li>Built a real-time dashboard visualization and automated LINE notifications for growth anomalies, enabling proactive farm management and faster response to issues.</li>
                             <li>Built an Interactive Analytics Dashboard using Shiny and Plotly, transforming raw time-series data into actionable insights through dual-line trend visualization and daily status classification.</li>
                         </ul>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+
+                        <!-- Full Details Toggle -->
+                        <button class="toggle-btn" onclick="toggleSection('chickenfarm-details')">
+                            <span>Full Technical Details</span>
+                            <span class="chevron">▼</span>
+                        </button>
+
+                        <div id="chickenfarm-details" class="collapsible mt-4">
+
+                            <!-- Project Structure -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Project Structure</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li><code class="text-xs bg-slate-100 px-1 rounded">app.py</code> — Main entry point that bootstraps the dashboard and monitoring loop.</li>
+                                    <li><code class="text-xs bg-slate-100 px-1 rounded">modules/alerts.py</code> — Alert system with LINE Notify integration for anomaly notifications.</li>
+                                    <li><code class="text-xs bg-slate-100 px-1 rounded">modules/dashboard.py</code> — Shiny dashboard UI and server logic with Thai language support.</li>
+                                    <li><code class="text-xs bg-slate-100 px-1 rounded">modules/data_generator.py</code> — Standard chicken growth weights by day (0–56 days) and status classification.</li>
+                                    <li><code class="text-xs bg-slate-100 px-1 rounded">modules/weight_classifier.py</code> — Classifies each reading as Normal, Underweight, Overweight, or Multiple Chickens Detected.</li>
+                                    <li><code class="text-xs bg-slate-100 px-1 rounded">utils/database.py</code> — Singleton MongoDB connection with methods for valid readings, daily stats, and time-range queries.</li>
+                                    <li><code class="text-xs bg-slate-100 px-1 rounded">utils/sensor_handler.py</code> — Sensor reading simulation with a 5-second monitoring loop.</li>
+                                    <li><code class="text-xs bg-slate-100 px-1 rounded">utils/helpers.py</code> — Data processing: growth rate calculations, anomaly detection, and summary statistics.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Data Validation Pipeline -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Data Validation Pipeline</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>Filters out negative or zero weights, and readings below 5g as sensor noise.</li>
+                                    <li>Rejects weights exceeding 150% of standard weight for the chicken's age (flags as multiple chickens detected).</li>
+                                    <li>Validates Day 0 birth weight within expected range of 35–45g.</li>
+                                    <li>Achieved 95% data accuracy after filtering, ensuring reliable analytics downstream.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Alert System -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Intelligent Alert System</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>Triggers LINE Notify alerts automatically when weight drops below <strong>90%</strong> or exceeds <strong>110%</strong> of standard weight for the chicken's age.</li>
+                                    <li>Sends critical alerts for invalid readings and multiple-chicken detection (weight &gt; 150% of standard).</li>
+                                    <li>Sends system status updates and startup/shutdown notifications via LINE Notify API.</li>
+                                    <li>Configured via <code class="text-xs bg-slate-100 px-1 rounded">LINE_NOTIFY_TOKEN</code> in <code class="text-xs bg-slate-100 px-1 rounded">.env</code> for easy deployment.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Dashboard -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Interactive Analytics Dashboard</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li><strong>Standard Comparison Table</strong> — Daily standard weights vs measured averages side by side.</li>
+                                    <li><strong>Weight Trend Chart</strong> — Dual-line Plotly visualization comparing actual vs standard growth curve over time.</li>
+                                    <li><strong>Daily Measurements Table</strong> — Detailed weight readings with status classification per day.</li>
+                                    <li>Full Thai language support in the dashboard UI.</li>
+                                    <li>Accessible at <code class="text-xs bg-slate-100 px-1 rounded">http://localhost:8000</code> after running <code class="text-xs bg-slate-100 px-1 rounded">python app.py</code>.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Database Schema -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Database Schema (MongoDB)</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>Collection: <code class="text-xs bg-slate-100 px-1 rounded">sensor_readings</code></li>
+                                    <li>Fields: <code class="text-xs bg-slate-100 px-1 rounded">device_id</code> (str), <code class="text-xs bg-slate-100 px-1 rounded">timestamp</code> (datetime), <code class="text-xs bg-slate-100 px-1 rounded">raw_weight</code> (float), <code class="text-xs bg-slate-100 px-1 rounded">batch_id</code> (str), <code class="text-xs bg-slate-100 px-1 rounded">day</code> (int).</li>
+                                    <li>Singleton connection pattern — one shared MongoDB client across all modules.</li>
+                                    <li>Supports time-range queries, daily statistics aggregation, and filtering valid vs. all readings.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Standard Growth Reference -->
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Standard Growth Reference</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>Day 0: 44g &nbsp;|&nbsp; Day 7: 209g &nbsp;|&nbsp; Day 14: 535g &nbsp;|&nbsp; Day 21: 1,040g</li>
+                                    <li>Day 28: 1,691g &nbsp;|&nbsp; Day 42: 3,204g &nbsp;|&nbsp; Day 56: 4,654g</li>
+                                    <li>All readings are compared against these benchmarks to determine weight status and trigger alerts.</li>
+                                </ul>
+                            </div>
+
+                        </div> <!-- end collapsible -->
+
+                        <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
                         <ul class="tech-stack-list">
                             <li><span class="tech-category">Backend & Database:</span> <a href="https://www.mongodb.com/" target="_blank" class="tech-link">MongoDB</a>, <a href="https://ubuntu.com/server" target="_blank" class="tech-link">Ubuntu Server</a></li>
                             <li><span class="tech-category">Data Visualization:</span> <a href="https://shiny.posit.co/" target="_blank" class="tech-link">Shiny</a>, <a href="https://plotly.com/" target="_blank" class="tech-link">Plotly</a></li>
