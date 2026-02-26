@@ -134,15 +134,15 @@
                         </ul>
 
                         <!-- What I Built - Collapsible -->
-                        <button class="toggle-btn" onclick="toggleSection('what-i-built')">
+                        <!-- <button class="toggle-btn" onclick="toggleSection('what-i-built')">
                             <span>What I Built — Full Details</span>
                             <span class="chevron">▼</span>
                         </button>
 
-                        <div id="what-i-built" class="collapsible mt-4">
+                        <div id="what-i-built" class="collapsible mt-4"> -->
 
                         <!-- 1. Full Stack Web App -->
-                        <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                        <!-- <div class="mb-5 pl-4 border-l-2 border-blue-200">
                             <p class="text-sm font-bold text-slate-700 mb-1">1. Full-Stack Web Application</p>
                             <ul class="text-sm text-slate-600 space-y-1">
                                 <li>Built the entire application end-to-end using <strong>Blazor WebAssembly</strong> (frontend) and <strong>ASP.NET Core</strong> (backend) with a clean 3-layer architecture: Presentation, Business Logic, and Data Access layers.</li>
@@ -153,10 +153,10 @@
                                 <li>Implemented responsive UI with Dark Mode and Light Mode support across all devices.</li>
                                 <li>Designed UX/UI prototypes in <strong>Figma</strong> before development for both desktop and mobile layouts.</li>
                             </ul>
-                        </div>
+                        </div> -->
 
                         <!-- 2. Document Processing Pipeline -->
-                        <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                        <!-- <div class="mb-5 pl-4 border-l-2 border-blue-200">
                             <p class="text-sm font-bold text-slate-700 mb-1">2. Document Processing Pipeline</p>
                             <ul class="text-sm text-slate-600 space-y-1">
                                 <li>Built a PDF processing pipeline using <strong>PdfPig</strong> to extract text and document structure from uploaded files.</li>
@@ -171,10 +171,10 @@
                                 <li>Stored vector embeddings in <strong>Qdrant</strong> (primary vector database) and <strong>SQLite</strong> (local backup), with metadata in <strong>Microsoft SQL Server</strong>.</li>
                                 <li>Tracked upload progress in real-time via SignalR, supporting up to 10 files (500MB each) per batch upload.</li>
                             </ul>
-                        </div>
+                        </div> -->
 
                         <!-- 3. RAG Evaluation Pipeline -->
-                        <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                        <!-- <div class="mb-5 pl-4 border-l-2 border-blue-200">
                             <p class="text-sm font-bold text-slate-700 mb-1">3. RAG Evaluation & A/B Testing Pipeline</p>
                             <ul class="text-sm text-slate-600 space-y-1">
                                 <li>Built a vector search testing system where Admin can query any uploaded document and compare results across different chunking strategies side by side.</li>
@@ -192,10 +192,10 @@
                                 <li>System automatically identifies the best-performing strategy and recommends it for RAG activation.</li>
                                 <li>Saved all comparison sessions with full history so Admin can review and re-compare at any time.</li>
                             </ul>
-                        </div>
+                        </div> -->
 
                         <!-- 4. Multi-RAG System -->
-                        <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                        <!-- <div class="mb-5 pl-4 border-l-2 border-blue-200">
                             <p class="text-sm font-bold text-slate-700 mb-1">4. Multi-Document RAG System</p>
                             <ul class="text-sm text-slate-600 space-y-1">
                                 <li>Implemented <strong>Hybrid Search</strong> combining Vector Search (Cosine Similarity) and BM25 keyword search, fused using <strong>Reciprocal Rank Fusion (RRF)</strong> for better ranking accuracy.</li>
@@ -206,10 +206,10 @@
                                 <li>Built a version management system — each document tracks DocumentName and VersionLabel (v1, v2, v3...) so Admin can manage multiple versions of the same document.</li>
                                 <li>Provided RAG management controls: Pause (temporarily disable), Resume, Delete (permanent with cache cleanup), Reactivate old versions, and Deactivate All (emergency stop).</li>
                             </ul>
-                        </div>
+                        </div> -->
 
                         <!-- 5. Caching & Performance -->
-                        <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                        <!-- <div class="mb-5 pl-4 border-l-2 border-blue-200">
                             <p class="text-sm font-bold text-slate-700 mb-1">5. Caching System & Performance Optimization</p>
                             <ul class="text-sm text-slate-600 space-y-1">
                                 <li>Built a <strong>Never-Expire caching system</strong> using .NET IMemoryCache that stores active RAG configurations and pre-processed BM25 corpus in RAM.</li>
@@ -218,10 +218,10 @@
                                 <li>Added smart cache invalidation — cache is cleared automatically only when Admin changes RAG configuration (add, pause, delete).</li>
                                 <li>Result: reduced chat response time from <strong>850ms → &lt;100ms</strong>, a <strong>27x improvement</strong>.</li>
                             </ul>
-                        </div>
+                        </div> -->
 
                         <!-- 6. Intelligent Question Detection -->
-                        <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                        <!-- <div class="mb-5 pl-4 border-l-2 border-blue-200">
                             <p class="text-sm font-bold text-slate-700 mb-1">6. Intelligent Question Classification</p>
                             <ul class="text-sm text-slate-600 space-y-1">
                                 <li>Implemented a question classifier in the ChatHub that detects question intent before deciding whether to activate RAG search.</li>
@@ -235,10 +235,10 @@
                                 <li>Used a confidence threshold of <strong>0.85</strong> (increased from 0.7) to reduce false RAG activation by ~75%, preventing documents from being used for unrelated questions.</li>
                                 <li>Integrated <strong>User Memory</strong> feature — users can save personal information in Settings, which is injected into the system prompt so the AI remembers it across all conversations.</li>
                             </ul>
-                        </div>
+                        </div> -->
 
                         <!-- Tech Stack -->
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <!-- <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
                         <ul class="tech-stack-list text-sm">
                             <li><span class="tech-category">Backend:</span> C#, ASP.NET Core, Entity Framework Core, ASP.NET Core Identity, SignalR</li>
                             <li><span class="tech-category">Frontend:</span> Blazor WebAssembly, Bootstrap, HTML, CSS, JavaScript</li>
@@ -249,9 +249,8 @@
                             <li><span class="tech-category">PDF Processing:</span> PdfPig</li>
                             <li><span class="tech-category">Caching:</span> .NET IMemoryCache (Never-Expire strategy)</li>
                             <li><span class="tech-category">Design:</span> <a href="https://www.figma.com/" target="_blank" class="tech-link">Figma</a></li>
-                        </ul>
-
-                        </div> <!-- end collapsible -->
+                        </ul> -->
+                         <!-- end collapsible -->
                     </div>
 
                     <!-- Biomass Exchange -->
