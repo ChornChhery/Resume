@@ -7,47 +7,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .toggle-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #3b82f6;
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 6px;
-            padding: 5px 12px;
-            margin-top: 8px;
-            transition: all 0.2s ease;
-            user-select: none;
-        }
-        .toggle-btn:hover {
-            background: #dbeafe;
-            border-color: #93c5fd;
-        }
-        .toggle-btn .chevron {
-            transition: transform 0.3s ease;
-            font-style: normal;
-        }
-        .toggle-btn.open .chevron {
-            transform: rotate(180deg);
-        }
-        .collapsible {
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.4s ease, opacity 0.3s ease;
-            opacity: 0;
-        }
-        .collapsible.open {
-            max-height: 9999px;
-            opacity: 1;
-        }
-    </style>
+
 </head>
 <body class="py-12 md:py-24">
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <span id="lightbox-close">&#x2715;</span>
+        <span id="lightbox-prev">&#8592;</span>
+        <img id="lightbox-img" src="" alt="">
+        <span id="lightbox-next">&#8594;</span>
+    </div>
 
     <div class="max-w-6xl mx-auto px-6">
         <div class="flex flex-col md:flex-row gap-16 items-start">
@@ -123,8 +93,6 @@
                         <h3 class="text-lg font-bold text-slate-800 mb-1">AI Engineer Cooperative Internship at <a href="https://www.jobthai.com/en/company/231960" target="_blank" class="company-link">Max Savings (Thailand) Co., LTD</a> <span class="font-normal text-slate-600">(Bangkok, Thailand)</span></h3>
                         <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">November 2025 - March 2026 (4 months)</p>
                         <p class="text-sm font-bold text-slate-700 mb-4">Built an end-to-end intelligent customer service chatbot using RAG to provide context-aware responses.</p>
-
-                        <!-- Summary bullets (CV version) -->
                         <p class="text-sm font-bold text-slate-700 mb-2 italic">Accomplishments:</p>
                         <ul class="text-sm text-slate-600 mb-6">
                             <li>Built a full-stack web application using <a href="https://dotnet.microsoft.com/en-us/apps/blazor" target="_blank" class="tech-link">Blazor WebAssembly</a> and <a href="https://dotnet.microsoft.com/en-us/apps/aspnet" target="_blank" class="tech-link">.NET Core</a> with real-time streaming chat via <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/signalr" target="_blank" class="tech-link">SignalR</a>, supporting both desktop and mobile platforms.</li>
@@ -175,7 +143,7 @@
                 <section id="projects" class="mb-12">
                     <h2 class="section-heading">Projects</h2>
 
-                    <!-- ChatBotRAG -->
+                    <!-- ── ChatBotRAG ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
                             <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/RAG-" target="_blank" class="project-link">ChatBotRAG — Document Question Answering Chatbot</a></h3>
@@ -193,7 +161,14 @@
                             A full-stack RAG chatbot built with .NET 10, Blazor WebAssembly, and SignalR. Upload PDF, TXT, or Markdown files and chat with them in real time using local Ollama models — no cloud dependency, full privacy.
                         </p>
 
-                        <!-- Summary bullets -->
+                        <!-- Project Images -->
+                        <div class="project-img-grid cols-4" data-gallery="chatbotrag">
+                            <img src="ChatbotRag.png"  alt="ChatBotRAG screenshot 1" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
+                            <img src="ChatbotRag1.png" alt="ChatBotRAG screenshot 2" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
+                            <img src="ChatbotRag2.png" alt="ChatBotRAG screenshot 3" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
+                            <img src="ChatbotRag3.png" alt="ChatBotRAG screenshot 4" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
+                        </div>
+
                         <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
                         <ul class="text-sm text-slate-600 mb-4">
                             <li>Built a full-stack web application using Blazor WebAssembly and ASP.NET Core with real-time token-by-token streaming chat via SignalR.</li>
@@ -203,15 +178,12 @@
                             <li>Engineered an in-memory embedding cache with startup pre-warming, eliminating repeated database round trips at query time.</li>
                         </ul>
 
-                        <!-- Full Details Toggle -->
                         <button class="toggle-btn" onclick="toggleSection('chatbotrag-details')">
                             <span>Full Technical Details</span>
                             <span class="chevron">▼</span>
                         </button>
 
                         <div id="chatbotrag-details" class="collapsible mt-4">
-
-                            <!-- RAG Architecture -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">RAG Architecture (How It Works)</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -231,8 +203,6 @@
                                     <li><strong>Stream</strong> — LLM response sent token-by-token to client via SignalR.</li>
                                 </ul>
                             </div>
-
-                            <!-- Chunking Strategies -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">Chunking Strategies</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -241,8 +211,6 @@
                                     <li><strong>Semantic</strong> — Groups sentences by topic coherence using word-overlap similarity (150–1200 chars). Best for dense research papers.</li>
                                 </ul>
                             </div>
-
-                            <!-- Multilingual Support -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">Multilingual Support (English, Thai, Khmer)</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -252,8 +220,6 @@
                                     <li>All 3 chunking strategies support language-specific sentence boundaries (Thai ๆ/ๆ markers, Khmer ។ terminator).</li>
                                 </ul>
                             </div>
-
-                            <!-- Embedding Cache -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">In-Memory Embedding Cache</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -265,8 +231,6 @@
                                     <li>Cache stats available at <code class="text-xs bg-slate-100 px-1 rounded">GET /api/documents/cache-stats</code> — shows total chunks, documents, and estimated RAM usage.</li>
                                 </ul>
                             </div>
-
-                            <!-- RAG Evaluation -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">RAG Evaluation Pipeline</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -279,8 +243,7 @@
                                     <li>Evaluation makes 3 LLM calls: reference generation, RAG answer generation, and LLM judge scoring.</li>
                                 </ul>
                             </div>
-
-                        </div> <!-- end collapsible -->
+                        </div>
 
                         <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
                         <ul class="tech-stack-list">
@@ -295,7 +258,7 @@
                         </ul>
                     </div>
 
-                    <!-- ChatBotRagPy -->
+                    <!-- ── ChatBotRagPy ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
                             <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/ChatBot-with-React-Python" target="_blank" class="project-link">ChatBotRagPy — RAG Chatbot with FastAPI + React</a></h3>
@@ -313,6 +276,14 @@
                             A full-stack RAG chatbot built with FastAPI and React. Upload documents and chat with them in real time using local Ollama models — supports English, Thai, and Khmer documents with automatic RAG/LLM routing.
                         </p>
 
+                        <!-- Project Images -->
+                        <div class="project-img-grid cols-4" data-gallery="chatbotragpy">
+                            <img src="ChatbotRagPy.png"  alt="ChatBotRagPy screenshot 1" loading="lazy" onclick="openLightbox(this, 'chatbotragpy')">
+                            <img src="ChatbotRagPy1.png" alt="ChatBotRagPy screenshot 2" loading="lazy" onclick="openLightbox(this, 'chatbotragpy')">
+                            <img src="ChatbotRagPy2.png" alt="ChatBotRagPy screenshot 3" loading="lazy" onclick="openLightbox(this, 'chatbotragpy')">
+                            <img src="ChatbotRagPy3.png" alt="ChatBotRagPy screenshot 4" loading="lazy" onclick="openLightbox(this, 'chatbotragpy')">
+                        </div>
+
                         <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
                         <ul class="text-sm text-slate-600 mb-4">
                             <li>Built a full-stack web application using React + Vite (frontend) and FastAPI Python (backend) with real-time token-by-token streaming chat via WebSocket.</li>
@@ -322,15 +293,12 @@
                             <li>Engineered an in-memory embedding cache with startup pre-warming and partial updates (add/remove per document) to eliminate repeated database round trips.</li>
                         </ul>
 
-                        <!-- Full Details Toggle -->
                         <button class="toggle-btn" onclick="toggleSection('chatbotragpy-details')">
                             <span>Full Technical Details</span>
                             <span class="chevron">▼</span>
                         </button>
 
                         <div id="chatbotragpy-details" class="collapsible mt-4">
-
-                            <!-- Intelligent RAG Routing -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">Intelligent RAG Routing</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -342,8 +310,6 @@
                                     <li>Threshold configurable in <code class="text-xs bg-slate-100 px-1 rounded">rag_service.py</code> — lower for more RAG, higher for stricter matching.</li>
                                 </ul>
                             </div>
-
-                            <!-- Hybrid Search -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">Hybrid Search (Vector + BM25)</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -353,8 +319,6 @@
                                     <li>Weights configurable via <code class="text-xs bg-slate-100 px-1 rounded">.env</code> — <code class="text-xs bg-slate-100 px-1 rounded">VECTOR_WEIGHT</code> and <code class="text-xs bg-slate-100 px-1 rounded">MIN_SIMILARITY_THRESHOLD</code>.</li>
                                 </ul>
                             </div>
-
-                            <!-- Chunking Strategies -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">Chunking Strategies</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -363,8 +327,6 @@
                                     <li><strong>Semantic</strong> — Groups sentences by topic-overlap similarity (150–1200 chars). Best for research papers and dense content.</li>
                                 </ul>
                             </div>
-
-                            <!-- Multilingual Support -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">Multilingual Support (English, Thai, Khmer)</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -374,8 +336,6 @@
                                     <li>Auto-detects language per text segment using Unicode range detection.</li>
                                 </ul>
                             </div>
-
-                            <!-- Embedding Cache -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">In-Memory Embedding Cache</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -386,8 +346,6 @@
                                     <li>Memory estimate: ~4MB per 1,000 chunks, ~40MB per 10,000 chunks.</li>
                                 </ul>
                             </div>
-
-                            <!-- Evaluation Pipeline -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">RAG Evaluation Pipeline</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -400,8 +358,7 @@
                                     <li>Overall score = average of all 4 metrics.</li>
                                 </ul>
                             </div>
-
-                        </div> <!-- end collapsible -->
+                        </div>
 
                         <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
                         <ul class="tech-stack-list">
@@ -417,7 +374,7 @@
                         </ul>
                     </div>
 
-                    <!-- Chicken Farm -->
+                    <!-- ── IoT Chicken Farm ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
                             <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Chicken-Farm-IOT" target="_blank" class="project-link">IoT-Based Chicken Farm Monitoring System</a></h3>
@@ -445,7 +402,7 @@
                         </ul>
                     </div>
 
-                    <!-- Jamoon -->
+                    <!-- ── Jamoon Laundry ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
                             <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Laundry-Management-System" target="_blank" class="project-link">Jamoon Laundry Management System</a></h3>
@@ -461,6 +418,13 @@
                             </a>
                         </div>
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">A web-based laundry management system for student-run laundry services with real-time machine availability, booking, and administrative analytics.</p>
+
+                        <!-- Project Images -->
+                        <div class="project-img-grid cols-2" data-gallery="jamoon">
+                            <img src="jamoon.png"  alt="Jamoon screenshot 1" loading="lazy" onclick="openLightbox(this, 'jamoon')">
+                            <img src="jamoon1.png" alt="Jamoon screenshot 2" loading="lazy" onclick="openLightbox(this, 'jamoon')">
+                        </div>
+
                         <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
                         <ul class="text-sm text-slate-600 mb-4">
                             <li>Real-time washing machine status updates using AJAX without requiring page reloads.</li>
@@ -477,7 +441,7 @@
                         </ul>
                     </div>
 
-                    <!-- Jame -->
+                    <!-- ── Jame POS ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
                             <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Jame" target="_blank" class="project-link">Jame - All-in-One Inventory & Sales Management App</a></h3>
@@ -504,41 +468,7 @@
                         </ul>
                     </div>
 
-                    <!-- RAG App -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Rag-AI-Agent" target="_blank" class="project-link">RAG App – Document Question Answering System</a></h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">October 2025</span>
-                        </div>
-                        <div class="flex gap-2 mb-4 flex-wrap">
-                            <a href="https://github.com/ChornChhery/Rag-AI-Agent" target="_blank">
-                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                            </a>
-                            <img src="https://img.shields.io/github/stars/ChornChhery/Rag-AI-Agent?style=social" alt="GitHub stars">
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">A RAG application enabling intelligent question answering over uploaded PDF documents using local AI models.</p>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Designed and implemented a RAG application for intelligent question-answering over PDF documents.</li>
-                            <li>Built a FastAPI backend to handle document upload, ingestion, and query APIs.</li>
-                            <li>Implemented PDF parsing, text chunking, and embedding pipelines using LlamaIndex.</li>
-                            <li>Generated document embeddings using Ollama (nomic-embed-text) and stored vectors in Qdrant for efficient similarity search.</li>
-                            <li>Integrated local LLM inference with Ollama (llama3.2) to generate privacy-focused AI responses without external APIs.</li>
-                            <li>Developed an interactive Streamlit UI for document upload and question querying.</li>
-                            <li>Containerized the vector database using Docker for consistent local deployment.</li>
-                        </ul>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Backend API:</span> Python, <a href="https://fastapi.tiangolo.com/" target="_blank" class="tech-link">FastAPI</a></li>
-                            <li><span class="tech-category">RAG Framework:</span> <a href="https://www.llamaindex.ai/" target="_blank" class="tech-link">LlamaIndex</a></li>
-                            <li><span class="tech-category">LLM & Embeddings:</span> <a href="https://ollama.com/" target="_blank" class="tech-link">Ollama</a> (llama3.2, nomic-embed-text)</li>
-                            <li><span class="tech-category">Vector Database:</span> <a href="https://qdrant.tech/" target="_blank" class="tech-link">Qdrant</a></li>
-                            <li><span class="tech-category">Web Interface:</span> <a href="https://streamlit.io/" target="_blank" class="tech-link">Streamlit</a></li>
-                            <li><span class="tech-category">Deployment:</span> <a href="https://www.docker.com/" target="_blank" class="tech-link">Docker</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- DataPilot AI -->
+                    <!-- ── DataPilot AI ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
                             <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/DataPilot_AI" target="_blank" class="project-link">DataPilot AI — Autonomous Data Scientist Agent Platform</a></h3>
@@ -556,6 +486,14 @@
                             A zero-code AutoML platform. Upload a CSV, select a target column, and the system automatically cleans data, trains multiple ML models, selects the best one, and delivers a visual dashboard with downloadable PDF report and cleaned dataset.
                         </p>
 
+                        <!-- Project Images -->
+                        <div class="project-img-grid cols-4" data-gallery="datapilot">
+                            <img src="Datapilot1.png" alt="DataPilot AI screenshot 1" loading="lazy" onclick="openLightbox(this, 'datapilot')">
+                            <img src="Datapilot2.png" alt="DataPilot AI screenshot 2" loading="lazy" onclick="openLightbox(this, 'datapilot')">
+                            <img src="Datapilot3.png" alt="DataPilot AI screenshot 3" loading="lazy" onclick="openLightbox(this, 'datapilot')">
+                            <img src="Datapilot4.png" alt="DataPilot AI screenshot 4" loading="lazy" onclick="openLightbox(this, 'datapilot')">
+                        </div>
+
                         <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
                         <ul class="text-sm text-slate-600 mb-4">
                             <li>Built a full-stack web application using React and FastAPI that runs a 6-stage ML pipeline automatically — data understanding, cleaning, feature engineering, statistical analysis, model training, and evaluation.</li>
@@ -564,15 +502,12 @@
                             <li>Implemented PDF report generation entirely in the browser using jsPDF, producing a full A4 report with metrics table, feature importance bars, and correlation heatmap without any server-side rendering.</li>
                         </ul>
 
-                        <!-- Full Details Toggle -->
                         <button class="toggle-btn" onclick="toggleSection('datapilot-details')">
                             <span>Full Technical Details</span>
                             <span class="chevron">▼</span>
                         </button>
 
                         <div id="datapilot-details" class="collapsible mt-4">
-
-                            <!-- ML Pipeline -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">ML Pipeline (6 Stages)</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -584,8 +519,6 @@
                                     <li><strong>Model Evaluation</strong> — Runs k-fold cross-validation, evaluates on held-out test set, extracts feature importances, selects best model by highest CV mean score.</li>
                                 </ul>
                             </div>
-
-                            <!-- Models -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">Models Trained</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -596,8 +529,6 @@
                                     <li>Feature importance extracted from <code class="text-xs bg-slate-100 px-1 rounded">feature_importances_</code> (tree models) or <code class="text-xs bg-slate-100 px-1 rounded">coef_</code> (linear models) — top 15 features returned.</li>
                                 </ul>
                             </div>
-
-                            <!-- Frontend Architecture -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">Frontend Architecture</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -609,8 +540,6 @@
                                     <li>Cleaned CSV downloaded via <code class="text-xs bg-slate-100 px-1 rounded">GET /api/v1/download/{session_id}</code> — backend re-runs cleaning pipeline and streams file back.</li>
                                 </ul>
                             </div>
-
-                            <!-- Deployment -->
                             <div class="mb-5 pl-4 border-l-2 border-blue-200">
                                 <p class="text-sm font-bold text-slate-700 mb-1">Deployment</p>
                                 <ul class="text-sm text-slate-600 space-y-1">
@@ -620,8 +549,7 @@
                                     <li>Environment configurable via <code class="text-xs bg-slate-100 px-1 rounded">.env</code> — CV folds, test size, file size limit, random seed all tunable without code changes.</li>
                                 </ul>
                             </div>
-
-                        </div> <!-- end collapsible -->
+                        </div>
 
                         <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
                         <ul class="tech-stack-list">
@@ -633,7 +561,7 @@
                         </ul>
                     </div>
 
-                    <!-- Skincare E-commerce -->
+                    <!-- ── Skincare E-commerce ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
                             <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank" class="project-link">Skincare E-commerce Platform with Admin Dashboard</a></h3>
@@ -646,6 +574,13 @@
                             <img src="https://img.shields.io/github/stars/ChornChhery/Ecommerce-Skincare?style=social" alt="GitHub stars">
                         </div>
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">A full-featured e-commerce web application supporting customer-facing functionality and a comprehensive administrative management system.</p>
+
+                        <!-- Project Images -->
+                        <div class="project-img-grid cols-2" data-gallery="skincare">
+                            <img src="skincare.png"  alt="Skincare E-commerce screenshot 1" loading="lazy" onclick="openLightbox(this, 'skincare')">
+                            <img src="skincare1.png" alt="Skincare E-commerce screenshot 2" loading="lazy" onclick="openLightbox(this, 'skincare')">
+                        </div>
+
                         <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
                         <ul class="text-sm text-slate-600 mb-4">
                             <li>Implemented customer-facing features including product browsing, shopping cart, wishlist, user authentication, profile management, and order history.</li>
@@ -664,13 +599,15 @@
                             <li><span class="tech-category">Data Visualization:</span> Chart.js</li>
                         </ul>
                     </div>
+
                 </section>
 
             </main>
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
         lucide.createIcons();
 
         function toggleSection(id) {
@@ -680,21 +617,56 @@
             btn.classList.toggle('open');
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.project-media').forEach(function(media) {
-                const img = media.querySelector('.media-image');
-                const video = media.querySelector('.media-video');
-                const placeholder = media.querySelector('.media-placeholder');
-                if (img && img.complete && img.naturalHeight === 0) {
-                    img.style.display = 'none';
-                    if (video) video.style.display = 'block';
-                }
-                setTimeout(function() {
-                    if ((img && img.style.display === 'none') && (video && video.style.display === 'none')) {
-                        if (placeholder) placeholder.style.display = 'flex';
-                    }
-                }, 100);
-            });
+        /* ── Lightbox ── */
+        const lb        = document.getElementById('lightbox');
+        const lbImg     = document.getElementById('lightbox-img');
+        const lbClose   = document.getElementById('lightbox-close');
+        const lbPrev    = document.getElementById('lightbox-prev');
+        const lbNext    = document.getElementById('lightbox-next');
+
+        let currentGallery = [];
+        let currentIndex   = 0;
+
+        function openLightbox(imgEl, galleryId) {
+            const grid = document.querySelector(`[data-gallery="${galleryId}"]`);
+            currentGallery = Array.from(grid.querySelectorAll('img'));
+            currentIndex   = currentGallery.indexOf(imgEl);
+            showLightboxImage();
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showLightboxImage() {
+            lbImg.src = currentGallery[currentIndex].src;
+            lbImg.alt = currentGallery[currentIndex].alt;
+            lbPrev.style.display = currentGallery.length > 1 ? 'block' : 'none';
+            lbNext.style.display = currentGallery.length > 1 ? 'block' : 'none';
+        }
+
+        function closeLightbox() {
+            lb.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lbClose.addEventListener('click', closeLightbox);
+        lb.addEventListener('click', function(e) {
+            if (e.target === lb) closeLightbox();
+        });
+        lbPrev.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            showLightboxImage();
+        });
+        lbNext.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            showLightboxImage();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (!lb.classList.contains('active')) return;
+            if (e.key === 'Escape')      closeLightbox();
+            if (e.key === 'ArrowLeft')  { currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length; showLightboxImage(); }
+            if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % currentGallery.length; showLightboxImage(); }
         });
     </script>
 </body>
