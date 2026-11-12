@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="text-slate-600 text-sm leading-relaxed mb-8 max-w-xs mx-auto">
-                I am an IT Programmer at MinebeaMitsumi in Phnom Penh, with a strong interest in backend systems, data, and AI applications. I enjoy building practical programs that solve real problems for the people who use them, and keeping those programs running reliably.
+                I am an IT Programmer at MinebeaMitsumi in Phnom Penh, with a background in AI engineering (RAG chatbots) and full-stack development. I enjoy building practical programs that solve real problems for the people who use them, and keeping those programs running reliably.
                 </div>
                 <div class="text-xs text-slate-500 font-medium">
                     email - chherychorn@gmail.com
@@ -61,10 +61,10 @@
                     <h2 class="section-heading">Skills</h2>
                     <ul class="text-sm space-y-3">
                         <li><span class="skill-label">Programming languages:</span> Python, TypeScript, JavaScript, SQL, C#, PHP, Java, C, C++, Golang, Dart</li>
-                        <li><span class="skill-label">Web & Frameworks:</span> React, NestJS, Node.js, .NET Core, Flutter, Tailwind CSS, Bootstrap, HTMX, HTML, CSS, Socket.IO</li>
-                        <li><span class="skill-label">Databases:</span> PostgreSQL, Prisma, MySQL, Microsoft SQL Server, MongoDB, Qdrant, SQLite</li>
+                        <li><span class="skill-label">Web & Frameworks:</span> React, NestJS, Node.js, .NET Core, Blazor WebAssembly, SignalR, HTMX, Flutter, Tailwind CSS, Bootstrap, HTMX, HTML, CSS, Socket.IO</li>
+                        <li><span class="skill-label">Databases:</span> PostgreSQL, Prisma, Redis, MySQL, Microsoft SQL Server, MongoDB, Qdrant, SQLite</li>
                         <li><span class="skill-label">AI & Machine Learning:</span> RAG, NLP, Ollama (local LLMs), K-Means, Decision Tree, XGBoost, Scikit-learn</li>
-                        <li><span class="skill-label">Other:</span> Docker, Linux (Ubuntu), nginx, Grafana, Prometheus, Telegram Bot API, Raspberry Pi, GitHub Actions, Git, GitHub, Azure DevOps, Postman, Figma, Spark, Pandas, Numpy, Matplotlib, Streamlit</li>
+                        <li><span class="skill-label">Other:</span> Docker, Linux (Ubuntu), nginx, Grafana, Prometheus, Telegram Bot API, Raspberry Pi, GitHub Actions, Git, GitHub, Azure DevOps, Postman, Figma, xUnit, Spark, Pandas, Numpy, Matplotlib, Streamlit</li>
                         <li><span class="skill-label">Communication Languages:</span> Khmer (Native), English (Intermediate), Thai (Advanced)</li>
                     </ul>
                 </section>
@@ -105,27 +105,46 @@
 
                     <!-- Max Savings -->
                     <div class="mb-12">
-                        <h3 class="text-lg font-bold text-slate-800 mb-1">AI Engineer Cooperative Internship at <a href="https://www.jobthai.com/en/company/231960" target="_blank" class="company-link">Max Savings (Thailand) Co., LTD</a> <span class="font-normal text-slate-600">(Bangkok, Thailand)</span></h3>
-                        <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">September 2025 - April 2026 (8 months)</p>
-                        <p class="text-sm font-bold text-slate-700 mb-4">Built an end-to-end intelligent customer service chatbot using RAG to provide context-aware responses.</p>
-                        <p class="text-sm font-bold text-slate-700 mb-2 italic">Accomplishments:</p>
-                        <ul class="text-sm text-slate-600 mb-6">
-                            <li>Built a full-stack web application using <a href="https://dotnet.microsoft.com/en-us/apps/blazor" target="_blank" class="tech-link">Blazor WebAssembly</a> and <a href="https://dotnet.microsoft.com/en-us/apps/aspnet" target="_blank" class="tech-link">.NET Core</a> with real-time streaming chat via <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/signalr" target="_blank" class="tech-link">SignalR</a>, supporting both desktop and mobile platforms.</li>
-                            <li>Implemented a multi-document RAG pipeline with hybrid search (Vector + BM25), enabling the system to retrieve context from multiple documents simultaneously.</li>
-                            <li>Designed a RAG evaluation pipeline comparing 3 chunking strategies (fixed, content-aware, semantic), scored with NLP metrics (BLEU, ROUGE, METEOR) to select the optimal retrieval configuration.</li>
-                            <li>Optimized response time by 27x (850ms → &lt;100ms) through intelligent caching and question classification, reducing unnecessary document searches.</li>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">AI Engineer (Co-op Intern, promoted to Staff) at <a href="https://www.jobthai.com/en/company/231960" target="_blank" class="company-link">Max Savings (Thailand) Co., LTD</a> <span class="font-normal text-slate-600">(Bangkok, Thailand)</span></h3>
+                        <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">August 2025 - April 2026</p>
+                        <p class="text-sm font-bold text-slate-700 mb-4">Built a chatbot that answers employees' questions from company documents. It finds the right passages first, then the AI answers from them (this is called RAG).</p>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2 italic">As AI Engineer (Nov 2025 - Apr 2026):</p>
+<ul class="text-sm text-slate-600 mb-5">
+                            <li>Built the document pipeline. Admins upload PDFs (up to 10 files, 500 MB each). The program splits each file in 3 ways (fixed size, by structure, by meaning), turns the pieces into embeddings (mxbai-embed-large, nomic-embed-text or all-minilm), and stores them in Qdrant or SQLite.</li>
+                            <li>Built the search. It joins vector search and keyword search (BM25, with Thai word splitting) using Reciprocal Rank Fusion. It searches all active documents at once, uses only passages above a 70% confidence level (up to 5), and shows the source document, so answers come from the right place.</li>
+                            <li>The chatbot knows if a question is about a document or about the user. Personal questions are answered from the user's saved memory.</li>
+                            <li>Added a Redis cache so search stays fast. It is rebuilt when an admin adds, pauses, or deletes a document. Response time went from about 850 ms to under 100 ms with caching and question detection.</li>
+                            <li>Built an admin test screen to compare chunking and embedding setups. Each answer is scored with NLP metrics (BLEU, GLEU, F1, from Microsoft.Extensions.AI.Evaluation) and star ratings from the admin. A weighted score recommends the best setup, and an AI note explains why. I read the scores to check that the system works correctly.</li>
+                            <li>Added RAG version control: pause, roll back, or reactivate a setup.</li>
+                            <li>Built the chat app with Blazor WebAssembly and SignalR: real-time chat with stop, regenerate and copy, login with admin and user roles, searchable chat history (pin, rename, delete), per-user memory, response style, temperature and model choice, and light and dark mode on desktop and mobile.</li>
+                            <li>Used local models with Ollama (Llama 3.2, Qwen3) and OpenAI models on the company server.</li>
+                            <li>Wrote 30+ documented REST endpoints, xUnit tests, a user manual, and an API manual.</li>
+                        </ul>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2 italic">As co-op intern (Aug 2025 - Oct 2025):</p>
+<ul class="text-sm text-slate-600 mb-3">
+                            <li>Learned .NET by building practice apps with Clean Architecture (a music app, a book store with cart and orders, and a login API), wrote xUnit tests, and worked with Azure DevOps pull requests and code reviews from senior developers.</li>
+                            <li>Built a responsive email screen (Blazor, Bootstrap) and a QR-code check-in for attendance on mobile, for the company's e-office system.</li>
+                            <li>Took over the chatbot project (.NET 9, only a basic chat screen). Upgraded it to .NET 10 with all packages, and designed the screens in Figma for desktop and mobile.</li>
                         </ul>
                     </div>
 
                     <!-- Biomass Exchange -->
                     <div class="mb-10">
-                        <h3 class="text-lg font-bold text-slate-800 mb-1">Full Stack Developer at <a href="https://www.biomassx.com/" target="_blank" class="company-link">Biomass Exchange Co., LTD</a> <span class="font-normal text-slate-600">(Bangkok, Thailand)</span></h3>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">Full Stack Developer Intern at <a href="https://www.biomassx.com/" target="_blank" class="company-link">Biomass Exchange Co., LTD</a> <span class="font-normal text-slate-600">(Bangkok, Thailand)</span></h3>
                         <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">February 2025 - May 2025 (4 months)</p>
+                        <p class="text-sm font-bold text-slate-700 mb-4">BiomassX is a bioenergy exchange where buyers and sellers post orders that are matched into contracts. I built its email notification system in <a href="https://go.dev/" target="_blank" class="tech-link">Go</a>, so users get an email at each step.</p>
                         <p class="text-sm font-bold text-slate-700 mb-2 italic">Accomplishments:</p>
-                        <ul class="text-sm text-slate-600">
-                            <li>Developed an asynchronous email system with <a href="https://go.dev/" target="_blank" class="tech-link">Golang</a> that automates user communications and sends notifications efficiently.</li>
-                            <li>Led database schema design for notification features, ensuring data integrity and scalability to support growing transaction volumes.</li>
-                            <li>Built a booking history feature with full CRUD operations, enabling users to manage, edit, and track transaction records efficiently.</li>
+<ul class="text-sm text-slate-600">
+                            <li>Created 14 automated emails in Thai and English (28 templates): registration, password reset, order submission, match found, contract confirmation, rejection, cancellation, and reminders. Each email shows the order details and has a button to the right page. The language comes from the user's registration choice or past notifications.</li>
+                            <li>Built the contract flow: the first person to confirm gets a confirmation, the other party gets a 3-day waiting notice, and both get a final email once the contract is confirmed.</li>
+                            <li>Sent emails in the background (goroutines, channels, and a pool of 5 workers) so pages respond instantly. Each email is saved as pending, sent, or failed.</li>
+                            <li>Added scheduled jobs: an hourly retry of pending emails, a day-3 reminder for unconfirmed contracts, and automatic cancellation after 3 days.</li>
+                            <li>Sent profile reminders that list exactly which fields a user is missing, with a completion percentage.</li>
+                            <li>Designed the PostgreSQL notifications table, linked to users and notification types with foreign keys.</li>
+                            <li>Built a booking history feature with full CRUD using HTMX, JavaScript, and CSS, plus address and role management on the profile page.</li>
+                            <li>Wrote the business and system analysis and the user flows for the notification package.</li>
                         </ul>
                     </div>
 
