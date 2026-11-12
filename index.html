@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="text-slate-600 text-sm leading-relaxed mb-8 max-w-xs mx-auto">
-                I am a junior Full-Stack Developer with a strong interest in backend systems, data, and AI applications. I enjoy building practical products that connect software, data, and intelligent systems to solve real-world problems.
+                I am an IT Programmer at MinebeaMitsumi in Phnom Penh, with a strong interest in backend systems, data, and AI applications. I enjoy building practical programs that solve real problems for the people who use them, and keeping those programs running reliably.
                 </div>
                 <div class="text-xs text-slate-500 font-medium">
                     email - chherychorn@gmail.com
@@ -60,11 +60,11 @@
                 <section id="skills" class="mb-12">
                     <h2 class="section-heading">Skills</h2>
                     <ul class="text-sm space-y-3">
-                        <li><span class="skill-label">Programming languages:</span> Python, SQL, C#, JavaScript, PHP, Java, C, C++, Golang, Dart</li>
-                        <li><span class="skill-label">Web & Frameworks:</span> React, .NET Core, Flutter, Bootstrap, HTMX, HTML, CSS</li>
-                        <li><span class="skill-label">Databases:</span> PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Qdrant, SQLite</li>
-                        <li><span class="skill-label">AI & Machine Learning:</span> RAG, NLP, K-Means, Decision Tree, XGBoost, Scikit-learn</li>
-                        <li><span class="skill-label">Other:</span> Docker, Git, GitHub, Azure DevOps, Postman, Figma, Spark, Pandas, Numpy, Matplotlib, Streamlit</li>
+                        <li><span class="skill-label">Programming languages:</span> Python, TypeScript, JavaScript, SQL, C#, PHP, Java, C, C++, Golang, Dart</li>
+                        <li><span class="skill-label">Web & Frameworks:</span> React, NestJS, Node.js, .NET Core, Flutter, Tailwind CSS, Bootstrap, HTMX, HTML, CSS, Socket.IO</li>
+                        <li><span class="skill-label">Databases:</span> PostgreSQL, Prisma, MySQL, Microsoft SQL Server, MongoDB, Qdrant, SQLite</li>
+                        <li><span class="skill-label">AI & Machine Learning:</span> RAG, NLP, Ollama (local LLMs), K-Means, Decision Tree, XGBoost, Scikit-learn</li>
+                        <li><span class="skill-label">Other:</span> Docker, Linux (Ubuntu), nginx, Grafana, Prometheus, Telegram Bot API, Raspberry Pi, GitHub Actions, Git, GitHub, Azure DevOps, Postman, Figma, Spark, Pandas, Numpy, Matplotlib, Streamlit</li>
                         <li><span class="skill-label">Communication Languages:</span> Khmer (Native), English (Intermediate), Thai (Advanced)</li>
                     </ul>
                 </section>
@@ -87,6 +87,21 @@
                 <!-- Work Experience Section -->
                 <section id="experience" class="mb-12">
                     <h2 class="section-heading">Work Experience</h2>
+
+                    <!-- MinebeaMitsumi -->
+                    <div class="mb-12">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">IT Programmer at <a href="https://www.minebeamitsumi.com/" target="_blank" class="company-link">MinebeaMitsumi Inc.</a> <span class="font-normal text-slate-600">(Phnom Penh, Cambodia)</span></h3>
+                        <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">May 2026 - Present</p>
+                        <p class="text-sm font-bold text-slate-700 mb-4">Build and run the internal programs our factory teams use, from leave requests to production lines.</p>
+                        <p class="text-sm font-bold text-slate-700 mb-2 italic">Accomplishments:</p>
+                        <ul class="text-sm text-slate-600 mb-6">
+                            <li>Built a leave system on Telegram in English and Khmer. Staff write their leave like a normal message. The program checks it, blocks duplicates, and asks an admin to approve. If no admin answers in 5 hours, it approves the request by itself, so people do not wait.</li>
+                            <li>Built a factory website that shows each production line, who is at work, and who is on leave. Supervisors can move a worker from one line to another, and the worker returns by himself when the time is over. Approved leave arrives from the Telegram system every minute, so nobody types it twice.</li>
+                            <li>Made both systems safer to run after leave requests were lost once when the database stopped: added a retry queue, health checks, backups, and updates that roll back if something goes wrong.</li>
+                            <li>Set up Grafana dashboards that show server health and how fast both systems respond, and built a Raspberry Pi counter that compares production output with the plan for each shift.</li>
+                            <li>Run everything on one Ubuntu server with Docker.</li>
+                        </ul>
+                    </div>
 
                     <!-- Max Savings -->
                     <div class="mb-12">
@@ -142,6 +157,167 @@
                 <!-- Projects Section -->
                 <section id="projects" class="mb-12">
                     <h2 class="section-heading">Projects</h2>
+
+                    <!-- ── Leave Bot — Telegram Leave System (MinebeaMitsumi) ── -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl">Leave Bot — Telegram Leave System (MinebeaMitsumi)</h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            A leave system for factory staff and admins. Staff send leave in a Telegram group or in a Mini App, in English or Khmer. Admins approve it in Telegram or in the Mini App. Everything is saved in PostgreSQL. Built for internal company use, so the source code is private.
+                        </p>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Reads normal chat messages, including typos, changed field order, spelled-out months, and Khmer wording, and checks leave type, dates, half days, Sunday off, and daily limits.</li>
+                            <li>Blocks duplicate requests and handles changes such as “half day more”, “cancel”, or “I will come this afternoon”.</li>
+                            <li>Approval rules: admins cannot approve their own leave, admins get a reminder after 2 hours, and a request is approved automatically after 5 hours if nobody answers.</li>
+                            <li>Mini App pages for On Leave, Dashboard, Approvals, Admins, Report (Excel-style preview and export), My Requests, and Feedback, with access set per person.</li>
+                            <li>Sends a daily on-leave report as a picture card with Khmer text, and keeps working if the database is down by saving requests in a retry queue.</li>
+                            <li>Moved the data from a Google Sheet to PostgreSQL only, after comparing the old history and fixing 9 gaps by hand.</li>
+                        </ul>
+                        <button class="toggle-btn" onclick="toggleSection('leavebot-details')">
+                            <span>Full Technical Details</span>
+                            <span class="chevron">▼</span>
+                        </button>
+
+                        <div id="leavebot-details" class="collapsible mt-4">
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">How the messages are read</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>The program first reads the message with fixed rules and a list of label names. A small local AI model is used only when the rules cannot read a date or the meaning of a change.</li>
+                                    <li>Every value the model gives is checked again against the real leave types and date limits before anything is saved.</li>
+                                    <li>If a person edits a message, the program reads it again.</li>
+                                </ul>
+                            </div>
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Reliability</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>A retry queue saves new requests and approve/reject decisions if PostgreSQL is down, and plays them back when it returns.</li>
+                                    <li>Startup checks, a health page, nightly backups of the database, and a script that tests a restore.</li>
+                                    <li>Found and fixed a case where the same request could be saved twice when two requests arrived together.</li>
+                                </ul>
+                            </div>
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Access and safety</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>Super Admin, Admin, and limited roles. Page access can be set for each person and is checked on the server.</li>
+                                    <li>Rate limit for each Telegram user, and a signature check for Mini App login.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Language / API:</span> Python, Flask, gunicorn</li>
+                            <li><span class="tech-category">Database:</span> PostgreSQL, SQLite</li>
+                            <li><span class="tech-category">Chat:</span> Telegram Bot API, Telegram Mini App (HTML, JavaScript, Chart.js)</li>
+                            <li><span class="tech-category">AI:</span> Ollama (local model, used only as a fallback; its output is always checked)</li>
+                            <li><span class="tech-category">Deployment:</span> Docker Compose, Caddy, Cloudflare Tunnel and Worker</li>
+                            <li><span class="tech-category">Quality:</span> 72 test files, health checks, nightly backups</li>
+                        </ul>
+                    </div>
+
+                    <!-- ── Factory Website — Production Lines, Attendance and Leave Dashboard (MinebeaMitsumi) ── -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl">Factory Website — Production Lines, Attendance and Leave Dashboard (MinebeaMitsumi)</h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            A website for the factory network. It shows each production line, who is at work, who is on leave, and which line needs people. Built for internal company use, so the source code is private.
+                        </p>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Live line view with worker photos and status colours (present, vacant, borrowed, on leave), updated in real time with Socket.IO.</li>
+                            <li>Daily roster for Day and Night shift, with filters and a button to mark an area present.</li>
+                            <li>Worker borrowing between lines in one database transaction (half day, OT, full day, or custom dates), with automatic return and a full history that can be exported.</li>
+                            <li>Member list with photos, Excel import and export, and Resign / Re-activate instead of delete.</li>
+                            <li>Gets approved leave from the Telegram leave system every minute, and sends it the member list after each change.</li>
+                            <li>Leave dashboard with a heat calendar, a trend line, and the top leave takers each month.</li>
+                        </ul>
+                        <button class="toggle-btn" onclick="toggleSection('factory-details')">
+                            <span>Full Technical Details</span>
+                            <span class="chevron">▼</span>
+                        </button>
+
+                        <div id="factory-details" class="collapsible mt-4">
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Line view and attendance</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>A line builder for areas, lines, and stations.</li>
+                                    <li>A full-screen list of people with no line today, where an admin can drag or tap a person onto a line.</li>
+                                    <li>A display board where an admin chooses who is shown.</li>
+                                    <li>A page that shows staff short of workers on each line.</li>
+                                </ul>
+                            </div>
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Link with the leave system</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>Joins an AM leave and a PM leave of the same person into one full day.</li>
+                                    <li>A health page that tells the admin if the two systems cannot talk to each other.</li>
+                                    <li>The member list sync refuses a very large drop in members unless an admin confirms it.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Backend:</span> NestJS, Prisma, Socket.IO</li>
+                            <li><span class="tech-category">Database:</span> PostgreSQL</li>
+                            <li><span class="tech-category">Frontend:</span> React, Vite, TypeScript, Tailwind CSS</li>
+                            <li><span class="tech-category">Deployment:</span> Docker, nginx</li>
+                            <li><span class="tech-category">Quality:</span> Backend tests for roster, leave sync, dashboard numbers, and member sync</li>
+                        </ul>
+                    </div>
+
+                    <!-- ── Server Monitoring Dashboards (MinebeaMitsumi) ── -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl">Server Monitoring Dashboards (MinebeaMitsumi)</h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            Grafana dashboards for the leave system and the factory website, running on the same server in Docker. Built for internal company use, so the source code is private.
+                        </p>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>4 dashboards: server health, leave counts, speed of the leave system, and speed of the factory website.</li>
+                            <li>Shows CPU, memory, disk, uptime, restarts, the retry queue, backup age, and how long approvals take, without showing any names.</li>
+                            <li>Privacy: the leave numbers come from a read-only database role that cannot read personal columns, and no IP address or cookie is stored.</li>
+                            <li>Dashboards are generated by Python scripts and loaded automatically, with an install script and a check script.</li>
+                        </ul>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Monitoring:</span> Grafana, Prometheus, node_exporter, cAdvisor</li>
+                            <li><span class="tech-category">Language:</span> Python (small exporter)</li>
+                            <li><span class="tech-category">Deployment:</span> Docker Compose</li>
+                        </ul>
+                    </div>
+
+                    <!-- ── Production-Line Counter on Raspberry Pi (MinebeaMitsumi) ── -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl">Production-Line Counter on Raspberry Pi (MinebeaMitsumi)</h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            A full-screen counter for a production line. It shows the plan, the target, and the real count for each shift.
+                        </p>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Reads input, output, and a red-light stop signal through GPIO and ignores false pulses.</li>
+                            <li>Counts a unit only when two signals are 3 to 4 seconds apart, after removing the time the line was stopped.</li>
+                            <li>Schedule editor for Day and Night plans, with work and break blocks and tact time worked out for each row.</li>
+                            <li>Saves the counts to a file, resets at shift change, and has a PIN-protected correction screen and a simulation mode for testing on a PC.</li>
+                        </ul>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Language:</span> Python, Tkinter</li>
+                            <li><span class="tech-category">Hardware:</span> Raspberry Pi, GPIO</li>
+                            <li><span class="tech-category">Data:</span> JSON files</li>
+                        </ul>
+                    </div>
 
                     <!-- ── ChatBotRAG ── -->
                     <div class="mb-10 project-card">
