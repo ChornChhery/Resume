@@ -61,10 +61,10 @@
                     <h2 class="section-heading">Skills</h2>
                     <ul class="text-sm space-y-3">
                         <li><span class="skill-label">Programming languages:</span> Python, TypeScript, JavaScript, SQL, C#, PowerShell, PHP, Java, C, C++, Golang, Dart</li>
-                        <li><span class="skill-label">Web & Frameworks:</span> React, NestJS, Node.js, .NET Core, Blazor WebAssembly, SignalR, HTMX, Flutter, Tailwind CSS, Bootstrap, HTMX, HTML, CSS, Socket.IO</li>
+                        <li><span class="skill-label">Web & Frameworks:</span> React, Next.js, NestJS, Express, Node.js, .NET Core, Blazor WebAssembly, SignalR, HTMX, Flutter, Tailwind CSS, Bootstrap, HTML, CSS, Socket.IO</li>
                         <li><span class="skill-label">Databases:</span> PostgreSQL, Prisma, Redis, MySQL, Microsoft SQL Server, MongoDB, Qdrant, SQLite</li>
                         <li><span class="skill-label">AI & Machine Learning:</span> RAG, NLP, Ollama (local LLMs), K-Means, Decision Tree, XGBoost, Scikit-learn</li>
-                        <li><span class="skill-label">Other:</span> Docker, Linux (Ubuntu), nginx, Caddy, Cloudflare Tunnel, systemd, Grafana, Prometheus, Telegram Bot API, Raspberry Pi, GitHub Actions, Git, GitHub, Azure DevOps, Jest, Postman, Figma, xUnit, Spark, Pandas, Numpy, Matplotlib, Streamlit</li>
+                        <li><span class="skill-label">Other:</span> Docker, Linux (Ubuntu), nginx, Caddy, Cloudflare Tunnel, systemd, Grafana, Prometheus, Telegram Bot API, Bakong KHQR, Raspberry Pi, GitHub Actions, Git, GitHub, Azure DevOps, Jest, Vitest, Postman, Figma, xUnit, Spark, Pandas, Numpy, Matplotlib, Streamlit</li>
                         <li><span class="skill-label">Communication Languages:</span> Khmer (Native), English (Intermediate), Thai (Advanced)</li>
                     </ul>
                 </section>
@@ -371,117 +371,129 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
 
                     <!-- ── ChatBotRAG ── -->
                     <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/RAG-" target="_blank" class="project-link">ChatBotRAG — Document Question Answering Chatbot</a></h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">February 2026</span>
-                        </div>
 
-                        <div class="flex gap-2 mb-4 flex-wrap">
-                            <a href="https://github.com/ChornChhery/RAG-" target="_blank">
-                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                            </a>
-                            <img src="https://img.shields.io/github/stars/ChornChhery/RAG-?style=social" alt="GitHub stars">
-                        </div>
+                    <div class="flex justify-between items-baseline mb-3">
+                    <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/RAG-" target="_blank" class="project-link">ChatBotRAG — Document Question Answering Chatbot</a></h3>
+                    <span class="text-xs text-slate-500 font-bold uppercase">February 2026</span>
+                    </div>
 
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            A full-stack RAG chatbot built with .NET 10, Blazor WebAssembly, and SignalR. Upload PDF, TXT, or Markdown files and chat with them in real time using local Ollama models — no cloud dependency, full privacy.
-                        </p>
+                    <div class="flex gap-2 mb-4 flex-wrap">
+                    <a href="https://github.com/ChornChhery/RAG-" target="_blank">
+                    <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
+                    </a>
+                    <img src="https://img.shields.io/github/stars/ChornChhery/RAG-?style=social" alt="GitHub stars">
+                    </div>
 
-                        <!-- Project Images -->
-                        <div class="project-img-grid cols-4" data-gallery="chatbotrag">
-                            <img src="ChatbotRag.png"  alt="ChatBotRAG screenshot 1" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
-                            <img src="ChatbotRag1.png" alt="ChatBotRAG screenshot 2" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
-                            <img src="ChatbotRag2.png" alt="ChatBotRAG screenshot 3" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
-                            <img src="ChatbotRag3.png" alt="ChatBotRAG screenshot 4" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
-                        </div>
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                    A full-stack RAG chatbot built with .NET 10, Blazor WebAssembly, and SignalR. Upload PDF, TXT, or Markdown files and chat with them in real time using local Ollama models — no cloud dependency, full privacy. Vectors are stored in Qdrant, and each RAG has its own settings, login-based access, and a saved evaluation history.
+                    </p>
 
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Built a full-stack web application using Blazor WebAssembly and ASP.NET Core with real-time token-by-token streaming chat via SignalR.</li>
-                            <li>Implemented hybrid search (Vector + BM25 with configurable weights) fusing semantic and keyword retrieval for more accurate document answers.</li>
-                            <li>Supported 3 chunking strategies (FixedSize, ContentAware, Semantic) with multilingual tokenization for English, Thai, and Khmer.</li>
-                            <li>Built a RAG evaluation pipeline scoring answer quality automatically using BLEU, GLEU, F1, and LLM Judge — no reference answer required.</li>
-                            <li>Engineered an in-memory embedding cache with startup pre-warming, eliminating repeated database round trips at query time.</li>
-                        </ul>
+                    <div class="project-img-grid cols-4" data-gallery="chatbotrag">
+                    <img src="ChatbotRag.png" alt="ChatBotRAG screenshot 1" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
+                    <img src="ChatbotRag1.png" alt="ChatBotRAG screenshot 2" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
+                    <img src="ChatbotRag2.png" alt="ChatBotRAG screenshot 3" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
+                    <img src="ChatbotRag3.png" alt="ChatBotRAG screenshot 4" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
+                    </div>
 
-                        <button class="toggle-btn" onclick="toggleSection('chatbotrag-details')">
-                            <span>Full Technical Details</span>
-                            <span class="chevron">▼</span>
-                        </button>
+                    <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                    <ul class="text-sm text-slate-600 mb-4">
+                    <li>Built a full-stack web application using Blazor WebAssembly and ASP.NET Core with real-time token-by-token streaming chat via SignalR.</li>
+                    <li>Implemented hybrid search (vector + BM25 with configurable weights, default 70/30) fusing semantic and keyword retrieval for more accurate document answers, with source chunks shown under each reply.</li>
+                    <li>Moved all embeddings to a Qdrant vector store behind an interface. SQL Server keeps documents, chunk text, chats, and messages. An upload writes vectors first, and if Qdrant is down the upload is marked Failed so nothing is half-saved.</li>
+                    <li>Supported 3 chunking strategies (FixedSize, ContentAware, Semantic) with multilingual tokenization for English, Thai, and Khmer.</li>
+                    <li>Built a RAG evaluation tab that scores answer quality with BLEU, GLEU, F1, and an LLM Judge — no reference answer required. Every run is saved, so a setting can be changed and the same question re-tested and compared.</li>
+                    <li>Added accounts (JWT login with an admin role), and a chat sidebar with pin, rename, delete, and light / dark / system theme.</li>
+                    </ul>
 
-                        <div id="chatbotrag-details" class="collapsible mt-4">
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">RAG Architecture (How It Works)</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li><strong>Upload</strong> — Document split into chunks using the selected strategy.</li>
-                                    <li><strong>Embed</strong> — Each chunk converted to a 1024-dim vector via <code class="text-xs bg-slate-100 px-1 rounded">mxbai-embed-large</code>.</li>
-                                    <li><strong>Store</strong> — Vectors saved in SQL Server with chunk text and chunking method.</li>
-                                    <li><strong>Cache</strong> — Vectors loaded into RAM on first query and stay cached until restart.</li>
-                                    <li><strong>Query</strong> — User question embedded and hybrid search runs:
-                                        <ul class="ml-4 mt-1 space-y-1">
-                                            <li>Vector search — cosine similarity against cached embeddings (70% weight)</li>
-                                            <li>BM25 search — keyword matching against chunk text (30% weight)</li>
-                                            <li>Fusion — scores combined: <code class="text-xs bg-slate-100 px-1 rounded">final = 0.7 × vector + 0.3 × bm25</code></li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Retrieve</strong> — Top-K chunks above similarity threshold returned.</li>
-                                    <li><strong>Generate</strong> — Retrieved chunks sent to <code class="text-xs bg-slate-100 px-1 rounded">llama3.2:3b</code> as context.</li>
-                                    <li><strong>Stream</strong> — LLM response sent token-by-token to client via SignalR.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Chunking Strategies</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li><strong>FixedSize</strong> — Splits text into fixed 500-char chunks with 100-char overlap. Fast, works for most documents.</li>
-                                    <li><strong>ContentAware</strong> — Respects sentence boundaries, markdown structure, and paragraphs (100–1000 chars). Best for structured documents.</li>
-                                    <li><strong>Semantic</strong> — Groups sentences by topic coherence using word-overlap similarity (150–1200 chars). Best for dense research papers.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Multilingual Support (English, Thai, Khmer)</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>English — word tokenization with stop word removal for BM25.</li>
-                                    <li>Thai & Khmer — character trigram (n-gram) tokenization since these languages have no spaces between words.</li>
-                                    <li>Auto-detects script per text segment, handling mixed-language documents correctly.</li>
-                                    <li>All 3 chunking strategies support language-specific sentence boundaries (Thai ๆ/ๆ markers, Khmer ។ terminator).</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">In-Memory Embedding Cache</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>Registered as a Singleton — holds shared RAM state across all requests.</li>
-                                    <li>On first query: loads ALL ready chunks from SQL Server, deserializes embeddings into <code class="text-xs bg-slate-100 px-1 rounded">float[]</code>, stores in <code class="text-xs bg-slate-100 px-1 rounded">ConcurrentDictionary</code>.</li>
-                                    <li>Every query after: reads directly from RAM — no DB queries, no JSON parsing.</li>
-                                    <li>Partial updates: uploading a new document adds only new chunks; deleting removes only that document's chunks.</li>
-                                    <li>Startup pre-warming via <code class="text-xs bg-slate-100 px-1 rounded">WarmUpAsync()</code> so the first user query is already fast.</li>
-                                    <li>Cache stats available at <code class="text-xs bg-slate-100 px-1 rounded">GET /api/documents/cache-stats</code> — shows total chunks, documents, and estimated RAM usage.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">RAG Evaluation Pipeline</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>No reference answer needed — the system auto-generates one from retrieved chunks via LLM.</li>
-                                    <li>Pipeline: Hybrid search → LLM generates reference answer → LLM generates RAG answer → BLEU/GLEU/F1 compare both → LLM Judge scores semantic quality.</li>
-                                    <li><strong>BLEU</strong> — n-gram precision, checks factual phrase accuracy.</li>
-                                    <li><strong>GLEU</strong> — balanced precision + recall, penalizes wrong additions and missing content.</li>
-                                    <li><strong>F1</strong> — token overlap, standard QA benchmark metric (SQuAD).</li>
-                                    <li><strong>LLM Judge</strong> — semantic quality scored by LLM (0–10 normalized to 0–1), reliable for Thai and Khmer.</li>
-                                    <li>Evaluation makes 3 LLM calls: reference generation, RAG answer generation, and LLM judge scoring.</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <button class="toggle-btn" onclick="toggleSection('chatbotrag-details')">
+                    <span>Full Technical Details</span>
+                    <span class="chevron">▼</span>
+                    </button>
 
-                        <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Frontend:</span> Blazor WebAssembly (.NET 10)</li>
-                            <li><span class="tech-category">Backend:</span> ASP.NET Core Web API (.NET 10), SignalR, Entity Framework Core</li>
-                            <li><span class="tech-category">LLM & Embeddings:</span> <a href="https://ollama.com/" target="_blank" class="tech-link">Ollama</a> (llama3.2:3b, mxbai-embed-large), OllamaSharp, Microsoft.Extensions.AI</li>
-                            <li><span class="tech-category">Database:</span> SQL Server / LocalDB</li>
-                            <li><span class="tech-category">PDF Parsing:</span> PdfPig</li>
-                            <li><span class="tech-category">Markdown:</span> Markdig</li>
-                            <li><span class="tech-category">Search:</span> Hybrid Vector + BM25 with RRF fusion</li>
-                            <li><span class="tech-category">Languages Supported:</span> English, Thai, Khmer</li>
-                        </ul>
+                    <div id="chatbotrag-details" class="collapsible mt-4">
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">RAG Architecture (How It Works)</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li><strong>Upload</strong> — Document split into chunks using the selected strategy.</li>
+                    <li><strong>Embed</strong> — Each chunk converted to a 1024-dim vector via <code class="text-xs bg-slate-100 px-1 rounded">mxbai-embed-large</code>.</li>
+                    <li><strong>Store</strong> — Vectors saved in Qdrant; chunk text, chats, and metadata saved in SQL Server.</li>
+                    <li><strong>Query</strong> — User question embedded and hybrid search runs:
+                    <ul class="ml-4 mt-1 space-y-1">
+                    <li>Vector search — cosine similarity in Qdrant (70% weight)</li>
+                    <li>BM25 search — keyword matching against cached chunk text (30% weight)</li>
+                    <li>Fusion — scores combined: <code class="text-xs bg-slate-100 px-1 rounded">final = 0.7 × vector + 0.3 × bm25</code></li>
+                    </ul>
+                    </li>
+                    <li><strong>Retrieve</strong> — Top-K chunks above the minimum score returned (TopK, weights, and thresholds are configurable).</li>
+                    <li><strong>Generate</strong> — Retrieved chunks sent to <code class="text-xs bg-slate-100 px-1 rounded">llama3.2:3b</code> as context.</li>
+                    <li><strong>Stream</strong> — LLM response sent token-by-token to the client via SignalR.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Vector Store (Qdrant)</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>All dense vectors live in Qdrant behind an <code class="text-xs bg-slate-100 px-1 rounded">IVectorStore</code> interface, run with Docker Compose.</li>
+                    <li>Deleting a document removes its points from Qdrant, and the server refuses to start with a clear message if Qdrant is not running.</li>
+                    <li>Changing the embedding model needs a new collection name (vector size is fixed per collection), then a re-upload.</li>
+                    <li>A stats endpoint reports provider, total chunks, and total documents.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Chunking Strategies</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li><strong>FixedSize</strong> — Splits text into fixed 500-char chunks with 100-char overlap. Fast, works for most documents.</li>
+                    <li><strong>ContentAware</strong> — Respects sentence boundaries, markdown structure, and paragraphs (100–1000 chars). Best for structured documents.</li>
+                    <li><strong>Semantic</strong> — Groups sentences by topic coherence using word-overlap similarity (150–1200 chars). Best for dense research papers.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Multilingual Support (English, Thai, Khmer)</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>English — word tokenization with stop word removal for BM25.</li>
+                    <li>Thai & Khmer — character trigram (n-gram) tokenization since these languages have no spaces between words.</li>
+                    <li>Auto-detects script per text segment, handling mixed-language documents correctly.</li>
+                    <li>All 3 chunking strategies support language-specific sentence boundaries (Thai ๆ/ฯ markers, Khmer ។ terminator).</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">RAG Evaluation</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>No reference answer needed — the system auto-generates one from retrieved chunks via LLM, using the RAG's own settings (passages, relevance, instructions, model).</li>
+                    <li>Pipeline: Hybrid search → LLM generates reference answer → LLM generates RAG answer → BLEU/GLEU/F1 compare both → LLM Judge scores semantic quality.</li>
+                    <li><strong>BLEU</strong> — n-gram precision. <strong>GLEU</strong> — balanced precision and recall. <strong>F1</strong> — token overlap (SQuAD-style). <strong>LLM Judge</strong> — semantic score (0–10 normalized to 0–1), most reliable for Thai and Khmer.</li>
+                    <li>Every run is saved to a history (newest 50 kept) with both answers and all settings used, so runs can be compared side by side and exported to CSV. An optional stronger judge model can be configured.</li>
+                    <li>Pure NLP evaluators (<code class="text-xs bg-slate-100 px-1 rounded">BLEU</code>, <code class="text-xs bg-slate-100 px-1 rounded">GLEU</code>, <code class="text-xs bg-slate-100 px-1 rounded">F1</code>) kept separate from DI services; exposed through a REST API (run, list, read, delete).</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Accounts and Chat Experience</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>ASP.NET Core Identity with JWT login; the login key and first admin are stored as user secrets, not in git.</li>
+                    <li>Each person has their own chats and RAGs (Settings &gt; My RAGs: Knowledge, Settings, and Evaluation tabs).</li>
+                    <li>Chat sidebar with pin, rename, and delete; theme button cycles System, Light, and Dark and remembers the choice.</li>
+                    </ul>
+                    </div>
+
+                    </div>
+
+                    <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
+                    <ul class="tech-stack-list">
+                    <li><span class="tech-category">Frontend:</span> Blazor WebAssembly (.NET 10)</li>
+                    <li><span class="tech-category">Backend:</span> ASP.NET Core Web API (.NET 10), SignalR, Entity Framework Core, JWT / Identity</li>
+                    <li><span class="tech-category">LLM & Embeddings:</span> <a href="https://ollama.com/" target="_blank" class="tech-link">Ollama</a> (llama3.2:3b, mxbai-embed-large), OllamaSharp, Microsoft.Extensions.AI</li>
+                    <li><span class="tech-category">Database:</span> SQL Server / LocalDB, Qdrant (vector store)</li>
+                    <li><span class="tech-category">PDF / Markdown:</span> PdfPig, Markdig</li>
+                    <li><span class="tech-category">Search:</span> Hybrid Vector + BM25 (weighted score fusion)</li>
+                    <li><span class="tech-category">Deployment:</span> Docker Compose (Qdrant)</li>
+                    <li><span class="tech-category">Languages Supported:</span> English, Thai, Khmer</li>
+                    </ul>
+
                     </div>
 
                     <!-- ── ChatBotRagPy ── -->
@@ -789,41 +801,111 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
 
                     <!-- ── Skincare E-commerce ── -->
                     <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank" class="project-link">Skincare E-commerce Platform with Admin Dashboard</a></h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">August 2025</span>
-                        </div>
-                        <div class="flex gap-2 mb-4 flex-wrap">
-                            <a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank">
-                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                            </a>
-                            <img src="https://img.shields.io/github/stars/ChornChhery/Ecommerce-Skincare?style=social" alt="GitHub stars">
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">A full-featured e-commerce web application supporting customer-facing functionality and a comprehensive administrative management system.</p>
 
-                        <!-- Project Images -->
-                        <div class="project-img-grid cols-2" data-gallery="skincare">
-                            <img src="skincare.png"  alt="Skincare E-commerce screenshot 1" loading="lazy" onclick="openLightbox(this, 'skincare')">
-                            <img src="skincare1.png" alt="Skincare E-commerce screenshot 2" loading="lazy" onclick="openLightbox(this, 'skincare')">
-                        </div>
+                    <div class="flex justify-between items-baseline mb-3">
+                    <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank" class="project-link">Jamoon Skincare Store — Online Shop + POS with Automatic KHQR Payments</a></h3>
+                    <span class="text-xs text-slate-500 font-bold uppercase">August 2025</span>
+                    </div>
 
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Implemented customer-facing features including product browsing, shopping cart, wishlist, user authentication, profile management, and order history.</li>
-                            <li>Built a comprehensive admin panel with separate routing and layout for managing products, orders, customers, categories, inventory, coupons, reviews, and system settings.</li>
-                            <li>Dynamic routing for products, orders, and customer detail pages using Next.js App Router.</li>
-                            <li>Integrated a mock API and API abstraction layer to support development and testing workflows.</li>
-                            <li>Designed responsive layouts supporting desktop, tablet, and mobile devices.</li>
-                            <li>Supported 2 languages (English and Khmer) using i18next.</li>
-                        </ul>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Framework:</span> <a href="https://nextjs.org/" target="_blank" class="tech-link">Next.js</a></li>
-                            <li><span class="tech-category">Frontend:</span> React, TypeScript, Tailwind CSS</li>
-                            <li><span class="tech-category">State Management:</span> Context API</li>
-                            <li><span class="tech-category">Internationalization:</span> i18next</li>
-                            <li><span class="tech-category">Data Visualization:</span> Chart.js</li>
-                        </ul>
+                    <div class="flex gap-2 mb-4 flex-wrap">
+                    <a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank">
+                    <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
+                    </a>
+                    <img src="https://img.shields.io/github/stars/ChornChhery/Ecommerce-Skincare?style=social" alt="GitHub stars">
+                    <a href="https://jameskincare.vercel.app" target="_blank">
+                    <img src="https://img.shields.io/badge/Live_Demo-181717?style=flat&logo=vercel&logoColor=white" alt="Live demo">
+                    </a>
+                    </div>
+
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                    A complete English and Khmer skincare shop in one small system: customer website, admin panel, counter POS, and automatic KHQR (Bakong) payments. The website and the staff POS share the same products, stock, orders, and reports. It runs as two processes and one SQLite file, so it fits on a laptop or a small VPS.
+                    </p>
+
+                    <div class="project-img-grid cols-2" data-gallery="skincare">
+                    <img src="skincare.png" alt="Skincare E-commerce screenshot 1" loading="lazy" onclick="openLightbox(this, 'skincare')">
+                    <img src="skincare1.png" alt="Skincare E-commerce screenshot 2" loading="lazy" onclick="openLightbox(this, 'skincare')">
+                    </div>
+
+                    <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                    <ul class="text-sm text-slate-600 mb-4">
+                    <li>Built the storefront: catalogue with skin-type filter and search, reviews, wishlist, cart, coupons, guest checkout, order tracking, saved addresses, printable receipts, and an installable PWA.</li>
+                    <li>Integrated automatic KHQR payments through Bakong. Each order gets its own QR with the exact amount and a 15-minute expiry, and the order confirms itself, checked by page polling and a server sweep every 20 seconds. A payment with the wrong amount is never confirmed and goes to an admin review list.</li>
+                    <li>Built a counter POS with barcode scanner support, discounts (owner / manager), cash change calculator, mandatory payment photo for bank or QR sales, printable receipts, and sales history.</li>
+                    <li>Added owner-only cost and profit tracking. Costs live in separate tables, with the cost frozen onto every order line, so no public route can leak them. A smoke test scans every public response to prove it.</li>
+                    <li>Built the admin panel: dashboard comparing online and POS sales, fulfilment board (new, packing, packed), returns and refunds, inventory, coupons, reviews, an Excel / CSV Export Center (9 workbooks), and Excel product import.</li>
+                    <li>Added 4 staff roles (owner, manager, packer, cashier) with permissions decided in one server file; Telegram alerts for new orders, payments, low stock, and orders stuck over 24 hours; and e-mailed password reset.</li>
+                    <li>Fully bilingual (English and Khmer, 2,484 strings each), with a check that fails the build if the two languages differ.</li>
+                    <li>Backed by 968 automated checks (684 API smoke, 254 frontend, 30 dashboard and Bakong tests), plus architecture and type checks.</li>
+                    </ul>
+
+                    <button class="toggle-btn" onclick="toggleSection('skincare-details')">
+                    <span>Full Technical Details</span>
+                    <span class="chevron">▼</span>
+                    </button>
+
+                    <div id="skincare-details" class="collapsible mt-4">
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Architecture</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>The website never touches the database; it only calls the REST API. Prices, stock, totals, coupons, and admin rights are all decided in the backend.</li>
+                    <li>Every request passes helmet and CORS, a rate limit (login, register, reset), JWT auth, permission checks on admin routes, and zod validation before the business rules run.</li>
+                    <li>Backend layers go one way: routes (HTTP) → lib (rules) → db. The frontend has its own enforced layer order, checked by an architecture script.</li>
+                    <li>One status table governs every order change, whether from a click, a bulk action, or an automatic payment. Cancelling puts items back in stock and releases the coupon.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Payments</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>KHQR (Bakong), ABA / Wing with receipt upload and admin verification, and cash on delivery.</li>
+                    <li>KHQR runs in Live, Test, or Off mode, decided by the server environment and never by the browser.</li>
+                    <li>A customer who pays and closes the page is still confirmed by the server sweep.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Database (SQLite, 19 tables)</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>Created and upgraded automatically on start. Foreign keys cascade or null out on purpose, so deleting a product never destroys order history.</li>
+                    <li>Order items copy the product name and price, and orders keep their own copy of the address, so past orders stay correct after edits.</li>
+                    <li>Password reset tokens are stored only as hashes; coupons are referenced by code so deleting one never breaks old orders.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Security and Sessions</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>bcrypt password hashes; JWT lifetime 7 days for customers and 12 hours for admins.</li>
+                    <li>Admin session ends when the browser closes unless "Remember me" is ticked, and signs out after 30 minutes idle.</li>
+                    <li>JSON limited to 200 kb and uploads to 2 MB; the API refuses to start in production without a strong secret.</li>
+                    <li>Admin changes and sign-ins are recorded in an Activity log with no secrets.</li>
+                    <li>Unlisted admin routes are owner-only by default, so a new feature stays hidden from staff until access is granted.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Background Workers and Deployment</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>KHQR sweep every 20 seconds; a watchdog every 15 minutes checks for low stock and paid orders waiting over 24 hours, and reports each problem once.</li>
+                    <li>Deployed with Caddy (automatic HTTPS) and Cloudflare in front; the frontend is hosted on Vercel.</li>
+                    <li>Documented in a <code class="text-xs bg-slate-100 px-1 rounded">docs/</code> folder with architecture, recipes, per-feature guides, and a changelog.</li>
+                    </ul>
+                    </div>
+
+                    </div>
+
+                    <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
+                    <ul class="tech-stack-list">
+                    <li><span class="tech-category">Frontend:</span> <a href="https://nextjs.org/" target="_blank" class="tech-link">Next.js 15</a> (App Router), React 19, TypeScript, Tailwind CSS 4, react-i18next, Recharts</li>
+                    <li><span class="tech-category">Backend:</span> Node.js, Express, zod, JWT, bcrypt, helmet</li>
+                    <li><span class="tech-category">Database:</span> SQLite (better-sqlite3)</li>
+                    <li><span class="tech-category">Payments:</span> Bakong KHQR (bakong-khqr, Bakong Open API)</li>
+                    <li><span class="tech-category">Files & Alerts:</span> ExcelJS (Excel / CSV), Nodemailer (SMTP), Telegram Bot API</li>
+                    <li><span class="tech-category">Testing:</span> Vitest, Testing Library, end-to-end smoke suites</li>
+                    <li><span class="tech-category">Deployment:</span> Vercel, Caddy, Cloudflare</li>
+                    </ul>
+
                     </div>
 
                 </section>
