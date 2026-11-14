@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chorn Chhery | Portfolio</title>
+    <title>Chorn Chhery | IT Programmer, Phnom Penh</title>
+    <meta name="description" content="Portfolio of Chorn Chhery, IT Programmer in Phnom Penh: factory systems, Telegram bots, RAG chatbots and full-stack web apps (Python, TypeScript, C#).">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.469.0"></script>
     <link rel="stylesheet" href="style.css">
 
+    <style>.collapsible.more-projects.open{max-height:none;overflow:visible}</style>
 </head>
 <body class="py-12 md:py-24">
 
@@ -49,7 +51,7 @@
                 I am an IT Programmer at MinebeaMitsumi in Phnom Penh, with a background in AI engineering (RAG chatbots) and full-stack development. I enjoy building practical programs that solve real problems for the people who use them, and keeping those programs running reliably.
                 </div>
                 <div class="text-xs text-slate-500 font-medium">
-                    email - chherychorn@gmail.com
+                    email - <a href="mailto:chherychorn@gmail.com" class="hover:underline">chherychorn@gmail.com</a>
                 </div>
             </aside>
 
@@ -63,7 +65,7 @@
                         <li><span class="skill-label">Languages:</span> Python, TypeScript, C#, SQL, JavaScript, Go (basic)</li>
                         <li><span class="skill-label">Backend & APIs:</span> NestJS, Express, Flask, FastAPI, ASP.NET Core, SignalR, WebSocket, Socket.IO</li>
                         <li><span class="skill-label">Frontend:</span> React, Next.js, Blazor WebAssembly, Tailwind CSS, HTMX</li>
-                        <li><span class="skill-label">Data:</span> PostgreSQL, SQL Server, SQLite, Redis, Qdrant, MongoDB, Prisma</li>
+                        <li><span class="skill-label">Database:</span> PostgreSQL, SQL Server, SQLite, Redis, Qdrant, MongoDB, Prisma</li>
                         <li><span class="skill-label">AI / RAG:</span> RAG (hybrid vector + BM25), Ollama (local LLMs), embeddings, BLEU / GLEU / F1 evaluation, scikit-learn</li>
                         <li><span class="skill-label">DevOps & Integrations:</span> Docker Compose, Ubuntu, nginx, Caddy, Cloudflare Tunnel, Grafana, Prometheus, GitHub Actions, Telegram Bot API, Bakong KHQR</li>
                         <li><span class="skill-label">Testing:</span> xUnit, Jest, Vitest</li>
@@ -188,7 +190,7 @@
                             <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
                         </div>
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            A leave system for factory staff and admins. Staff send leave in a Telegram group or in a Mini App, in English or Khmer. Admins approve it in Telegram or in the Mini App. Everything is saved in PostgreSQL. <a href="https://github.com/ChornChhery/Telegram-attendance-bot" target="_blank" class="project-link">View on GitHub</a>.
+                            A leave system for factory staff and admins. Staff send leave in a Telegram group or in a Mini App, in English or Khmer. Admins approve it in Telegram or in the Mini App. Everything is saved in PostgreSQL.
                         </p>
                         <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
                         <ul class="text-sm text-slate-600 mb-4">
@@ -242,7 +244,6 @@
                             <li><span class="tech-category">Quality:</span> 72 test files, GitHub Actions on every push, health checks, nightly backups, auto-rollback updates</li>
                         </ul>
                     </div>
-
                     <!-- ── Factory Website — Production Lines, Attendance and Leave Dashboard (MinebeaMitsumi) ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
@@ -250,7 +251,7 @@
                             <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
                         </div>
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            A website for a plant in Cambodia. It shows each production line, who is at work, who is on leave, and which line needs people. <a href="https://github.com/ChornChhery/PE-SYS" target="_blank" class="project-link">View on GitHub</a>.
+                            A website for a plant in Cambodia. It shows each production line, who is at work, who is on leave, and which line needs people.
                         </p>
                         <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
                         <ul class="text-sm text-slate-600 mb-4">
@@ -297,33 +298,6 @@
                             <li><span class="tech-category">Quality:</span> 141 backend specs, GitHub Actions CI, automatic server update with rollback</li>
                         </ul>
                     </div>
-
-                    <!-- ── Server Monitoring Dashboards (MinebeaMitsumi) ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl">Server Monitoring Dashboards (MinebeaMitsumi)</h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            Grafana dashboards for the leave system and the factory website, running on the same server in Docker. <a href="https://github.com/ChornChhery/Monitoring-PC" target="_blank" class="project-link">View on GitHub</a>.
-                        </p>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>4 dashboards: server health, leave counts, speed of the leave system, and speed of the factory website.</li>
-                            <li>Shows CPU, memory, disk, uptime, restarts, the retry queue, backup age, and how long approvals take, without showing any names.</li>
-                            <li>Privacy: the leave numbers come from a read-only database role that cannot read personal columns, and no IP address or cookie is stored.</li>
-                            <li>Leave dashboard also has a safety-net row: retry-queue size, failed items, last backup OK or failed, backup age, and whether the database can be read.</li>
-<li>A small read-only Python exporter (standard library only) reads the retry-queue file, the backup status, the bot's API log and the website's nginx log, and never writes to the systems it watches. Paths with a person's ID are turned into fixed patterns.</li>
-<li>Dashboards are generated by Python scripts and loaded automatically, with install, check (ends with ALL GOOD), stop and version-pin scripts. Everything listens on localhost only, with memory limits and 30 days of data.</li>
-                        </ul>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Monitoring:</span> Grafana, Prometheus, node_exporter, cAdvisor</li>
-                            <li><span class="tech-category">Language:</span> Python (small read-only exporter)</li>
-                            <li><span class="tech-category">Deployment:</span> Docker Compose</li>
-                        </ul>
-                    </div>
-
                     <!-- ── Teeth (Production-Plan) ── -->
 <div class="mb-10 project-card">
 <div class="flex justify-between items-baseline mb-3">
@@ -347,31 +321,6 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
 <li><span class="tech-category">Network:</span> TCP sockets, Windows firewall, scheduled tasks</li>
 </ul>
 </div>
-
-<!-- ── Production-Line Counter on Raspberry Pi (MinebeaMitsumi) ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl">Production-Line Counter on Raspberry Pi (MinebeaMitsumi)</h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            A full-screen counter for a production line. It shows the plan, the target, and the real count for each shift.
-                        </p>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Reads input, output, and a red-light stop signal through GPIO and ignores false pulses.</li>
-                            <li>Counts a unit only when two signals are 3 to 4 seconds apart, after removing the time the line was stopped.</li>
-                            <li>Schedule editor for Day and Night plans, with work and break blocks and tact time worked out for each row.</li>
-                            <li>Saves the counts to a file, resets at shift change, and has a PIN-protected correction screen and a simulation mode for testing on a PC.</li>
-                        </ul>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Language:</span> Python, Tkinter</li>
-                            <li><span class="tech-category">Hardware:</span> Raspberry Pi, GPIO</li>
-                            <li><span class="tech-category">Data:</span> JSON files</li>
-                        </ul>
-                    </div>
-
                     <!-- ── ChatBotRAG ── -->
                     <div class="mb-10 project-card">
 
@@ -384,7 +333,6 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
                     <a href="https://github.com/ChornChhery/RAG-" target="_blank">
                     <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
                     </a>
-                    <img src="https://img.shields.io/github/stars/ChornChhery/RAG-?style=social" alt="GitHub stars">
                     </div>
 
                     <p class="text-sm text-slate-600 mb-4 leading-relaxed">
@@ -498,7 +446,260 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
                     </ul>
 
                     </div>
+                    <!-- ── Skincare E-commerce ── -->
+                    <div class="mb-10 project-card">
 
+                    <div class="flex justify-between items-baseline mb-3">
+                    <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank" class="project-link">Jamoon Skincare Store — Online Shop + POS with Automatic KHQR Payments</a></h3>
+                    <span class="text-xs text-slate-500 font-bold uppercase">August 2025</span>
+                    </div>
+
+                    <div class="flex gap-2 mb-4 flex-wrap">
+                    <a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank">
+                    <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
+                    </a>
+                    <a href="https://jameskincare.vercel.app" target="_blank">
+                    <img src="https://img.shields.io/badge/Live_Demo-181717?style=flat&logo=vercel&logoColor=white" alt="Live demo">
+                    </a>
+                    </div>
+
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                    A complete English and Khmer skincare shop in one small system: customer website, admin panel, counter POS, and automatic KHQR (Bakong) payments. The website and the staff POS share the same products, stock, orders, and reports. It runs as two processes and one SQLite file, so it fits on a laptop or a small VPS.
+                    </p>
+
+                    <div class="project-img-grid cols-2" data-gallery="skincare">
+                    <img src="skincare.png" alt="Skincare E-commerce screenshot 1" loading="lazy" onclick="openLightbox(this, 'skincare')">
+                    <img src="skincare1.png" alt="Skincare E-commerce screenshot 2" loading="lazy" onclick="openLightbox(this, 'skincare')">
+                    </div>
+
+                    <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                    <ul class="text-sm text-slate-600 mb-4">
+                    <li>Built the storefront: catalogue with skin-type filter and search, reviews, wishlist, cart, coupons, guest checkout, order tracking, saved addresses, printable receipts, and an installable PWA.</li>
+                    <li>Integrated automatic KHQR payments through Bakong. Each order gets its own QR with the exact amount and a 15-minute expiry, and the order confirms itself, checked by page polling and a server sweep every 20 seconds. A payment with the wrong amount is never confirmed and goes to an admin review list.</li>
+                    <li>Built a counter POS with barcode scanner support, discounts (owner / manager), cash change calculator, mandatory payment photo for bank or QR sales, printable receipts, and sales history.</li>
+                    <li>Added owner-only cost and profit tracking. Costs live in separate tables, with the cost frozen onto every order line, so no public route can leak them. A smoke test scans every public response to prove it.</li>
+                    <li>Built the admin panel: dashboard comparing online and POS sales, fulfilment board (new, packing, packed), returns and refunds, inventory, coupons, reviews, an Excel / CSV Export Center (9 workbooks), and Excel product import.</li>
+                    <li>Added 4 staff roles (owner, manager, packer, cashier) with permissions decided in one server file; Telegram alerts for new orders, payments, low stock, and orders stuck over 24 hours; and e-mailed password reset.</li>
+                    <li>Fully bilingual (English and Khmer, 2,484 strings each), with a check that fails the build if the two languages differ.</li>
+                    <li>Backed by 968 automated checks (684 API smoke, 254 frontend, 30 dashboard and Bakong tests), plus architecture and type checks.</li>
+                    </ul>
+
+                    <button class="toggle-btn" onclick="toggleSection('skincare-details')">
+                    <span>Full Technical Details</span>
+                    <span class="chevron">▼</span>
+                    </button>
+
+                    <div id="skincare-details" class="collapsible mt-4">
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Architecture</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>The website never touches the database; it only calls the REST API. Prices, stock, totals, coupons, and admin rights are all decided in the backend.</li>
+                    <li>Every request passes helmet and CORS, a rate limit (login, register, reset), JWT auth, permission checks on admin routes, and zod validation before the business rules run.</li>
+                    <li>Backend layers go one way: routes (HTTP) → lib (rules) → db. The frontend has its own enforced layer order, checked by an architecture script.</li>
+                    <li>One status table governs every order change, whether from a click, a bulk action, or an automatic payment. Cancelling puts items back in stock and releases the coupon.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Payments</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>KHQR (Bakong), ABA / Wing with receipt upload and admin verification, and cash on delivery.</li>
+                    <li>KHQR runs in Live, Test, or Off mode, decided by the server environment and never by the browser.</li>
+                    <li>A customer who pays and closes the page is still confirmed by the server sweep.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Database (SQLite, 19 tables)</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>Created and upgraded automatically on start. Foreign keys cascade or null out on purpose, so deleting a product never destroys order history.</li>
+                    <li>Order items copy the product name and price, and orders keep their own copy of the address, so past orders stay correct after edits.</li>
+                    <li>Password reset tokens are stored only as hashes; coupons are referenced by code so deleting one never breaks old orders.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Security and Sessions</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>bcrypt password hashes; JWT lifetime 7 days for customers and 12 hours for admins.</li>
+                    <li>Admin session ends when the browser closes unless "Remember me" is ticked, and signs out after 30 minutes idle.</li>
+                    <li>JSON limited to 200 kb and uploads to 2 MB; the API refuses to start in production without a strong secret.</li>
+                    <li>Admin changes and sign-ins are recorded in an Activity log with no secrets.</li>
+                    <li>Unlisted admin routes are owner-only by default, so a new feature stays hidden from staff until access is granted.</li>
+                    </ul>
+                    </div>
+
+                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                    <p class="text-sm font-bold text-slate-700 mb-1">Background Workers and Deployment</p>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                    <li>KHQR sweep every 20 seconds; a watchdog every 15 minutes checks for low stock and paid orders waiting over 24 hours, and reports each problem once.</li>
+                    <li>Deployed with Caddy (automatic HTTPS) and Cloudflare in front; the frontend is hosted on Vercel.</li>
+                    <li>Documented in a <code class="text-xs bg-slate-100 px-1 rounded">docs/</code> folder with architecture, recipes, per-feature guides, and a changelog.</li>
+                    </ul>
+                    </div>
+
+                    </div>
+
+                    <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
+                    <ul class="tech-stack-list">
+                    <li><span class="tech-category">Frontend:</span> <a href="https://nextjs.org/" target="_blank" class="tech-link">Next.js 15</a> (App Router), React 19, TypeScript, Tailwind CSS 4, react-i18next, Recharts</li>
+                    <li><span class="tech-category">Backend:</span> Node.js, Express, zod, JWT, bcrypt, helmet</li>
+                    <li><span class="tech-category">Database:</span> SQLite (better-sqlite3)</li>
+                    <li><span class="tech-category">Payments:</span> Bakong KHQR (bakong-khqr, Bakong Open API)</li>
+                    <li><span class="tech-category">Files & Alerts:</span> ExcelJS (Excel / CSV), Nodemailer (SMTP), Telegram Bot API</li>
+                    <li><span class="tech-category">Testing:</span> Vitest, Testing Library, end-to-end smoke suites</li>
+                    <li><span class="tech-category">Deployment:</span> Vercel, Caddy, Cloudflare</li>
+                    </ul>
+
+                    </div>
+
+                
+                    <!-- ── DataPilot AI ── -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/DataPilot_AI" target="_blank" class="project-link">DataPilot AI — Autonomous Data Scientist Agent Platform</a></h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">March 2025</span>
+                        </div>
+
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <a href="https://github.com/ChornChhery/DataPilot_AI" target="_blank">
+                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
+                            </a>
+                        </div>
+
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            A zero-code AutoML platform. Upload a CSV, select a target column, and the system automatically cleans data, trains multiple ML models, selects the best one, and delivers a visual dashboard with downloadable PDF report and cleaned dataset.
+                        </p>
+
+                        <!-- Project Images -->
+                        <div class="project-img-grid cols-4" data-gallery="datapilot">
+                            <img src="Datapilot1.png" alt="DataPilot AI screenshot 1" loading="lazy" onclick="openLightbox(this, 'datapilot')">
+                            <img src="Datapilot2.png" alt="DataPilot AI screenshot 2" loading="lazy" onclick="openLightbox(this, 'datapilot')">
+                            <img src="Datapilot3.png" alt="DataPilot AI screenshot 3" loading="lazy" onclick="openLightbox(this, 'datapilot')">
+                            <img src="Datapilot4.png" alt="DataPilot AI screenshot 4" loading="lazy" onclick="openLightbox(this, 'datapilot')">
+                        </div>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Built a full-stack web application using React and FastAPI that runs a 6-stage ML pipeline automatically — data understanding, cleaning, feature engineering, statistical analysis, model training, and evaluation.</li>
+                            <li>Trained 3 models simultaneously (Logistic Regression, Random Forest, Gradient Boosting) for both classification and regression, selecting the best model by cross-validation score.</li>
+                            <li>Developed an interactive results dashboard with model comparison bar charts, feature importance visualization, and a Pearson correlation heatmap built in pure SVG.</li>
+                            <li>Implemented PDF report generation entirely in the browser using jsPDF, producing a full A4 report with metrics table, feature importance bars, and correlation heatmap without any server-side rendering.</li>
+                        </ul>
+
+                        <button class="toggle-btn" onclick="toggleSection('datapilot-details')">
+                            <span>Full Technical Details</span>
+                            <span class="chevron">▼</span>
+                        </button>
+
+                        <div id="datapilot-details" class="collapsible mt-4">
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">ML Pipeline (6 Stages)</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li><strong>Data Understanding</strong> — Detects column types, null %, and problem type (classification if target has ≤20 unique values or is string/bool, else regression).</li>
+                                    <li><strong>Data Cleaning</strong> — Removes duplicates, fills numeric nulls with median, fills categorical nulls with mode, applies LabelEncoder to categorical columns.</li>
+                                    <li><strong>Feature Engineering</strong> — Applies StandardScaler to numeric features, builds final X matrix and y vector.</li>
+                                    <li><strong>Statistical Analysis</strong> — Computes descriptive stats (mean, std, min, max, quartiles) and Pearson correlation matrix.</li>
+                                    <li><strong>Model Training</strong> — Trains 3 models simultaneously on the full training set.</li>
+                                    <li><strong>Model Evaluation</strong> — Runs k-fold cross-validation, evaluates on held-out test set, extracts feature importances, selects best model by highest CV mean score.</li>
+                                </ul>
+                            </div>
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Models Trained</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li><strong>Classification:</strong> Logistic Regression, Random Forest Classifier, Gradient Boosting Classifier</li>
+                                    <li><strong>Regression:</strong> Linear Regression, Random Forest Regressor, Gradient Boosting Regressor</li>
+                                    <li><strong>Classification metrics:</strong> Accuracy, F1 Score (weighted), ROC-AUC, CV Mean, CV Std, Train Time</li>
+                                    <li><strong>Regression metrics:</strong> RMSE, R², CV Mean, CV Std, Train Time</li>
+                                    <li>Feature importance extracted from <code class="text-xs bg-slate-100 px-1 rounded">feature_importances_</code> (tree models) or <code class="text-xs bg-slate-100 px-1 rounded">coef_</code> (linear models) — top 15 features returned.</li>
+                                </ul>
+                            </div>
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Frontend Architecture</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>4-file React architecture: <code class="text-xs bg-slate-100 px-1 rounded">App.jsx</code> (state + polling), <code class="text-xs bg-slate-100 px-1 rounded">Pages.jsx</code> (upload + processing), <code class="text-xs bg-slate-100 px-1 rounded">ResultsPage.jsx</code> (charts + downloads), <code class="text-xs bg-slate-100 px-1 rounded">constants.jsx</code> (shared tokens).</li>
+                                    <li>Frontend polls <code class="text-xs bg-slate-100 px-1 rounded">GET /api/v1/status/{session_id}</code> every 2 seconds during processing to show live progress and pipeline logs.</li>
+                                    <li>Model comparison and feature importance charts built with Recharts.</li>
+                                    <li>Correlation matrix heatmap built in pure SVG — no external chart library needed.</li>
+                                    <li>PDF report generated fully in browser using jsPDF loaded from CDN — no npm install, no server-side rendering.</li>
+                                    <li>Cleaned CSV downloaded via <code class="text-xs bg-slate-100 px-1 rounded">GET /api/v1/download/{session_id}</code> — backend re-runs cleaning pipeline and streams file back.</li>
+                                </ul>
+                            </div>
+                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
+                                <p class="text-sm font-bold text-slate-700 mb-1">Deployment</p>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>Fully containerized with Docker Compose — MongoDB + Backend + Frontend run with a single <code class="text-xs bg-slate-100 px-1 rounded">docker compose up --build</code> command.</li>
+                                    <li>Frontend built with Vite into a static production bundle, served via nginx:alpine for optimal performance.</li>
+                                    <li>Kubernetes manifests included in <code class="text-xs bg-slate-100 px-1 rounded">k8s/</code> directory for cloud deployment.</li>
+                                    <li>Environment configurable via <code class="text-xs bg-slate-100 px-1 rounded">.env</code> — CV folds, test size, file size limit, random seed all tunable without code changes.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Frontend:</span> React 19, Vite 7, Recharts, Axios, jsPDF (CDN)</li>
+                            <li><span class="tech-category">Backend:</span> Python 3.12, FastAPI, Uvicorn</li>
+                            <li><span class="tech-category">ML:</span> Scikit-learn, Pandas, NumPy, SciPy</li>
+                            <li><span class="tech-category">Database:</span> <a href="https://www.mongodb.com/" target="_blank" class="tech-link">MongoDB</a>, Motor (async driver)</li>
+                            <li><span class="tech-category">Deployment:</span> <a href="https://www.docker.com/" target="_blank" class="tech-link">Docker</a> + Docker Compose, Kubernetes, nginx</li>
+                        </ul>
+                    </div>
+
+                    <button class="toggle-btn" onclick="toggleSection('more-projects')">
+                        <span>More Projects (6)</span>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div id="more-projects" class="collapsible more-projects mt-6">
+                    <!-- ── Server Monitoring Dashboards (MinebeaMitsumi) ── -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl">Server Monitoring Dashboards (MinebeaMitsumi)</h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            Grafana dashboards for the leave system and the factory website, running on the same server in Docker. <a href="https://github.com/ChornChhery/Monitoring-PC" target="_blank" class="project-link">View on GitHub</a>.
+                        </p>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>4 dashboards: server health, leave counts, speed of the leave system, and speed of the factory website.</li>
+                            <li>Shows CPU, memory, disk, uptime, restarts, the retry queue, backup age, and how long approvals take, without showing any names.</li>
+                            <li>Privacy: the leave numbers come from a read-only database role that cannot read personal columns, and no IP address or cookie is stored.</li>
+                            <li>Leave dashboard also has a safety-net row: retry-queue size, failed items, last backup OK or failed, backup age, and whether the database can be read.</li>
+<li>A small read-only Python exporter (standard library only) reads the retry-queue file, the backup status, the bot's API log and the website's nginx log, and never writes to the systems it watches. Paths with a person's ID are turned into fixed patterns.</li>
+<li>Dashboards are generated by Python scripts and loaded automatically, with install, check (ends with ALL GOOD), stop and version-pin scripts. Everything listens on localhost only, with memory limits and 30 days of data.</li>
+                        </ul>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Monitoring:</span> Grafana, Prometheus, node_exporter, cAdvisor</li>
+                            <li><span class="tech-category">Language:</span> Python (small read-only exporter)</li>
+                            <li><span class="tech-category">Deployment:</span> Docker Compose</li>
+                        </ul>
+                    </div>
+<!-- ── Production-Line Counter on Raspberry Pi (MinebeaMitsumi) ── -->
+                    <div class="mb-10 project-card">
+                        <div class="flex justify-between items-baseline mb-3">
+                            <h3 class="font-bold text-slate-800 text-xl">Production-Line Counter on Raspberry Pi (MinebeaMitsumi)</h3>
+                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            A full-screen counter for a production line. It shows the plan, the target, and the real count for each shift.
+                        </p>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
+                        <ul class="text-sm text-slate-600 mb-4">
+                            <li>Reads input, output, and a red-light stop signal through GPIO and ignores false pulses.</li>
+                            <li>Counts a unit only when two signals are 3 to 4 seconds apart, after removing the time the line was stopped.</li>
+                            <li>Schedule editor for Day and Night plans, with work and break blocks and tact time worked out for each row.</li>
+                            <li>Saves the counts to a file, resets at shift change, and has a PIN-protected correction screen and a simulation mode for testing on a PC.</li>
+                        </ul>
+                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
+                        <ul class="tech-stack-list">
+                            <li><span class="tech-category">Language:</span> Python, Tkinter</li>
+                            <li><span class="tech-category">Hardware:</span> Raspberry Pi, GPIO</li>
+                            <li><span class="tech-category">Data:</span> JSON files</li>
+                        </ul>
+                    </div>
                     <!-- ── ChatBotRagPy ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
@@ -510,7 +711,6 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
                             <a href="https://github.com/ChornChhery/ChatBot-with-React-Python" target="_blank">
                                 <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
                             </a>
-                            <img src="https://img.shields.io/github/stars/ChornChhery/ChatBot-with-React-Python?style=social" alt="GitHub stars">
                         </div>
 
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">
@@ -614,7 +814,6 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
                             <li><span class="tech-category">Languages Supported:</span> English, Thai, Khmer</li>
                         </ul>
                     </div>
-
                     <!-- ── IoT Chicken Farm ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
@@ -625,7 +824,6 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
                             <a href="https://github.com/ChornChhery/Chicken-Farm-IOT" target="_blank">
                                 <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
                             </a>
-                            <img src="https://img.shields.io/github/stars/ChornChhery/Chicken-Farm-IOT?style=social" alt="GitHub stars">
                         </div>
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">Automated farm monitoring system with data streaming, validation, and intelligent alerting.</p>
                         <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
@@ -642,7 +840,6 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
                             <li><span class="tech-category">IoT & Notifications:</span> IoT Sensors, <a href="https://www.line.me/en/" target="_blank" class="tech-link">LINE Notify API</a></li>
                         </ul>
                     </div>
-
                     <!-- ── Jamoon Laundry ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
@@ -653,7 +850,6 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
                             <a href="https://github.com/ChornChhery/Laundry-Management-System" target="_blank">
                                 <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
                             </a>
-                            <img src="https://img.shields.io/github/stars/ChornChhery/Laundry-Management-System?style=social" alt="GitHub stars">
                             <a href="https://jamoon.free.nf/" target="_blank">
                                 <img src="https://img.shields.io/badge/View_on_Website-181717?style=flat&logo=github&logoColor=white" alt="View on Website">
                             </a>
@@ -681,7 +877,6 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
                             <li><span class="tech-category">Data Visualization:</span> <a href="https://www.chartjs.org/" target="_blank" class="tech-link">Chart.js</a></li>
                         </ul>
                     </div>
-
                     <!-- ── Jame POS ── -->
                     <div class="mb-10 project-card">
                         <div class="flex justify-between items-baseline mb-3">
@@ -692,7 +887,6 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
                             <a href="https://github.com/ChornChhery/Jame" target="_blank">
                                 <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
                             </a>
-                            <img src="https://img.shields.io/github/stars/ChornChhery/Jame?style=social" alt="GitHub stars">
                         </div>
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">End-to-end mobile point-of-sale system with analytics dashboard and inventory management.</p>
                         <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
@@ -708,216 +902,13 @@ A Windows tool that counts units IN and OUT of a production line for each Day an
                             <li><span class="tech-category">Features:</span> Barcode Scanner, PDF Generation</li>
                         </ul>
                     </div>
-
-                    <!-- ── DataPilot AI ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/DataPilot_AI" target="_blank" class="project-link">DataPilot AI — Autonomous Data Scientist Agent Platform</a></h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">March 2025</span>
-                        </div>
-
-                        <div class="flex gap-2 mb-4 flex-wrap">
-                            <a href="https://github.com/ChornChhery/DataPilot_AI" target="_blank">
-                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                            </a>
-                            <img src="https://img.shields.io/github/stars/ChornChhery/DataPilot_AI?style=social" alt="GitHub stars">
-                        </div>
-
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            A zero-code AutoML platform. Upload a CSV, select a target column, and the system automatically cleans data, trains multiple ML models, selects the best one, and delivers a visual dashboard with downloadable PDF report and cleaned dataset.
-                        </p>
-
-                        <!-- Project Images -->
-                        <div class="project-img-grid cols-4" data-gallery="datapilot">
-                            <img src="Datapilot1.png" alt="DataPilot AI screenshot 1" loading="lazy" onclick="openLightbox(this, 'datapilot')">
-                            <img src="Datapilot2.png" alt="DataPilot AI screenshot 2" loading="lazy" onclick="openLightbox(this, 'datapilot')">
-                            <img src="Datapilot3.png" alt="DataPilot AI screenshot 3" loading="lazy" onclick="openLightbox(this, 'datapilot')">
-                            <img src="Datapilot4.png" alt="DataPilot AI screenshot 4" loading="lazy" onclick="openLightbox(this, 'datapilot')">
-                        </div>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Built a full-stack web application using React and FastAPI that runs a 6-stage ML pipeline automatically — data understanding, cleaning, feature engineering, statistical analysis, model training, and evaluation.</li>
-                            <li>Trained 3 models simultaneously (Logistic Regression, Random Forest, Gradient Boosting) for both classification and regression, selecting the best model by cross-validation score.</li>
-                            <li>Developed an interactive results dashboard with model comparison bar charts, feature importance visualization, and a Pearson correlation heatmap built in pure SVG.</li>
-                            <li>Implemented PDF report generation entirely in the browser using jsPDF, producing a full A4 report with metrics table, feature importance bars, and correlation heatmap without any server-side rendering.</li>
-                        </ul>
-
-                        <button class="toggle-btn" onclick="toggleSection('datapilot-details')">
-                            <span>Full Technical Details</span>
-                            <span class="chevron">▼</span>
-                        </button>
-
-                        <div id="datapilot-details" class="collapsible mt-4">
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">ML Pipeline (6 Stages)</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li><strong>Data Understanding</strong> — Detects column types, null %, and problem type (classification if target has ≤20 unique values or is string/bool, else regression).</li>
-                                    <li><strong>Data Cleaning</strong> — Removes duplicates, fills numeric nulls with median, fills categorical nulls with mode, applies LabelEncoder to categorical columns.</li>
-                                    <li><strong>Feature Engineering</strong> — Applies StandardScaler to numeric features, builds final X matrix and y vector.</li>
-                                    <li><strong>Statistical Analysis</strong> — Computes descriptive stats (mean, std, min, max, quartiles) and Pearson correlation matrix.</li>
-                                    <li><strong>Model Training</strong> — Trains 3 models simultaneously on the full training set.</li>
-                                    <li><strong>Model Evaluation</strong> — Runs k-fold cross-validation, evaluates on held-out test set, extracts feature importances, selects best model by highest CV mean score.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Models Trained</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li><strong>Classification:</strong> Logistic Regression, Random Forest Classifier, Gradient Boosting Classifier</li>
-                                    <li><strong>Regression:</strong> Linear Regression, Random Forest Regressor, Gradient Boosting Regressor</li>
-                                    <li><strong>Classification metrics:</strong> Accuracy, F1 Score (weighted), ROC-AUC, CV Mean, CV Std, Train Time</li>
-                                    <li><strong>Regression metrics:</strong> RMSE, R², CV Mean, CV Std, Train Time</li>
-                                    <li>Feature importance extracted from <code class="text-xs bg-slate-100 px-1 rounded">feature_importances_</code> (tree models) or <code class="text-xs bg-slate-100 px-1 rounded">coef_</code> (linear models) — top 15 features returned.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Frontend Architecture</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>4-file React architecture: <code class="text-xs bg-slate-100 px-1 rounded">App.jsx</code> (state + polling), <code class="text-xs bg-slate-100 px-1 rounded">Pages.jsx</code> (upload + processing), <code class="text-xs bg-slate-100 px-1 rounded">ResultsPage.jsx</code> (charts + downloads), <code class="text-xs bg-slate-100 px-1 rounded">constants.jsx</code> (shared tokens).</li>
-                                    <li>Frontend polls <code class="text-xs bg-slate-100 px-1 rounded">GET /api/v1/status/{session_id}</code> every 2 seconds during processing to show live progress and pipeline logs.</li>
-                                    <li>Model comparison and feature importance charts built with Recharts.</li>
-                                    <li>Correlation matrix heatmap built in pure SVG — no external chart library needed.</li>
-                                    <li>PDF report generated fully in browser using jsPDF loaded from CDN — no npm install, no server-side rendering.</li>
-                                    <li>Cleaned CSV downloaded via <code class="text-xs bg-slate-100 px-1 rounded">GET /api/v1/download/{session_id}</code> — backend re-runs cleaning pipeline and streams file back.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Deployment</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>Fully containerized with Docker Compose — MongoDB + Backend + Frontend run with a single <code class="text-xs bg-slate-100 px-1 rounded">docker compose up --build</code> command.</li>
-                                    <li>Frontend built with Vite into a static production bundle, served via nginx:alpine for optimal performance.</li>
-                                    <li>Kubernetes manifests included in <code class="text-xs bg-slate-100 px-1 rounded">k8s/</code> directory for cloud deployment.</li>
-                                    <li>Environment configurable via <code class="text-xs bg-slate-100 px-1 rounded">.env</code> — CV folds, test size, file size limit, random seed all tunable without code changes.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Frontend:</span> React 19, Vite 7, Recharts, Axios, jsPDF (CDN)</li>
-                            <li><span class="tech-category">Backend:</span> Python 3.12, FastAPI, Uvicorn</li>
-                            <li><span class="tech-category">ML:</span> Scikit-learn, Pandas, NumPy, SciPy</li>
-                            <li><span class="tech-category">Database:</span> <a href="https://www.mongodb.com/" target="_blank" class="tech-link">MongoDB</a>, Motor (async driver)</li>
-                            <li><span class="tech-category">Deployment:</span> <a href="https://www.docker.com/" target="_blank" class="tech-link">Docker</a> + Docker Compose, Kubernetes, nginx</li>
-                        </ul>
                     </div>
-
-                    <!-- ── Skincare E-commerce ── -->
-                    <div class="mb-10 project-card">
-
-                    <div class="flex justify-between items-baseline mb-3">
-                    <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank" class="project-link">Jamoon Skincare Store — Online Shop + POS with Automatic KHQR Payments</a></h3>
-                    <span class="text-xs text-slate-500 font-bold uppercase">August 2025</span>
-                    </div>
-
-                    <div class="flex gap-2 mb-4 flex-wrap">
-                    <a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank">
-                    <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                    </a>
-                    <img src="https://img.shields.io/github/stars/ChornChhery/Ecommerce-Skincare?style=social" alt="GitHub stars">
-                    <a href="https://jameskincare.vercel.app" target="_blank">
-                    <img src="https://img.shields.io/badge/Live_Demo-181717?style=flat&logo=vercel&logoColor=white" alt="Live demo">
-                    </a>
-                    </div>
-
-                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                    A complete English and Khmer skincare shop in one small system: customer website, admin panel, counter POS, and automatic KHQR (Bakong) payments. The website and the staff POS share the same products, stock, orders, and reports. It runs as two processes and one SQLite file, so it fits on a laptop or a small VPS.
-                    </p>
-
-                    <div class="project-img-grid cols-2" data-gallery="skincare">
-                    <img src="skincare.png" alt="Skincare E-commerce screenshot 1" loading="lazy" onclick="openLightbox(this, 'skincare')">
-                    <img src="skincare1.png" alt="Skincare E-commerce screenshot 2" loading="lazy" onclick="openLightbox(this, 'skincare')">
-                    </div>
-
-                    <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                    <ul class="text-sm text-slate-600 mb-4">
-                    <li>Built the storefront: catalogue with skin-type filter and search, reviews, wishlist, cart, coupons, guest checkout, order tracking, saved addresses, printable receipts, and an installable PWA.</li>
-                    <li>Integrated automatic KHQR payments through Bakong. Each order gets its own QR with the exact amount and a 15-minute expiry, and the order confirms itself, checked by page polling and a server sweep every 20 seconds. A payment with the wrong amount is never confirmed and goes to an admin review list.</li>
-                    <li>Built a counter POS with barcode scanner support, discounts (owner / manager), cash change calculator, mandatory payment photo for bank or QR sales, printable receipts, and sales history.</li>
-                    <li>Added owner-only cost and profit tracking. Costs live in separate tables, with the cost frozen onto every order line, so no public route can leak them. A smoke test scans every public response to prove it.</li>
-                    <li>Built the admin panel: dashboard comparing online and POS sales, fulfilment board (new, packing, packed), returns and refunds, inventory, coupons, reviews, an Excel / CSV Export Center (9 workbooks), and Excel product import.</li>
-                    <li>Added 4 staff roles (owner, manager, packer, cashier) with permissions decided in one server file; Telegram alerts for new orders, payments, low stock, and orders stuck over 24 hours; and e-mailed password reset.</li>
-                    <li>Fully bilingual (English and Khmer, 2,484 strings each), with a check that fails the build if the two languages differ.</li>
-                    <li>Backed by 968 automated checks (684 API smoke, 254 frontend, 30 dashboard and Bakong tests), plus architecture and type checks.</li>
-                    </ul>
-
-                    <button class="toggle-btn" onclick="toggleSection('skincare-details')">
-                    <span>Full Technical Details</span>
-                    <span class="chevron">▼</span>
-                    </button>
-
-                    <div id="skincare-details" class="collapsible mt-4">
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Architecture</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>The website never touches the database; it only calls the REST API. Prices, stock, totals, coupons, and admin rights are all decided in the backend.</li>
-                    <li>Every request passes helmet and CORS, a rate limit (login, register, reset), JWT auth, permission checks on admin routes, and zod validation before the business rules run.</li>
-                    <li>Backend layers go one way: routes (HTTP) → lib (rules) → db. The frontend has its own enforced layer order, checked by an architecture script.</li>
-                    <li>One status table governs every order change, whether from a click, a bulk action, or an automatic payment. Cancelling puts items back in stock and releases the coupon.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Payments</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>KHQR (Bakong), ABA / Wing with receipt upload and admin verification, and cash on delivery.</li>
-                    <li>KHQR runs in Live, Test, or Off mode, decided by the server environment and never by the browser.</li>
-                    <li>A customer who pays and closes the page is still confirmed by the server sweep.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Database (SQLite, 19 tables)</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>Created and upgraded automatically on start. Foreign keys cascade or null out on purpose, so deleting a product never destroys order history.</li>
-                    <li>Order items copy the product name and price, and orders keep their own copy of the address, so past orders stay correct after edits.</li>
-                    <li>Password reset tokens are stored only as hashes; coupons are referenced by code so deleting one never breaks old orders.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Security and Sessions</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>bcrypt password hashes; JWT lifetime 7 days for customers and 12 hours for admins.</li>
-                    <li>Admin session ends when the browser closes unless "Remember me" is ticked, and signs out after 30 minutes idle.</li>
-                    <li>JSON limited to 200 kb and uploads to 2 MB; the API refuses to start in production without a strong secret.</li>
-                    <li>Admin changes and sign-ins are recorded in an Activity log with no secrets.</li>
-                    <li>Unlisted admin routes are owner-only by default, so a new feature stays hidden from staff until access is granted.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Background Workers and Deployment</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>KHQR sweep every 20 seconds; a watchdog every 15 minutes checks for low stock and paid orders waiting over 24 hours, and reports each problem once.</li>
-                    <li>Deployed with Caddy (automatic HTTPS) and Cloudflare in front; the frontend is hosted on Vercel.</li>
-                    <li>Documented in a <code class="text-xs bg-slate-100 px-1 rounded">docs/</code> folder with architecture, recipes, per-feature guides, and a changelog.</li>
-                    </ul>
-                    </div>
-
-                    </div>
-
-                    <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
-                    <ul class="tech-stack-list">
-                    <li><span class="tech-category">Frontend:</span> <a href="https://nextjs.org/" target="_blank" class="tech-link">Next.js 15</a> (App Router), React 19, TypeScript, Tailwind CSS 4, react-i18next, Recharts</li>
-                    <li><span class="tech-category">Backend:</span> Node.js, Express, zod, JWT, bcrypt, helmet</li>
-                    <li><span class="tech-category">Database:</span> SQLite (better-sqlite3)</li>
-                    <li><span class="tech-category">Payments:</span> Bakong KHQR (bakong-khqr, Bakong Open API)</li>
-                    <li><span class="tech-category">Files & Alerts:</span> ExcelJS (Excel / CSV), Nodemailer (SMTP), Telegram Bot API</li>
-                    <li><span class="tech-category">Testing:</span> Vitest, Testing Library, end-to-end smoke suites</li>
-                    <li><span class="tech-category">Deployment:</span> Vercel, Caddy, Cloudflare</li>
-                    </ul>
-
-                    </div>
-
                 </section>
 
             </main>
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         lucide.createIcons();
 
