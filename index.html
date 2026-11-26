@@ -1,975 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chorn Chhery | IT Programmer, Phnom Penh</title>
-    <meta name="description" content="Portfolio of Chorn Chhery, IT Programmer in Phnom Penh: factory systems, Telegram bots, RAG chatbots and full-stack web apps (Python, TypeScript, C#).">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@0.469.0"></script>
-    <link rel="stylesheet" href="style.css">
-
-    <style>.collapsible.more-projects.open{max-height:none;overflow:visible}</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chorn Chhery — IT Programmer &amp; Software Engineer</title>
+  <meta name="description" content="Portfolio of Chorn Chhery, IT Programmer at MinebeaMitsumi in Phnom Penh: factory systems, Telegram leave software, production-line tools, RAG chatbots and full-stack applications.">
+  <meta name="theme-color" content="#0b2f20">
+  <link rel="preload" as="image" href="me.png">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="py-12 md:py-24">
-
-    <!-- Lightbox -->
-    <div id="lightbox">
-        <span id="lightbox-close">&#x2715;</span>
-        <span id="lightbox-prev">&#8592;</span>
-        <img id="lightbox-img" src="" alt="">
-        <span id="lightbox-next">&#8594;</span>
-    </div>
-
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row gap-16 items-start">
-            
-            <!-- LEFT SIDE -->
-            <aside class="md:w-1/3 text-center sticky-sidebar">
-                <div class="mb-6">
-                    <h1 class="text-3xl font-bold text-blue-800 leading-tight">Chorn<br>Chhery</h1>
-                </div>
-
-                <div class="profile-ring mb-8">
-                    <img src="jame.jpg" alt="Chorn Chhery" class="w-48 h-48 rounded-full object-cover border border-slate-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="w-48 h-48 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden border border-slate-200" style="display: none;">
-                        <i data-lucide="user" class="w-20 h-20 text-slate-300"></i>
-                    </div>
-                </div>
-
-                <div class="flex justify-center gap-3 mb-8">
-                    <a href="ChornChhery_Resume.pdf" class="sidebar-link">Resume</a>
-                    <span class="text-slate-300">|</span>
-                    <a href="https://www.linkedin.com/in/chhery-chorn/" target="_blank" class="sidebar-link">LinkedIn</a>
-                    <span class="text-slate-300">|</span>
-                    <a href="https://github.com/ChornChhery" target="_blank" class="sidebar-link">GitHub</a>
-                    <span class="text-slate-300">|</span>
-                    <a href="https://t.me/chornchhery" target="_blank" class="sidebar-link">Telegram</a>
-                </div>
-
-                <div class="text-slate-600 text-sm leading-relaxed mb-8 max-w-xs mx-auto">
-                I am an IT Programmer at MinebeaMitsumi in Phnom Penh, with a background in AI engineering (RAG chatbots) and full-stack development. I enjoy building practical programs that solve real problems for the people who use them, and keeping those programs running reliably.
-                </div>
-                <div class="text-xs text-slate-500 font-medium">
-                    email - <a href="mailto:chherychorn@gmail.com" class="hover:underline">chherychorn@gmail.com</a>
-                </div>
-            </aside>
-
-            <!-- RIGHT SIDE -->
-            <main class="md:w-2/3">
-                
-                <!-- Skills Section -->
-                <section id="skills" class="mb-12">
-                    <h2 class="section-heading">Skills</h2>
-                    <ul class="text-sm space-y-3">
-                        <li><span class="skill-label">Languages:</span> Python, TypeScript, C#, SQL, JavaScript, Go (basic)</li>
-                        <li><span class="skill-label">Backend & APIs:</span> NestJS, Express, Flask, FastAPI, ASP.NET Core, SignalR, WebSocket, Socket.IO</li>
-                        <li><span class="skill-label">Frontend:</span> React, Next.js, Blazor WebAssembly, Tailwind CSS, HTMX</li>
-                        <li><span class="skill-label">Database:</span> PostgreSQL, SQL Server, SQLite, Redis, Qdrant, MongoDB, Prisma</li>
-                        <li><span class="skill-label">AI / RAG:</span> RAG (hybrid vector + BM25), Ollama (local LLMs), embeddings, BLEU / GLEU / F1 evaluation, scikit-learn</li>
-                        <li><span class="skill-label">DevOps & Integrations:</span> Docker Compose, Ubuntu, nginx, Caddy, Cloudflare Tunnel, Grafana, Prometheus, GitHub Actions, Telegram Bot API, Bakong KHQR</li>
-                        <li><span class="skill-label">Testing:</span> xUnit, Jest, Vitest</li>
-                        <li><span class="skill-label">Also used:</span> PHP, Java, C, C++, Dart / Flutter, MySQL, XGBoost, K-Means, Decision Tree, Raspberry Pi (GPIO), Azure DevOps</li>
-                        <li><span class="skill-label">Communication Languages:</span> Khmer (Native), Thai (Advanced), English (Intermediate)</li>
-                    </ul>
-                </section>
-
-                <!-- Education Section -->
-                <section id="education" class="mb-12">
-                    <h2 class="section-heading">Education</h2>
-                    <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
-                        <h3 class="font-bold text-slate-800"><a href="https://www.psu.ac.th/en/" target="_blank" class="university-link">Prince of Songkla University</a>, Pattani Campus</h3>
-                        <span class="text-xs text-slate-500 font-bold uppercase">Jul 2022 - Apr 2026</span>
-                    </div>
-                    <p class="text-sm text-slate-600 font-medium">Bachelor of Mathematics and Computer Science</p>
-                    <p class="text-sm text-slate-600 font-medium">Major: <a href="https://www.facebook.com/MCSPSUPattani/" target="_blank" class="department-link">Data Science</a></p>
-                    <div class="mt-2 space-y-1">
-                        <p class="text-xs text-blue-600 font-bold">Cumulative GPA: 3.68/4.0 | First Class Honors | <a href="transcript.pdf" target="_blank" class="transcript-link">View Transcript</a></p>
-                        <p class="text-xs text-slate-500">Graduated April 2026</p>
-                    </div>
-                </section>
-
-                <!-- Work Experience Section -->
-                <section id="experience" class="mb-12">
-                    <h2 class="section-heading">Work Experience</h2>
-
-                    <!-- MinebeaMitsumi -->
-                    <div class="mb-12">
-                        <h3 class="text-lg font-bold text-slate-800 mb-1">IT Programmer at <a href="https://www.minebeamitsumi.com/" target="_blank" class="company-link">MinebeaMitsumi Inc.</a> <span class="font-normal text-slate-600">(Phnom Penh, Cambodia)</span></h3>
-                        <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">May 2026 - Present</p>
-                        <p class="text-sm font-bold text-slate-700 mb-4">Build and run the internal programs our factory teams use, from leave requests to production lines.</p>
-                        <p class="text-sm font-bold text-slate-700 mb-2 italic">Accomplishments:</p>
-                        <ul class="text-sm text-slate-600 mb-6">
-<li>Built and run a Telegram leave system (English and Khmer, with a Mini App) and a factory website with live production lines, daily roster, worker borrowing and a leave dashboard. The two talk to each other: approved leave reaches the website every minute and the member list goes back to the bot, so nobody types anything twice.</li>
-<li>Made the systems safer after leave requests were lost once when the database stopped: added a retry queue, health checks, nightly backups with a restore test, and server updates that back up first and roll back automatically if something fails.</li>
-<li>Built Teeth, a two-laptop shift counter for a production line (IN from a key button, OUT from a barcode scanner), with a one-click setup tool that repairs itself every 5 minutes, so non-technical staff can install it.</li>
-<li>Set up Grafana dashboards for server health and response speed of both systems, with no names, IP addresses or cookies stored, and built a Raspberry Pi counter that compares output with the plan for each shift.</li>
-<li>Wrote the documentation for each system: user guide with screenshots, troubleshooting guides, runbooks, system overview and handover notes. Both main repos have CI and an MIT licence.</li>
-<li>Run everything on one Ubuntu server with Docker.</li>
-</ul>
-                    </div>
-
-                    <!-- Max Savings -->
-                    <div class="mb-12">
-                        <h3 class="text-lg font-bold text-slate-800 mb-1">AI Engineer (Co-op Intern, promoted to Staff) at <a href="https://www.jobthai.com/en/company/231960" target="_blank" class="company-link">Max Savings (Thailand) Co., LTD</a> <span class="font-normal text-slate-600">(Bangkok, Thailand)</span></h3>
-                        <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">August 2025 - April 2026</p>
-                        <p class="text-sm font-bold text-slate-700 mb-4">Built a chatbot that answers employees' questions from company documents. It finds the right passages first, then the AI answers from them (this is called RAG).</p>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2 italic">As AI Engineer (Nov 2025 - Apr 2026):</p>
-<ul class="text-sm text-slate-600 mb-5">
-                            <li>Built the document pipeline. Admins upload PDFs (up to 10 files, 500 MB each). The program splits each file in 3 ways (fixed size, by structure, by meaning), turns the pieces into embeddings (mxbai-embed-large, nomic-embed-text or all-minilm), and stores them in Qdrant or SQLite.</li>
-                            <li>Built the search. It joins vector search and keyword search (BM25, with Thai word splitting) using Reciprocal Rank Fusion. It searches all active documents at once, uses only passages above a 70% confidence level (up to 5), and shows the source document, so answers come from the right place.</li>
-                            <li>The chatbot knows if a question is about a document or about the user. Personal questions are answered from the user's saved memory.</li>
-                            <li>Added a Redis cache so search stays fast. It is rebuilt when an admin adds, pauses, or deletes a document. Response time went from about 850 ms to under 100 ms with caching and question detection.</li>
-                            <li>Built an admin test screen to compare chunking and embedding setups. Each answer is scored with NLP metrics (BLEU, GLEU, F1, from Microsoft.Extensions.AI.Evaluation) and star ratings from the admin. A weighted score recommends the best setup, and an AI note explains why. I read the scores to check that the system works correctly.</li>
-                            <li>Added RAG version control: pause, roll back, or reactivate a setup.</li>
-                            <li>Built the chat app with Blazor WebAssembly and SignalR: real-time chat with stop, regenerate and copy, login with admin and user roles, searchable chat history (pin, rename, delete), per-user memory, response style, temperature and model choice, and light and dark mode on desktop and mobile.</li>
-                            <li>Used local models with Ollama (Llama 3.2, Qwen3) and OpenAI models on the company server.</li>
-                            <li>Wrote 30+ documented REST endpoints, xUnit tests, a user manual, and an API manual.</li>
-                        </ul>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2 italic">As co-op intern (Aug 2025 - Oct 2025):</p>
-<ul class="text-sm text-slate-600 mb-3">
-                            <li>Learned .NET by building practice apps with Clean Architecture (a music app, a book store with cart and orders, and a login API), wrote xUnit tests, and worked with Azure DevOps pull requests and code reviews from senior developers.</li>
-                            <li>Built a responsive email screen (Blazor, Bootstrap) and a QR-code check-in for attendance on mobile, for the company's e-office system.</li>
-                            <li>Took over the chatbot project (.NET 9, only a basic chat screen). Upgraded it to .NET 10 with all packages, and designed the screens in Figma for desktop and mobile.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Biomass Exchange -->
-                    <div class="mb-10">
-                        <h3 class="text-lg font-bold text-slate-800 mb-1">Full Stack Developer Intern at <a href="https://www.biomassx.com/" target="_blank" class="company-link">Biomass Exchange Co., LTD</a> <span class="font-normal text-slate-600">(Bangkok, Thailand)</span></h3>
-                        <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">February 2025 - May 2025 (4 months)</p>
-                        <p class="text-sm font-bold text-slate-700 mb-4">BiomassX is a bioenergy exchange where buyers and sellers post orders that are matched into contracts. I built its email notification system in <a href="https://go.dev/" target="_blank" class="tech-link">Go</a>, so users get an email at each step.</p>
-                        <p class="text-sm font-bold text-slate-700 mb-2 italic">Accomplishments:</p>
-<ul class="text-sm text-slate-600">
-                            <li>Created 14 automated emails in Thai and English (28 templates): registration, password reset, order submission, match found, contract confirmation, rejection, cancellation, and reminders. Each email shows the order details and has a button to the right page. The language comes from the user's registration choice or past notifications.</li>
-                            <li>Built the contract flow: the first person to confirm gets a confirmation, the other party gets a 3-day waiting notice, and both get a final email once the contract is confirmed.</li>
-                            <li>Sent emails in the background (goroutines, channels, and a pool of 5 workers) so pages respond instantly. Each email is saved as pending, sent, or failed.</li>
-                            <li>Added scheduled jobs: an hourly retry of pending emails, a day-3 reminder for unconfirmed contracts, and automatic cancellation after 3 days.</li>
-                            <li>Sent profile reminders that list exactly which fields a user is missing, with a completion percentage.</li>
-                            <li>Designed the PostgreSQL notifications table, linked to users and notification types with foreign keys.</li>
-                            <li>Built a booking history feature with full CRUD using HTMX, JavaScript, and CSS, plus address and role management on the profile page.</li>
-                            <li>Wrote the business and system analysis and the user flows for the notification package.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Technical Assistant -->
-                    <div class="mb-10">
-                        <h3 class="text-lg font-bold text-slate-800 mb-1">Technical Assistant at <a href="https://www.psu.ac.th/en/" target="_blank" class="company-link">Prince of Songkla University, Hat Yai Campus</a> <span class="font-normal text-slate-600">(Hat Yai, Thailand)</span></h3>
-                        <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">13 December 2024 - 15 December 2024</p>
-                        <ul class="text-sm text-slate-600">
-                            <li>Supported workshops on <a href="https://www.python.org/" target="_blank" class="tech-link">Python</a> and robotics for 50+ students at Programming Camp.</li>
-                            <li>Assisted participants with debugging, problem-solving, and logic development.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Leadership Section -->
-                <section id="leadership" class="mb-12">
-                    <h2 class="section-heading">Leadership Experience & Activities</h2>
-                    <div class="mb-6">
-                        <h3 class="font-bold text-slate-800 text-lg mb-1">International English Exchange Program (Universiti Malaysia Kelantan), Kelantan, Malaysia</h3>
-                        <p class="text-xs font-bold text-slate-500 mb-3 uppercase tracking-wider">08 September 2025 - 14 September 2025</p>
-                        <ul class="text-sm text-slate-600">
-                            <li>Enhanced English communication skills through international workplace training.</li>
-                            <li>Led group discussions and team projects to build mutual understanding and effective participation.</li>
-                            <li>Built international relationships while representing Cambodian culture.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Projects Section -->
-                <section id="projects" class="mb-12">
-                    <h2 class="section-heading">Projects</h2>
-
-                    <!-- ── Leave Bot — Telegram Leave System (MinebeaMitsumi) ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl">Leave Bot — Telegram Leave System (MinebeaMitsumi)</h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            A leave system for factory staff and admins. Staff send leave in a Telegram group or in a Mini App, in English or Khmer. Admins approve it in Telegram or in the Mini App. Everything is saved in PostgreSQL.
-                        </p>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Reads normal chat messages, including typos, changed field order, spelled-out months, and Khmer wording, and checks leave type, dates, half days, Sunday off, and daily limits.</li>
-                            <li>Blocks duplicate requests and handles changes such as “half day more”, “cancel”, or “I will come this afternoon”.</li>
-                            <li>Approval rules: admins cannot approve their own leave, admins get a reminder after 2 hours, and a request is approved automatically after 5 hours if nobody answers.</li>
-                            <li>Mini App pages for On Leave, Dashboard, Approvals, Admins, Report (Excel-style preview and export), My Requests, and Feedback, with access set per person.</li>
-                            <li>Sends a daily on-leave report as a picture card with Khmer text, and keeps working if the database is down by saving requests in a retry queue.</li>
-                            <li>Moved the data from a Google Sheet to PostgreSQL only (30 Sep 2026), after comparing the old history and fixing 9 gaps by hand.</li>
-<li>Leave papers (SL / SLP): sends a Khmer reminder when the person is back at work, and posts it in the group with a tag if they never opened the bot. Admins can Remind or Confirm.</li>
-<li>Follow-ups like “full day please” or “one more day” are merged into the right request, and low-confidence requests are flagged for an admin to check.</li>
-                        </ul>
-                        <button class="toggle-btn" onclick="toggleSection('leavebot-details')">
-                            <span>Full Technical Details</span>
-                            <span class="chevron">▼</span>
-                        </button>
-
-                        <div id="leavebot-details" class="collapsible mt-4">
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">How the messages are read</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>The program first reads the message with fixed rules and a list of label names. A small local AI model is used only when the rules cannot read a date or the meaning of a change.</li>
-                                    <li>Every value the model gives is checked again against the real leave types and date limits before anything is saved.</li>
-                                    <li>If a person edits a message, the program reads it again.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Reliability</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>A retry queue saves new requests and approve/reject decisions if PostgreSQL is down, and plays them back when it returns.</li>
-                                    <li>Startup checks, a health page, nightly backups of the database, and a script that tests a restore.</li>
-                                    <li>Found and fixed a case where the same request could be saved twice when two requests arrived together.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Access and safety</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>Super Admin, Admin, and limited roles. Page access can be set for each person and is checked on the server.</li>
-                                    <li>Rate limit for each Telegram user, and a signature check for Mini App login.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Language / API:</span> Python, Flask, gunicorn</li>
-                            <li><span class="tech-category">Database:</span> PostgreSQL, SQLite</li>
-                            <li><span class="tech-category">Chat:</span> Telegram Bot API, Telegram Mini App (HTML, JavaScript, Chart.js)</li>
-                            <li><span class="tech-category">AI:</span> Ollama (local model, used only as a fallback; its output is always checked)</li>
-                            <li><span class="tech-category">Deployment:</span> Docker Compose, Caddy, Cloudflare Tunnel and Worker</li>
-                            <li><span class="tech-category">Quality:</span> 72 test files, GitHub Actions on every push, health checks, nightly backups, auto-rollback updates</li>
-                        </ul>
-                    </div>
-                    <!-- ── Factory Website — Production Lines, Attendance and Leave Dashboard (MinebeaMitsumi) ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl">Factory Website — Production Lines, Attendance and Leave Dashboard (MinebeaMitsumi)</h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            A website for a plant in Cambodia. It shows each production line, who is at work, who is on leave, and which line needs people.
-                        </p>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Live line view with worker photos and status colours (present, vacant, borrowed, on leave), updated in real time with Socket.IO.</li>
-                            <li>Daily roster for Day and Night shift, with filters and a button to mark an area present.</li>
-                            <li>Worker borrowing between lines in one database transaction (half day, OT, full day, or custom dates), with automatic return and a full history that can be exported.</li>
-                            <li>Member list with photos, Excel import and export, and Resign / Re-activate instead of delete.</li>
-                            <li>Gets approved leave from the Telegram leave system every minute, and sends it the member list after each change.</li>
-                            <li>Leave dashboard with a heat calendar, a trend line, and top leave takers with period, skill and position filters.</li>
-<li>Roster is created automatically at 00:05 Cambodia time for Day and Night shift. The leave sync never guesses: an unclear half day is skipped, and it only ever marks people on leave, never absent.</li>
-<li>Admin Monitoring with an audit log of leave edits, a read-only Feedback Inbox, a startup secrets check, and member photos turned into small cached links.</li>
-                        </ul>
-                        <button class="toggle-btn" onclick="toggleSection('factory-details')">
-                            <span>Full Technical Details</span>
-                            <span class="chevron">▼</span>
-                        </button>
-
-                        <div id="factory-details" class="collapsible mt-4">
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Line view and attendance</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>A line builder for areas, lines, and stations.</li>
-                                    <li>A full-screen list of people with no line today, where an admin can drag or tap a person onto a line.</li>
-                                    <li>A display board where an admin chooses who is shown.</li>
-                                    <li>A page that shows staff short of workers on each line.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Link with the leave system</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>Joins an AM leave and a PM leave of the same person into one full day.</li>
-                                    <li>A health page that tells the admin if the two systems cannot talk to each other.</li>
-                                    <li>The member list sync refuses a very large drop in members unless an admin confirms it.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Backend:</span> NestJS, Prisma, Socket.IO</li>
-                            <li><span class="tech-category">Database:</span> PostgreSQL</li>
-                            <li><span class="tech-category">Frontend:</span> React, Vite, TypeScript, Tailwind CSS</li>
-                            <li><span class="tech-category">Deployment:</span> Docker, nginx</li>
-                            <li><span class="tech-category">Quality:</span> 141 backend specs, GitHub Actions CI, automatic server update with rollback</li>
-                        </ul>
-                    </div>
-                    <!-- ── Teeth (Production-Plan) ── -->
-<div class="mb-10 project-card">
-<div class="flex justify-between items-baseline mb-3">
-<h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Production-Plan" target="_blank" class="project-link">Teeth — Two-Laptop Production Counter (MinebeaMitsumi)</a></h3>
-<span class="text-xs text-slate-500 font-bold uppercase">November 2026</span>
-</div>
-<p class="text-sm text-slate-600 mb-4 leading-relaxed">
-A Windows tool that counts units IN and OUT of a production line for each Day and Night shift, without disturbing the existing print software.
-</p>
-<p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-<ul class="text-sm text-slate-600 mb-4">
-<li>Laptop 1 listens to the key button and sends +1 IN over a cable; laptop 2 reads the barcode scanner for OUT and shows the shift totals, with an Excel log of every shift.</li>
-<li>Uses a second USB-to-Ethernet adapter on a private network, so the built-in port used by printing is never changed. If the cable is out, counts wait in a file and are sent later, nothing lost or counted twice.</li>
-<li>One-click setup and self-repair (Teeth Doctor, PowerShell): sets the IP, opens firewall rules, installs .NET 4.8 if missing, checks the time zone, restarts closed programs, and re-checks every 5 minutes with no window.</li>
-<li>113 automated checks in a simulator; the network, scanner, key button and printing were proven on the real laptops. Wrote a quick visual guide, a 17-page reference, a troubleshooting guide and a rollout kit.</li>
-</ul>
-<p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-<ul class="tech-stack-list">
-<li><span class="tech-category">Language:</span> C#, .NET Framework 4.8, PowerShell</li>
-<li><span class="tech-category">Data:</span> SQLite, Excel log</li>
-<li><span class="tech-category">Network:</span> TCP sockets, Windows firewall, scheduled tasks</li>
-</ul>
-</div>
-                    <!-- ── ChatBotRAG ── -->
-                    <div class="mb-10 project-card">
-
-                    <div class="flex justify-between items-baseline mb-3">
-                    <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/RAG-" target="_blank" class="project-link">ChatBotRAG — Document Question Answering Chatbot</a></h3>
-                    <span class="text-xs text-slate-500 font-bold uppercase">February 2026</span>
-                    </div>
-
-                    <div class="flex gap-2 mb-4 flex-wrap">
-                    <a href="https://github.com/ChornChhery/RAG-" target="_blank">
-                    <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                    </a>
-                    </div>
-
-                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                    A full-stack RAG chatbot built with .NET 10, Blazor WebAssembly, and SignalR. Upload PDF, TXT, or Markdown files and chat with them in real time using local Ollama models — no cloud dependency, full privacy. Vectors are stored in Qdrant, and each RAG has its own settings, login-based access, and a saved evaluation history.
-                    </p>
-
-                    <div class="project-img-grid cols-4" data-gallery="chatbotrag">
-                    <img src="ChatbotRag.png" alt="ChatBotRAG screenshot 1" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
-                    <img src="ChatbotRag1.png" alt="ChatBotRAG screenshot 2" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
-                    <img src="ChatbotRag2.png" alt="ChatBotRAG screenshot 3" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
-                    <img src="ChatbotRag3.png" alt="ChatBotRAG screenshot 4" loading="lazy" onclick="openLightbox(this, 'chatbotrag')">
-                    </div>
-
-                    <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                    <ul class="text-sm text-slate-600 mb-4">
-                    <li>Built a full-stack web application using Blazor WebAssembly and ASP.NET Core with real-time token-by-token streaming chat via SignalR.</li>
-                    <li>Implemented hybrid search (vector + BM25 with configurable weights, default 70/30) fusing semantic and keyword retrieval for more accurate document answers, with source chunks shown under each reply.</li>
-                    <li>Moved all embeddings to a Qdrant vector store behind an interface. SQL Server keeps documents, chunk text, chats, and messages. An upload writes vectors first, and if Qdrant is down the upload is marked Failed so nothing is half-saved.</li>
-                    <li>Supported 3 chunking strategies (FixedSize, ContentAware, Semantic) with multilingual tokenization for English, Thai, and Khmer.</li>
-                    <li>Built a RAG evaluation tab that scores answer quality with BLEU, GLEU, F1, and an LLM Judge — no reference answer required. Every run is saved, so a setting can be changed and the same question re-tested and compared.</li>
-                    <li>Added accounts (JWT login with an admin role), and a chat sidebar with pin, rename, delete, and light / dark / system theme.</li>
-                    </ul>
-
-                    <button class="toggle-btn" onclick="toggleSection('chatbotrag-details')">
-                    <span>Full Technical Details</span>
-                    <span class="chevron">▼</span>
-                    </button>
-
-                    <div id="chatbotrag-details" class="collapsible mt-4">
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">RAG Architecture (How It Works)</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li><strong>Upload</strong> — Document split into chunks using the selected strategy.</li>
-                    <li><strong>Embed</strong> — Each chunk converted to a 1024-dim vector via <code class="text-xs bg-slate-100 px-1 rounded">mxbai-embed-large</code>.</li>
-                    <li><strong>Store</strong> — Vectors saved in Qdrant; chunk text, chats, and metadata saved in SQL Server.</li>
-                    <li><strong>Query</strong> — User question embedded and hybrid search runs:
-                    <ul class="ml-4 mt-1 space-y-1">
-                    <li>Vector search — cosine similarity in Qdrant (70% weight)</li>
-                    <li>BM25 search — keyword matching against cached chunk text (30% weight)</li>
-                    <li>Fusion — scores combined: <code class="text-xs bg-slate-100 px-1 rounded">final = 0.7 × vector + 0.3 × bm25</code></li>
-                    </ul>
-                    </li>
-                    <li><strong>Retrieve</strong> — Top-K chunks above the minimum score returned (TopK, weights, and thresholds are configurable).</li>
-                    <li><strong>Generate</strong> — Retrieved chunks sent to <code class="text-xs bg-slate-100 px-1 rounded">llama3.2:3b</code> as context.</li>
-                    <li><strong>Stream</strong> — LLM response sent token-by-token to the client via SignalR.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Vector Store (Qdrant)</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>All dense vectors live in Qdrant behind an <code class="text-xs bg-slate-100 px-1 rounded">IVectorStore</code> interface, run with Docker Compose.</li>
-                    <li>Deleting a document removes its points from Qdrant, and the server refuses to start with a clear message if Qdrant is not running.</li>
-                    <li>Changing the embedding model needs a new collection name (vector size is fixed per collection), then a re-upload.</li>
-                    <li>A stats endpoint reports provider, total chunks, and total documents.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Chunking Strategies</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li><strong>FixedSize</strong> — Splits text into fixed 500-char chunks with 100-char overlap. Fast, works for most documents.</li>
-                    <li><strong>ContentAware</strong> — Respects sentence boundaries, markdown structure, and paragraphs (100–1000 chars). Best for structured documents.</li>
-                    <li><strong>Semantic</strong> — Groups sentences by topic coherence using word-overlap similarity (150–1200 chars). Best for dense research papers.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Multilingual Support (English, Thai, Khmer)</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>English — word tokenization with stop word removal for BM25.</li>
-                    <li>Thai & Khmer — character trigram (n-gram) tokenization since these languages have no spaces between words.</li>
-                    <li>Auto-detects script per text segment, handling mixed-language documents correctly.</li>
-                    <li>All 3 chunking strategies support language-specific sentence boundaries (Thai ๆ/ฯ markers, Khmer ។ terminator).</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">RAG Evaluation</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>No reference answer needed — the system auto-generates one from retrieved chunks via LLM, using the RAG's own settings (passages, relevance, instructions, model).</li>
-                    <li>Pipeline: Hybrid search → LLM generates reference answer → LLM generates RAG answer → BLEU/GLEU/F1 compare both → LLM Judge scores semantic quality.</li>
-                    <li><strong>BLEU</strong> — n-gram precision. <strong>GLEU</strong> — balanced precision and recall. <strong>F1</strong> — token overlap (SQuAD-style). <strong>LLM Judge</strong> — semantic score (0–10 normalized to 0–1), most reliable for Thai and Khmer.</li>
-                    <li>Every run is saved to a history (newest 50 kept) with both answers and all settings used, so runs can be compared side by side and exported to CSV. An optional stronger judge model can be configured.</li>
-                    <li>Pure NLP evaluators (<code class="text-xs bg-slate-100 px-1 rounded">BLEU</code>, <code class="text-xs bg-slate-100 px-1 rounded">GLEU</code>, <code class="text-xs bg-slate-100 px-1 rounded">F1</code>) kept separate from DI services; exposed through a REST API (run, list, read, delete).</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Accounts and Chat Experience</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>ASP.NET Core Identity with JWT login; the login key and first admin are stored as user secrets, not in git.</li>
-                    <li>Each person has their own chats and RAGs (Settings &gt; My RAGs: Knowledge, Settings, and Evaluation tabs).</li>
-                    <li>Chat sidebar with pin, rename, and delete; theme button cycles System, Light, and Dark and remembers the choice.</li>
-                    </ul>
-                    </div>
-
-                    </div>
-
-                    <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
-                    <ul class="tech-stack-list">
-                    <li><span class="tech-category">Frontend:</span> Blazor WebAssembly (.NET 10)</li>
-                    <li><span class="tech-category">Backend:</span> ASP.NET Core Web API (.NET 10), SignalR, Entity Framework Core, JWT / Identity</li>
-                    <li><span class="tech-category">LLM & Embeddings:</span> <a href="https://ollama.com/" target="_blank" class="tech-link">Ollama</a> (llama3.2:3b, mxbai-embed-large), OllamaSharp, Microsoft.Extensions.AI</li>
-                    <li><span class="tech-category">Database:</span> SQL Server / LocalDB, Qdrant (vector store)</li>
-                    <li><span class="tech-category">PDF / Markdown:</span> PdfPig, Markdig</li>
-                    <li><span class="tech-category">Search:</span> Hybrid Vector + BM25 (weighted score fusion)</li>
-                    <li><span class="tech-category">Deployment:</span> Docker Compose (Qdrant)</li>
-                    <li><span class="tech-category">Languages Supported:</span> English, Thai, Khmer</li>
-                    </ul>
-
-                    </div>
-                    <!-- ── Skincare E-commerce ── -->
-                    <div class="mb-10 project-card">
-
-                    <div class="flex justify-between items-baseline mb-3">
-                    <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank" class="project-link">Jamoon Skincare Store — Online Shop + POS with Automatic KHQR Payments</a></h3>
-                    <span class="text-xs text-slate-500 font-bold uppercase">August 2025</span>
-                    </div>
-
-                    <div class="flex gap-2 mb-4 flex-wrap">
-                    <a href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank">
-                    <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                    </a>
-                    <a href="https://jameskincare.vercel.app" target="_blank">
-                    <img src="https://img.shields.io/badge/Live_Demo-181717?style=flat&logo=vercel&logoColor=white" alt="Live demo">
-                    </a>
-                    </div>
-
-                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                    A complete English and Khmer skincare shop in one small system: customer website, admin panel, counter POS, and automatic KHQR (Bakong) payments. The website and the staff POS share the same products, stock, orders, and reports. It runs as two processes and one SQLite file, so it fits on a laptop or a small VPS.
-                    </p>
-
-                    <div class="project-img-grid cols-2" data-gallery="skincare">
-                    <img src="skincare.png" alt="Skincare E-commerce screenshot 1" loading="lazy" onclick="openLightbox(this, 'skincare')">
-                    <img src="skincare1.png" alt="Skincare E-commerce screenshot 2" loading="lazy" onclick="openLightbox(this, 'skincare')">
-                    </div>
-
-                    <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                    <ul class="text-sm text-slate-600 mb-4">
-                    <li>Built the storefront: catalogue with skin-type filter and search, reviews, wishlist, cart, coupons, guest checkout, order tracking, saved addresses, printable receipts, and an installable PWA.</li>
-                    <li>Integrated automatic KHQR payments through Bakong. Each order gets its own QR with the exact amount and a 15-minute expiry, and the order confirms itself, checked by page polling and a server sweep every 20 seconds. A payment with the wrong amount is never confirmed and goes to an admin review list.</li>
-                    <li>Built a counter POS with barcode scanner support, discounts (owner / manager), cash change calculator, mandatory payment photo for bank or QR sales, printable receipts, and sales history.</li>
-                    <li>Added owner-only cost and profit tracking. Costs live in separate tables, with the cost frozen onto every order line, so no public route can leak them. A smoke test scans every public response to prove it.</li>
-                    <li>Built the admin panel: dashboard comparing online and POS sales, fulfilment board (new, packing, packed), returns and refunds, inventory, coupons, reviews, an Excel / CSV Export Center (9 workbooks), and Excel product import.</li>
-                    <li>Added 4 staff roles (owner, manager, packer, cashier) with permissions decided in one server file; Telegram alerts for new orders, payments, low stock, and orders stuck over 24 hours; and e-mailed password reset.</li>
-                    <li>Fully bilingual (English and Khmer, 2,484 strings each), with a check that fails the build if the two languages differ.</li>
-                    <li>Backed by 968 automated checks (684 API smoke, 254 frontend, 30 dashboard and Bakong tests), plus architecture and type checks.</li>
-                    </ul>
-
-                    <button class="toggle-btn" onclick="toggleSection('skincare-details')">
-                    <span>Full Technical Details</span>
-                    <span class="chevron">▼</span>
-                    </button>
-
-                    <div id="skincare-details" class="collapsible mt-4">
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Architecture</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>The website never touches the database; it only calls the REST API. Prices, stock, totals, coupons, and admin rights are all decided in the backend.</li>
-                    <li>Every request passes helmet and CORS, a rate limit (login, register, reset), JWT auth, permission checks on admin routes, and zod validation before the business rules run.</li>
-                    <li>Backend layers go one way: routes (HTTP) → lib (rules) → db. The frontend has its own enforced layer order, checked by an architecture script.</li>
-                    <li>One status table governs every order change, whether from a click, a bulk action, or an automatic payment. Cancelling puts items back in stock and releases the coupon.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Payments</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>KHQR (Bakong), ABA / Wing with receipt upload and admin verification, and cash on delivery.</li>
-                    <li>KHQR runs in Live, Test, or Off mode, decided by the server environment and never by the browser.</li>
-                    <li>A customer who pays and closes the page is still confirmed by the server sweep.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Database (SQLite, 19 tables)</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>Created and upgraded automatically on start. Foreign keys cascade or null out on purpose, so deleting a product never destroys order history.</li>
-                    <li>Order items copy the product name and price, and orders keep their own copy of the address, so past orders stay correct after edits.</li>
-                    <li>Password reset tokens are stored only as hashes; coupons are referenced by code so deleting one never breaks old orders.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Security and Sessions</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>bcrypt password hashes; JWT lifetime 7 days for customers and 12 hours for admins.</li>
-                    <li>Admin session ends when the browser closes unless "Remember me" is ticked, and signs out after 30 minutes idle.</li>
-                    <li>JSON limited to 200 kb and uploads to 2 MB; the API refuses to start in production without a strong secret.</li>
-                    <li>Admin changes and sign-ins are recorded in an Activity log with no secrets.</li>
-                    <li>Unlisted admin routes are owner-only by default, so a new feature stays hidden from staff until access is granted.</li>
-                    </ul>
-                    </div>
-
-                    <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                    <p class="text-sm font-bold text-slate-700 mb-1">Background Workers and Deployment</p>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                    <li>KHQR sweep every 20 seconds; a watchdog every 15 minutes checks for low stock and paid orders waiting over 24 hours, and reports each problem once.</li>
-                    <li>Deployed with Caddy (automatic HTTPS) and Cloudflare in front; the frontend is hosted on Vercel.</li>
-                    <li>Documented in a <code class="text-xs bg-slate-100 px-1 rounded">docs/</code> folder with architecture, recipes, per-feature guides, and a changelog.</li>
-                    </ul>
-                    </div>
-
-                    </div>
-
-                    <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
-                    <ul class="tech-stack-list">
-                    <li><span class="tech-category">Frontend:</span> <a href="https://nextjs.org/" target="_blank" class="tech-link">Next.js 15</a> (App Router), React 19, TypeScript, Tailwind CSS 4, react-i18next, Recharts</li>
-                    <li><span class="tech-category">Backend:</span> Node.js, Express, zod, JWT, bcrypt, helmet</li>
-                    <li><span class="tech-category">Database:</span> SQLite (better-sqlite3)</li>
-                    <li><span class="tech-category">Payments:</span> Bakong KHQR (bakong-khqr, Bakong Open API)</li>
-                    <li><span class="tech-category">Files & Alerts:</span> ExcelJS (Excel / CSV), Nodemailer (SMTP), Telegram Bot API</li>
-                    <li><span class="tech-category">Testing:</span> Vitest, Testing Library, end-to-end smoke suites</li>
-                    <li><span class="tech-category">Deployment:</span> Vercel, Caddy, Cloudflare</li>
-                    </ul>
-
-                    </div>
-
-                
-                    <!-- ── DataPilot AI ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/DataPilot_AI" target="_blank" class="project-link">DataPilot AI — Autonomous Data Scientist Agent Platform</a></h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">March 2025</span>
-                        </div>
-
-                        <div class="flex gap-2 mb-4 flex-wrap">
-                            <a href="https://github.com/ChornChhery/DataPilot_AI" target="_blank">
-                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                            </a>
-                        </div>
-
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            A zero-code AutoML platform. Upload a CSV, select a target column, and the system automatically cleans data, trains multiple ML models, selects the best one, and delivers a visual dashboard with downloadable PDF report and cleaned dataset.
-                        </p>
-
-                        <!-- Project Images -->
-                        <div class="project-img-grid cols-4" data-gallery="datapilot">
-                            <img src="Datapilot1.png" alt="DataPilot AI screenshot 1" loading="lazy" onclick="openLightbox(this, 'datapilot')">
-                            <img src="Datapilot2.png" alt="DataPilot AI screenshot 2" loading="lazy" onclick="openLightbox(this, 'datapilot')">
-                            <img src="Datapilot3.png" alt="DataPilot AI screenshot 3" loading="lazy" onclick="openLightbox(this, 'datapilot')">
-                            <img src="Datapilot4.png" alt="DataPilot AI screenshot 4" loading="lazy" onclick="openLightbox(this, 'datapilot')">
-                        </div>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Built a full-stack web application using React and FastAPI that runs a 6-stage ML pipeline automatically — data understanding, cleaning, feature engineering, statistical analysis, model training, and evaluation.</li>
-                            <li>Trained 3 models simultaneously (Logistic Regression, Random Forest, Gradient Boosting) for both classification and regression, selecting the best model by cross-validation score.</li>
-                            <li>Developed an interactive results dashboard with model comparison bar charts, feature importance visualization, and a Pearson correlation heatmap built in pure SVG.</li>
-                            <li>Implemented PDF report generation entirely in the browser using jsPDF, producing a full A4 report with metrics table, feature importance bars, and correlation heatmap without any server-side rendering.</li>
-                        </ul>
-
-                        <button class="toggle-btn" onclick="toggleSection('datapilot-details')">
-                            <span>Full Technical Details</span>
-                            <span class="chevron">▼</span>
-                        </button>
-
-                        <div id="datapilot-details" class="collapsible mt-4">
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">ML Pipeline (6 Stages)</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li><strong>Data Understanding</strong> — Detects column types, null %, and problem type (classification if target has ≤20 unique values or is string/bool, else regression).</li>
-                                    <li><strong>Data Cleaning</strong> — Removes duplicates, fills numeric nulls with median, fills categorical nulls with mode, applies LabelEncoder to categorical columns.</li>
-                                    <li><strong>Feature Engineering</strong> — Applies StandardScaler to numeric features, builds final X matrix and y vector.</li>
-                                    <li><strong>Statistical Analysis</strong> — Computes descriptive stats (mean, std, min, max, quartiles) and Pearson correlation matrix.</li>
-                                    <li><strong>Model Training</strong> — Trains 3 models simultaneously on the full training set.</li>
-                                    <li><strong>Model Evaluation</strong> — Runs k-fold cross-validation, evaluates on held-out test set, extracts feature importances, selects best model by highest CV mean score.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Models Trained</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li><strong>Classification:</strong> Logistic Regression, Random Forest Classifier, Gradient Boosting Classifier</li>
-                                    <li><strong>Regression:</strong> Linear Regression, Random Forest Regressor, Gradient Boosting Regressor</li>
-                                    <li><strong>Classification metrics:</strong> Accuracy, F1 Score (weighted), ROC-AUC, CV Mean, CV Std, Train Time</li>
-                                    <li><strong>Regression metrics:</strong> RMSE, R², CV Mean, CV Std, Train Time</li>
-                                    <li>Feature importance extracted from <code class="text-xs bg-slate-100 px-1 rounded">feature_importances_</code> (tree models) or <code class="text-xs bg-slate-100 px-1 rounded">coef_</code> (linear models) — top 15 features returned.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Frontend Architecture</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>4-file React architecture: <code class="text-xs bg-slate-100 px-1 rounded">App.jsx</code> (state + polling), <code class="text-xs bg-slate-100 px-1 rounded">Pages.jsx</code> (upload + processing), <code class="text-xs bg-slate-100 px-1 rounded">ResultsPage.jsx</code> (charts + downloads), <code class="text-xs bg-slate-100 px-1 rounded">constants.jsx</code> (shared tokens).</li>
-                                    <li>Frontend polls <code class="text-xs bg-slate-100 px-1 rounded">GET /api/v1/status/{session_id}</code> every 2 seconds during processing to show live progress and pipeline logs.</li>
-                                    <li>Model comparison and feature importance charts built with Recharts.</li>
-                                    <li>Correlation matrix heatmap built in pure SVG — no external chart library needed.</li>
-                                    <li>PDF report generated fully in browser using jsPDF loaded from CDN — no npm install, no server-side rendering.</li>
-                                    <li>Cleaned CSV downloaded via <code class="text-xs bg-slate-100 px-1 rounded">GET /api/v1/download/{session_id}</code> — backend re-runs cleaning pipeline and streams file back.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Deployment</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>Fully containerized with Docker Compose — MongoDB + Backend + Frontend run with a single <code class="text-xs bg-slate-100 px-1 rounded">docker compose up --build</code> command.</li>
-                                    <li>Frontend built with Vite into a static production bundle, served via nginx:alpine for optimal performance.</li>
-                                    <li>Kubernetes manifests included in <code class="text-xs bg-slate-100 px-1 rounded">k8s/</code> directory for cloud deployment.</li>
-                                    <li>Environment configurable via <code class="text-xs bg-slate-100 px-1 rounded">.env</code> — CV folds, test size, file size limit, random seed all tunable without code changes.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Frontend:</span> React 19, Vite 7, Recharts, Axios, jsPDF (CDN)</li>
-                            <li><span class="tech-category">Backend:</span> Python 3.12, FastAPI, Uvicorn</li>
-                            <li><span class="tech-category">ML:</span> Scikit-learn, Pandas, NumPy, SciPy</li>
-                            <li><span class="tech-category">Database:</span> <a href="https://www.mongodb.com/" target="_blank" class="tech-link">MongoDB</a>, Motor (async driver)</li>
-                            <li><span class="tech-category">Deployment:</span> <a href="https://www.docker.com/" target="_blank" class="tech-link">Docker</a> + Docker Compose, Kubernetes, nginx</li>
-                        </ul>
-                    </div>
-
-                    <button class="toggle-btn" onclick="toggleSection('more-projects')">
-                        <span>More Projects (6)</span>
-                        <span class="chevron">▼</span>
-                    </button>
-                    <div id="more-projects" class="collapsible more-projects mt-6">
-                    <!-- ── Server Monitoring Dashboards (MinebeaMitsumi) ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl">Server Monitoring Dashboards (MinebeaMitsumi)</h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            Grafana dashboards for the leave system and the factory website, running on the same server in Docker. <a href="https://github.com/ChornChhery/Monitoring-PC" target="_blank" class="project-link">View on GitHub</a>.
-                        </p>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>4 dashboards: server health, leave counts, speed of the leave system, and speed of the factory website.</li>
-                            <li>Shows CPU, memory, disk, uptime, restarts, the retry queue, backup age, and how long approvals take, without showing any names.</li>
-                            <li>Privacy: the leave numbers come from a read-only database role that cannot read personal columns, and no IP address or cookie is stored.</li>
-                            <li>Leave dashboard also has a safety-net row: retry-queue size, failed items, last backup OK or failed, backup age, and whether the database can be read.</li>
-<li>A small read-only Python exporter (standard library only) reads the retry-queue file, the backup status, the bot's API log and the website's nginx log, and never writes to the systems it watches. Paths with a person's ID are turned into fixed patterns.</li>
-<li>Dashboards are generated by Python scripts and loaded automatically, with install, check (ends with ALL GOOD), stop and version-pin scripts. Everything listens on localhost only, with memory limits and 30 days of data.</li>
-                        </ul>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Monitoring:</span> Grafana, Prometheus, node_exporter, cAdvisor</li>
-                            <li><span class="tech-category">Language:</span> Python (small read-only exporter)</li>
-                            <li><span class="tech-category">Deployment:</span> Docker Compose</li>
-                        </ul>
-                    </div>
-<!-- ── Production-Line Counter on Raspberry Pi (MinebeaMitsumi) ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl">Production-Line Counter on Raspberry Pi (MinebeaMitsumi)</h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">2026</span>
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            A full-screen counter for a production line. It shows the plan, the target, and the real count for each shift.
-                        </p>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Reads input, output, and a red-light stop signal through GPIO and ignores false pulses.</li>
-                            <li>Counts a unit only when two signals are 3 to 4 seconds apart, after removing the time the line was stopped.</li>
-                            <li>Schedule editor for Day and Night plans, with work and break blocks and tact time worked out for each row.</li>
-                            <li>Saves the counts to a file, resets at shift change, and has a PIN-protected correction screen and a simulation mode for testing on a PC.</li>
-                        </ul>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Language:</span> Python, Tkinter</li>
-                            <li><span class="tech-category">Hardware:</span> Raspberry Pi, GPIO</li>
-                            <li><span class="tech-category">Data:</span> JSON files</li>
-                        </ul>
-                    </div>
-                    <!-- ── ChatBotRagPy ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/ChatBot-with-React-Python" target="_blank" class="project-link">ChatBotRagPy — RAG Chatbot with FastAPI + React</a></h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">March 2025</span>
-                        </div>
-
-                        <div class="flex gap-2 mb-4 flex-wrap">
-                            <a href="https://github.com/ChornChhery/ChatBot-with-React-Python" target="_blank">
-                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                            </a>
-                        </div>
-
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                            A full-stack RAG chatbot built with FastAPI and React. Upload documents and chat with them in real time using local Ollama models — supports English, Thai, and Khmer documents with automatic RAG/LLM routing.
-                        </p>
-
-                        <!-- Project Images -->
-                        <div class="project-img-grid cols-4" data-gallery="chatbotragpy">
-                            <img src="ChatbotRagPy.png"  alt="ChatBotRagPy screenshot 1" loading="lazy" onclick="openLightbox(this, 'chatbotragpy')">
-                            <img src="ChatbotRagPy1.png" alt="ChatBotRagPy screenshot 2" loading="lazy" onclick="openLightbox(this, 'chatbotragpy')">
-                            <img src="ChatbotRagPy2.png" alt="ChatBotRagPy screenshot 3" loading="lazy" onclick="openLightbox(this, 'chatbotragpy')">
-                            <img src="ChatbotRagPy3.png" alt="ChatBotRagPy screenshot 4" loading="lazy" onclick="openLightbox(this, 'chatbotragpy')">
-                        </div>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Built a full-stack web application using React + Vite (frontend) and FastAPI Python (backend) with real-time token-by-token streaming chat via WebSocket.</li>
-                            <li>Implemented intelligent RAG routing — automatically decides whether to use document context or pure LLM based on hybrid search confidence score (threshold 0.65).</li>
-                            <li>Supported 3 chunking strategies (FixedSize, ContentAware, Semantic) with multilingual tokenization for English, Thai (pythainlp), and Khmer (character trigrams).</li>
-                            <li>Built a RAG evaluation pipeline scoring answer quality using BLEU, GLEU, F1, and LLM Judge — auto-generates reference answers with no manual input required.</li>
-                            <li>Engineered an in-memory embedding cache with startup pre-warming and partial updates (add/remove per document) to eliminate repeated database round trips.</li>
-                        </ul>
-
-                        <button class="toggle-btn" onclick="toggleSection('chatbotragpy-details')">
-                            <span>Full Technical Details</span>
-                            <span class="chevron">▼</span>
-                        </button>
-
-                        <div id="chatbotragpy-details" class="collapsible mt-4">
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Intelligent RAG Routing</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>System automatically decides whether to answer with document context or LLM-only — no manual switching needed.</li>
-                                    <li>Question embedded → hybrid search runs across all cached chunks → scores calculated.</li>
-                                    <li>If best chunk score <strong>≥ 0.65</strong>: answer uses LLM + RAG context, sources shown in chat.</li>
-                                    <li>If no chunks pass threshold: LLM answers from its own knowledge only, no sources shown.</li>
-                                    <li>Prevents irrelevant document context from being forced into unrelated answers.</li>
-                                    <li>Threshold configurable in <code class="text-xs bg-slate-100 px-1 rounded">rag_service.py</code> — lower for more RAG, higher for stricter matching.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Hybrid Search (Vector + BM25)</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>Combines two complementary retrieval methods: Vector Search (cosine similarity, 70%) and BM25 keyword search (30%).</li>
-                                    <li>Formula: <code class="text-xs bg-slate-100 px-1 rounded">final = 0.7 × vector_score + 0.3 × bm25_score</code></li>
-                                    <li>Vector search handles semantic meaning and paraphrasing; BM25 handles exact terms, technical names, and IDs.</li>
-                                    <li>Weights configurable via <code class="text-xs bg-slate-100 px-1 rounded">.env</code> — <code class="text-xs bg-slate-100 px-1 rounded">VECTOR_WEIGHT</code> and <code class="text-xs bg-slate-100 px-1 rounded">MIN_SIMILARITY_THRESHOLD</code>.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Chunking Strategies</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li><strong>FixedSize</strong> — 500-char chunks with 100-char overlap. Fast, good for most documents.</li>
-                                    <li><strong>ContentAware</strong> — Respects headings, paragraphs, and sentence terminators (100–1000 chars). Best for markdown and structured docs.</li>
-                                    <li><strong>Semantic</strong> — Groups sentences by topic-overlap similarity (150–1200 chars). Best for research papers and dense content.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">Multilingual Support (English, Thai, Khmer)</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>English — word tokenization with stop word removal for BM25; punctuation-based sentence splitting for chunking.</li>
-                                    <li>Thai — uses <code class="text-xs bg-slate-100 px-1 rounded">pythainlp</code> word tokenizer (newmm engine) for BM25 and sentence tokenizer for chunking; trigram fallback if not installed.</li>
-                                    <li>Khmer — character trigram tokenization for BM25; splits on ។ ៕ ៖ sentence terminators for chunking.</li>
-                                    <li>Auto-detects language per text segment using Unicode range detection.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">In-Memory Embedding Cache</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>Singleton service — holds all embeddings as <code class="text-xs bg-slate-100 px-1 rounded">numpy float32</code> arrays in a thread-safe <code class="text-xs bg-slate-100 px-1 rounded">ConcurrentDictionary</code>.</li>
-                                    <li>Startup pre-warming: loads all Ready chunks from SQL Server before first request.</li>
-                                    <li>Partial updates: uploading a new document adds only its chunks; deleting removes only that document's chunks — no full reload needed.</li>
-                                    <li>Cache stats endpoint: <code class="text-xs bg-slate-100 px-1 rounded">GET /api/documents/cache-stats</code> — total chunks, documents, and estimated RAM.</li>
-                                    <li>Memory estimate: ~4MB per 1,000 chunks, ~40MB per 10,000 chunks.</li>
-                                </ul>
-                            </div>
-                            <div class="mb-5 pl-4 border-l-2 border-blue-200">
-                                <p class="text-sm font-bold text-slate-700 mb-1">RAG Evaluation Pipeline</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>No reference answer needed — LLM auto-generates an ideal reference from retrieved chunks.</li>
-                                    <li>Pipeline: Hybrid search → LLM generates reference → LLM generates RAG answer → BLEU/GLEU/F1 score both → LLM Judge scores semantic quality.</li>
-                                    <li><strong>BLEU</strong> — n-gram precision for factual phrase accuracy.</li>
-                                    <li><strong>GLEU</strong> — balanced precision + recall, penalizes wrong additions and missing content.</li>
-                                    <li><strong>F1</strong> — token overlap, standard SQuAD benchmark metric.</li>
-                                    <li><strong>LLM Judge</strong> — scores 0–10 normalized to 0–1, reliable for multilingual (Thai/Khmer) evaluation.</li>
-                                    <li>Overall score = average of all 4 metrics.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2 mt-4">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Frontend:</span> React, Vite</li>
-                            <li><span class="tech-category">Backend:</span> Python, FastAPI, SQLAlchemy, Alembic</li>
-                            <li><span class="tech-category">Real-time:</span> WebSocket</li>
-                            <li><span class="tech-category">LLM & Embeddings:</span> <a href="https://ollama.com/" target="_blank" class="tech-link">Ollama</a> (llama3.2:3b, mxbai-embed-large)</li>
-                            <li><span class="tech-category">Database:</span> SQL Server LocalDB</li>
-                            <li><span class="tech-category">PDF Parsing:</span> PyPDF2</li>
-                            <li><span class="tech-category">Thai NLP:</span> pythainlp</li>
-                            <li><span class="tech-category">Search:</span> Hybrid Vector + BM25</li>
-                            <li><span class="tech-category">Languages Supported:</span> English, Thai, Khmer</li>
-                        </ul>
-                    </div>
-                    <!-- ── IoT Chicken Farm ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Chicken-Farm-IOT" target="_blank" class="project-link">IoT-Based Chicken Farm Monitoring System</a></h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">February 2024</span>
-                        </div>
-                        <div class="flex gap-2 mb-4 flex-wrap">
-                            <a href="https://github.com/ChornChhery/Chicken-Farm-IOT" target="_blank">
-                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                            </a>
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">Automated farm monitoring system with data streaming, validation, and intelligent alerting.</p>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Designed a real-time IoT monitoring system with automated data ingestion into MongoDB, enabling continuous tracking of poultry growth metrics for farm optimization.</li>
-                            <li>Developed a data validation pipeline filtering sensor readings to ensure 95% data accuracy, cleaning and preparing raw data for reliable analytics and insights.</li>
-                            <li>Built a real-time dashboard visualization and automated LINE notifications for growth anomalies, enabling proactive farm management and faster response to issues.</li>
-                            <li>Built an Interactive Analytics Dashboard using Shiny and Plotly, transforming raw time-series data into actionable insights through dual-line trend visualization and daily status classification.</li>
-                        </ul>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Backend & Database:</span> <a href="https://www.mongodb.com/" target="_blank" class="tech-link">MongoDB</a>, <a href="https://ubuntu.com/server" target="_blank" class="tech-link">Ubuntu Server</a></li>
-                            <li><span class="tech-category">Data Visualization:</span> <a href="https://shiny.posit.co/" target="_blank" class="tech-link">Shiny</a>, <a href="https://plotly.com/" target="_blank" class="tech-link">Plotly</a></li>
-                            <li><span class="tech-category">IoT & Notifications:</span> IoT Sensors, <a href="https://www.line.me/en/" target="_blank" class="tech-link">LINE Notify API</a></li>
-                        </ul>
-                    </div>
-                    <!-- ── Jamoon Laundry ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Laundry-Management-System" target="_blank" class="project-link">Jamoon Laundry Management System</a></h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">March 2024</span>
-                        </div>
-                        <div class="flex gap-2 mb-4 flex-wrap">
-                            <a href="https://github.com/ChornChhery/Laundry-Management-System" target="_blank">
-                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                            </a>
-                            <a href="https://jamoon.free.nf/" target="_blank">
-                                <img src="https://img.shields.io/badge/View_on_Website-181717?style=flat&logo=github&logoColor=white" alt="View on Website">
-                            </a>
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">A web-based laundry management system for student-run laundry services with real-time machine availability, booking, and administrative analytics.</p>
-
-                        <!-- Project Images -->
-                        <div class="project-img-grid cols-2" data-gallery="jamoon">
-                            <img src="jamoon.png"  alt="Jamoon screenshot 1" loading="lazy" onclick="openLightbox(this, 'jamoon')">
-                            <img src="jamoon1.png" alt="Jamoon screenshot 2" loading="lazy" onclick="openLightbox(this, 'jamoon')">
-                        </div>
-
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Real-time washing machine status updates using AJAX without requiring page reloads.</li>
-                            <li>Engineered a "Smart-Reservation" logic featuring a 30-minute activation window with automated server-side cancellation, optimizing machine turnover and operational efficiency.</li>
-                            <li>Designed a relational database schema with complex foreign key constraints across user profiles, machine specifications, and transaction logs to ensure 100% data integrity.</li>
-                            <li>Developed an Administrative ERP Dashboard using Chart.js, transforming raw transaction data into actionable business intelligence through revenue analytics and usage pattern reporting.</li>
-                        </ul>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Backend:</span> <a href="https://www.php.net/" target="_blank" class="tech-link">PHP</a></li>
-                            <li><span class="tech-category">Frontend:</span> <a href="https://www.w3schools.com/js/" target="_blank" class="tech-link">JavaScript</a>, AJAX, HTML, CSS</li>
-                            <li><span class="tech-category">Database:</span> <a href="https://www.mysql.com/" target="_blank" class="tech-link">MySQL</a></li>
-                            <li><span class="tech-category">Data Visualization:</span> <a href="https://www.chartjs.org/" target="_blank" class="tech-link">Chart.js</a></li>
-                        </ul>
-                    </div>
-                    <!-- ── Jame POS ── -->
-                    <div class="mb-10 project-card">
-                        <div class="flex justify-between items-baseline mb-3">
-                            <h3 class="font-bold text-slate-800 text-xl"><a href="https://github.com/ChornChhery/Jame" target="_blank" class="project-link">Jame - All-in-One Inventory & Sales Management App</a></h3>
-                            <span class="text-xs text-slate-500 font-bold uppercase">September 2025</span>
-                        </div>
-                        <div class="flex gap-2 mb-4 flex-wrap">
-                            <a href="https://github.com/ChornChhery/Jame" target="_blank">
-                                <img src="https://img.shields.io/badge/View_on_GitHub-181717?style=flat&logo=github&logoColor=white" alt="View on GitHub">
-                            </a>
-                        </div>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">End-to-end mobile point-of-sale system with analytics dashboard and inventory management.</p>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Key Features:</p>
-                        <ul class="text-sm text-slate-600 mb-4">
-                            <li>Developed a comprehensive POS mobile application for department business management, integrating real-time barcode scanning and automated PDF receipt generation.</li>
-                            <li>Built an analytics dashboard with visual insights into revenue trends, product stocks, best-selling items, and profit margins to support data-driven business decisions.</li>
-                            <li>Managed product inventory with barcode-based stock updates, automated low-stock alerts, and real-time pricing calculations to streamline operations.</li>
-                        </ul>
-                        <p class="text-sm font-bold text-slate-700 mb-2">Tools / Technologies:</p>
-                        <ul class="tech-stack-list">
-                            <li><span class="tech-category">Mobile Framework:</span> <a href="https://flutter.dev/" target="_blank" class="tech-link">Flutter</a>, <a href="https://dart.dev/" target="_blank" class="tech-link">Dart</a></li>
-                            <li><span class="tech-category">Database:</span> SQLite, MySQL</li>
-                            <li><span class="tech-category">Features:</span> Barcode Scanner, PDF Generation</li>
-                        </ul>
-                    </div>
-                    </div>
-                </section>
-
-            </main>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#home" aria-label="Chorn Chhery — back to the studio">CC<span>·</span>26</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="Open menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+    <nav class="site-nav" id="primaryNav" aria-label="Primary">
+      <a class="nav-tag" href="#home">my studio</a>
+      <a class="nav-tag" href="#about">about</a>
+      <a class="nav-tag" href="#experience">experience</a>
+      <a class="nav-tag" href="#projects">work</a>
+      <a class="nav-tag" href="#skills">skills</a>
+      <a class="nav-tag" href="#education">education</a>
+      <a class="nav-tag" href="#contact">contact</a>
+      <a class="nav-tag nav-resume" href="ChornChhery_Resume.pdf" download="ChornChhery_Resume.pdf">resume <span aria-hidden="true">↓</span></a>
+    </nav>
+  </header>
+
+  <nav class="chapter-rail" aria-label="Chapter navigation">
+    <a href="#home" data-chapter-link="home"><span class="rail-num">01</span><span class="rail-label">Studio</span></a>
+    <a href="#about" data-chapter-link="about"><span class="rail-num">02</span><span class="rail-label">About</span></a>
+    <a href="#experience" data-chapter-link="experience"><span class="rail-num">03</span><span class="rail-label">Experience</span></a>
+    <a href="#projects" data-chapter-link="projects"><span class="rail-num">04</span><span class="rail-label">Work</span></a>
+    <a href="#skills" data-chapter-link="skills"><span class="rail-num">05</span><span class="rail-label">Skills</span></a>
+    <a href="#education" data-chapter-link="education"><span class="rail-num">06</span><span class="rail-label">Education</span></a>
+    <a href="#contact" data-chapter-link="contact"><span class="rail-num">07</span><span class="rail-label">Contact</span></a>
+  </nav>
+
+  <section class="studio" id="home" aria-labelledby="heroName">
+    <div class="studio-stage" id="studioStage">
+
+      <div class="studio-bg" aria-hidden="true"></div>
+
+      <h1 class="wordmark" id="heroName"><span>Chorn</span> <span>Chhery</span></h1>
+      <p class="studio-script" aria-hidden="true">software-engineer</p>
+
+      <figure class="portrait-card">
+        <img src="me.png" alt="Portrait of Chorn Chhery in a dark jacket and glasses on a sunlit street." width="864" height="1083">
+        <figcaption class="portrait-meta">PHNOM PENH · 2026</figcaption>
+      </figure>
+
+      <button class="laptop" id="laptopButton" type="button" aria-label="Open the project case viewer">
+        <span class="laptop-lid">
+          <span class="laptop-bezel">
+            <span class="laptop-screen">
+              <span class="hero-slides" aria-hidden="true">
+                <img class="hero-slide is-active" src="ChatbotRag.png" alt="ChatBotRAG chat interface showing a document-grounded answer and its source file." width="1903" height="1037">
+                <img class="hero-slide" src="skincare.png" alt="Jamoon Skincare storefront with product filters and a product grid." width="1910" height="1037">
+                <img class="hero-slide" src="Datapilot1.png" alt="DataPilot AI upload screen for selecting a CSV and target column." width="1902" height="1035">
+                <img class="hero-slide" src="ChatbotRagPy.png" alt="ChatBotRagPy chat interface with a streaming answer and source panel." width="1902" height="1035">
+              </span>
+              <span class="case-screen" id="caseScreen" aria-hidden="true">
+                <img id="caseScreenImage" src="ChatbotRag.png" alt="Project screenshot" width="1903" height="1037" hidden>
+                <span class="case-record" id="caseRecord">
+                  <span class="record-brand">LEAVE BOT</span>
+                  <span class="record-sub">TELEGRAM LEAVE SYSTEM / MINEBEAMITSUMI / 2026</span>
+                  <span class="record-grid">
+                    <span><b>EN + KH</b>Group and Mini App</span>
+                    <span><b>RETRY QUEUE</b>Survives database downtime</span>
+                    <span><b>BACKUPS</b>Nightly restore test</span>
+                    <span><b>UPDATES</b>Backup first, auto-rollback</span>
+                  </span>
+                </span>
+              </span>
+              <span class="screen-sheen" aria-hidden="true"></span>
+              <span class="screen-flash" id="screenFlash" aria-hidden="true"></span>
+              <span class="screen-label" id="screenLabel" aria-hidden="true">SELECTED WORK · 2026</span>
+            </span>
+            <span class="laptop-camera" aria-hidden="true"></span>
+          </span>
+          <span class="laptop-base" aria-hidden="true"><span class="laptop-notch"></span></span>
+        </span>
+      </button>
+
+      <aside class="badge" aria-label="Developer card: Chorn Chhery, IT Programmer, Phnom Penh">
+        <span class="badge-strap" aria-hidden="true"></span>
+        <span class="badge-clip" aria-hidden="true"></span>
+        <span class="badge-card">
+          <span class="badge-hole" aria-hidden="true"></span>
+          <span class="badge-top"><span>DEVELOPER<br>CARD</span><span class="badge-year">2026</span></span>
+          <span class="badge-role">IT PROGRAMMER // FULL-STACK</span>
+          <span class="badge-photo"><img src="me.png" alt="Chorn Chhery, portrait crop." width="864" height="1083"></span>
+          <span class="badge-row"><span>NAME</span><b>CHORN CHHERY</b></span>
+          <span class="badge-row"><span>FOCUS</span><b>FACTORY SYSTEMS</b></span>
+          <span class="badge-row"><span>BASE</span><b>PHNOM PENH</b></span>
+          <span class="badge-row"><span>EMAIL</span><b>chherychorn@gmail.com</b></span>
+        </span>
+      </aside>
+
+      <div class="studio-copy">
+        <p class="studio-kicker">IT PROGRAMMER · MINEBEAMITSUMI INC. · PHNOM PENH</p>
+        <p class="studio-lede">I build and run the systems a factory actually uses — leave requests in Telegram, live production lines, shift counters, and the backups and dashboards that keep them honest.</p>
+        <div class="studio-actions">
+          <button class="btn btn-primary" id="exploreButton" type="button">Explore the work <span aria-hidden="true">↓</span></button>
+          <a class="btn btn-ghost" href="#about">Read the full record</a>
         </div>
+        <p class="studio-note">Python · TypeScript · C# · SQL · RAG · Docker</p>
+      </div>
+
+      <p class="scroll-hint"><span class="hint-line" aria-hidden="true"></span>scroll for the full record</p>
     </div>
 
-    <script>
-        lucide.createIcons();
+    <div class="case-ui" id="caseUI" aria-hidden="true">
+      <div class="case-scrim" aria-hidden="true"></div>
 
-        function toggleSection(id) {
-            const section = document.getElementById(id);
-            const btn = section.previousElementSibling;
-            section.classList.toggle('open');
-            btn.classList.toggle('open');
-        }
+      <button class="case-back" id="caseBack" type="button">← my studio</button>
+      <p class="case-logo" aria-hidden="true">CHORN CHHERY</p>
 
-        /* ── Lightbox ── */
-        const lb        = document.getElementById('lightbox');
-        const lbImg     = document.getElementById('lightbox-img');
-        const lbClose   = document.getElementById('lightbox-close');
-        const lbPrev    = document.getElementById('lightbox-prev');
-        const lbNext    = document.getElementById('lightbox-next');
+      <div class="case-visual" id="caseVisual">
+        <img id="caseVisualImage" src="ChatbotRag.png" alt="ChatBotRAG chat interface showing a document-grounded answer and its source file." width="1903" height="1037">
+        <span class="case-record" id="caseVisualRecord" hidden></span>
+        <span class="case-visual-label" id="caseVisualLabel">CASE FILE · LEAVE BOT</span>
+      </div>
 
-        let currentGallery = [];
-        let currentIndex   = 0;
+      <div class="case-ticket" id="caseTicket">
+        <span class="punch p1" aria-hidden="true"></span>
+        <span class="punch p2" aria-hidden="true"></span>
+        <span class="punch p3" aria-hidden="true"></span>
+        <span class="punch p4" aria-hidden="true"></span>
+        <h2 class="case-title" id="caseTitle">LEAVE BOT</h2>
+        <div class="case-rows" id="caseRows">
+          <span>MINEBEAMITSUMI / FACTORY SYSTEMS / 2026</span>
+          <span>PYTHON · FLASK · POSTGRESQL</span>
+          <span>INTERNAL SYSTEM</span>
+        </div>
+      </div>
 
-        function openLightbox(imgEl, galleryId) {
-            const grid = document.querySelector(`[data-gallery="${galleryId}"]`);
-            currentGallery = Array.from(grid.querySelectorAll('img'));
-            currentIndex   = currentGallery.indexOf(imgEl);
-            showLightboxImage();
-            lb.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+      <div class="case-desc">
+        <p class="case-key" id="caseKey">// leave bot</p>
+        <p class="case-text" id="caseText">— a Telegram leave system in English and Khmer, with a Mini App, retry queue and restore-tested backups.</p>
+        <a class="case-link" id="caseLink" href="https://github.com/ChornChhery" target="_blank" rel="noopener noreferrer" hidden>View repository ↗</a>
+        <p class="case-note" id="caseNote">Internal system · no public demo</p>
+      </div>
 
-        function showLightboxImage() {
-            lbImg.src = currentGallery[currentIndex].src;
-            lbImg.alt = currentGallery[currentIndex].alt;
-            lbPrev.style.display = currentGallery.length > 1 ? 'block' : 'none';
-            lbNext.style.display = currentGallery.length > 1 ? 'block' : 'none';
-        }
+      <div class="case-nav">
+        <button class="case-arrow prev" id="casePrev" type="button" aria-label="Previous case">
+          <span class="arrow-circle" aria-hidden="true">←</span>
+          <span class="arrow-label">previous<br>case</span>
+        </button>
+        <button class="case-arrow next" id="caseNext" type="button" aria-label="Next case">
+          <span class="arrow-circle" aria-hidden="true">→</span>
+          <span class="arrow-label">next<br>case</span>
+        </button>
+      </div>
 
-        function closeLightbox() {
-            lb.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+      <p class="case-counter" id="caseCounter">01 / 06</p>
+      <a class="case-resume" href="#about">full resume ↓</a>
+    </div>
+  </section>
 
-        lbClose.addEventListener('click', closeLightbox);
-        lb.addEventListener('click', function(e) {
-            if (e.target === lb) closeLightbox();
-        });
-        lbPrev.addEventListener('click', function(e) {
-            e.stopPropagation();
-            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-            showLightboxImage();
-        });
-        lbNext.addEventListener('click', function(e) {
-            e.stopPropagation();
-            currentIndex = (currentIndex + 1) % currentGallery.length;
-            showLightboxImage();
-        });
-        document.addEventListener('keydown', function(e) {
-            if (!lb.classList.contains('active')) return;
-            if (e.key === 'Escape')      closeLightbox();
-            if (e.key === 'ArrowLeft')  { currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length; showLightboxImage(); }
-            if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % currentGallery.length; showLightboxImage(); }
-        });
-    </script>
+  <main id="main">
+
+    <section class="record-section" id="about" aria-labelledby="aboutTitle">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="section-index">01 / ABOUT</p>
+          <h2 id="aboutTitle">About the work</h2>
+          <p class="section-meta">RECORD 2026.11</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-lead">
+            <p class="statement">I'm an <strong>IT Programmer at MinebeaMitsumi</strong> in Phnom Penh. I build the internal programs factory teams use every day — a Telegram leave system in English and Khmer, a live production-line and roster website, a two-laptop shift counter, and the monitoring that keeps them running.</p>
+            <p>Before that, I built RAG chatbots and full-stack applications in Bangkok. I care about the unglamorous parts: retries, backups, restore tests, and documentation someone can actually follow.</p>
+            <p class="about-signature">Chorn Chhery <span>— Phnom Penh, Cambodia</span></p>
+          </div>
+
+          <aside class="record-card" aria-label="Current record">
+            <p class="card-kicker">CURRENT RECORD</p>
+            <dl class="record-rows">
+              <div><dt>ROLE</dt><dd>IT Programmer</dd></div>
+              <div><dt>EMPLOYER</dt><dd>MinebeaMitsumi Inc.</dd></div>
+              <div><dt>BASE</dt><dd>Phnom Penh, Cambodia</dd></div>
+              <div><dt>FOCUS</dt><dd>Factory systems, automation, AI/RAG, full-stack</dd></div>
+              <div><dt>EDUCATION</dt><dd>BSc Mathematics &amp; Computer Science, PSU</dd></div>
+              <div><dt>LANGUAGES</dt><dd>Khmer (native), Thai (advanced), English (intermediate)</dd></div>
+            </dl>
+            <div class="card-actions">
+              <a class="text-link" href="ChornChhery_Resume.pdf" download="ChornChhery_Resume.pdf">Download full resume ↓</a>
+              <a class="text-link" href="transcript.pdf" target="_blank" rel="noopener noreferrer">View transcript ↗</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="record-section" id="experience" aria-labelledby="experienceTitle">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="section-index">02 / EXPERIENCE</p>
+          <h2 id="experienceTitle">Experience record</h2>
+          <p class="section-meta">04 ROLES · 2024—2026</p>
+        </div>
+
+        <div class="timeline">
+          <article class="role is-current">
+            <div class="role-date">
+              <span class="role-dot" aria-hidden="true"></span>
+              <p>MAY 2026 — PRESENT</p>
+              <p class="role-place">PHNOM PENH</p>
+            </div>
+            <div class="role-body">
+              <div class="role-top">
+                <h3>IT Programmer</h3>
+                <span class="role-badge">CURRENT</span>
+              </div>
+              <p class="role-company"><a href="https://www.minebeamitsumi.com/" target="_blank" rel="noopener noreferrer">MinebeaMitsumi Inc.</a> · Phnom Penh, Cambodia</p>
+              <p class="role-summary">Build and run the internal programs our factory teams use, from leave requests to production lines.</p>
+              <ul class="role-list">
+                <li>Built and run a Telegram leave system (English and Khmer, group and Mini App) and a factory website for production lines, daily roster, worker borrowing and a leave dashboard. The systems exchange leave approvals and member information.</li>
+                <li>Added retry handling, health checks, nightly backups with a restore test, backup-first server updates with automatic rollback, Grafana monitoring and a Raspberry Pi production counter.</li>
+                <li>Built Teeth, a two-laptop shift counter (IN key button, OUT barcode scanner) with one-click setup and self-repair.</li>
+                <li>Wrote user guides, troubleshooting guides, runbooks, system overviews and handover documentation. Runs on Ubuntu with Docker.</li>
+              </ul>
+              <div class="tag-row">
+                <span>Python</span><span>Flask</span><span>NestJS</span><span>React</span><span>PostgreSQL</span><span>Docker</span><span>Grafana</span>
+              </div>
+              <details class="record-details">
+                <summary>Full role record</summary>
+                <div class="details-body">
+                  <p>The leave system reads normal chat messages, checks leave type, dates, half days, Sunday off and daily limits, blocks duplicate requests, and keeps a retry queue if PostgreSQL is down. The factory website uses Socket.IO for live line status, a Day/Night roster, worker borrowing in one transaction, and a leave dashboard. Both main repositories have CI and an MIT licence.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-date">
+              <span class="role-dot" aria-hidden="true"></span>
+              <p>AUG 2025 — APR 2026</p>
+              <p class="role-place">BANGKOK</p>
+            </div>
+            <div class="role-body">
+              <div class="role-top">
+                <h3>AI Engineer <span>(Co-op Intern, promoted to Staff)</span></h3>
+              </div>
+              <p class="role-company"><a href="https://www.jobthai.com/en/company/231960" target="_blank" rel="noopener noreferrer">Max Savings (Thailand) Co., LTD</a> · Bangkok, Thailand</p>
+              <p class="role-summary">Built a chatbot that answers employees' questions from company documents. It finds the right passages first, then the AI answers from them.</p>
+              <ul class="role-list">
+                <li>Built the document pipeline: PDF upload, three chunking strategies, embeddings (mxbai-embed-large, nomic-embed-text, all-minilm), and Qdrant or SQLite storage.</li>
+                <li>Built hybrid search combining vector search and BM25 with Thai word splitting, Reciprocal Rank Fusion, source attribution and a confidence threshold.</li>
+                <li>Added a Redis cache rebuilt when an admin changes a document. Response time went from about 850 ms to under 100 ms with caching and question detection.</li>
+                <li>Built the Blazor WebAssembly and SignalR chat app with admin and user roles, searchable chat history, per-user memory, response style, temperature, model choice, and light and dark mode.</li>
+                <li>Added an admin evaluation screen with BLEU, GLEU and F1 scores, star ratings, a weighted score, RAG version controls, 30+ documented REST endpoints, xUnit tests, and user and API manuals.</li>
+              </ul>
+              <div class="tag-row">
+                <span>C#</span><span>ASP.NET Core</span><span>Blazor WebAssembly</span><span>SignalR</span><span>Qdrant</span><span>Redis</span><span>Ollama</span>
+              </div>
+              <details class="record-details">
+                <summary>Co-op intern record</summary>
+                <div class="details-body">
+                  <p>As a co-op intern (Aug–Oct 2025), I learned .NET by building practice apps with Clean Architecture, wrote xUnit tests, and worked with Azure DevOps pull requests and code reviews. I built a responsive email screen and a QR-code attendance check-in for the company's e-office system, took over the .NET 9 chatbot, upgraded it to .NET 10, and designed the desktop and mobile screens in Figma.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-date">
+              <span class="role-dot" aria-hidden="true"></span>
+              <p>FEB 2025 — MAY 2025</p>
+              <p class="role-place">BANGKOK</p>
+            </div>
+            <div class="role-body">
+              <div class="role-top">
+                <h3>Full Stack Developer Intern</h3>
+              </div>
+              <p class="role-company"><a href="https://www.biomassx.com/" target="_blank" rel="noopener noreferrer">Biomass Exchange Co., LTD</a> · Bangkok, Thailand</p>
+              <p class="role-summary">BiomassX is a bioenergy exchange where buyers and sellers post orders that are matched into contracts. I built its email notification system in Go.</p>
+              <ul class="role-list">
+                <li>Created 14 automated emails in Thai and English (28 templates) covering registration, password reset, order submission, match found, contract confirmation, rejection, cancellation and reminders.</li>
+                <li>Built the contract flow: first confirmation, a three-day waiting notice, final confirmation, and scheduled retry, reminder and cancellation jobs.</li>
+                <li>Sent emails in the background with goroutines, channels and a pool of five workers; tracked pending, sent and failed; designed the PostgreSQL notifications table.</li>
+                <li>Built booking-history CRUD with HTMX, JavaScript and CSS, plus address and role management on the profile page.</li>
+              </ul>
+              <div class="tag-row">
+                <span>Go</span><span>PostgreSQL</span><span>HTMX</span><span>JavaScript</span><span>CSS</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-date">
+              <span class="role-dot" aria-hidden="true"></span>
+              <p>13—15 DEC 2024</p>
+              <p class="role-place">HAT YAI</p>
+            </div>
+            <div class="role-body">
+              <div class="role-top">
+                <h3>Technical Assistant</h3>
+              </div>
+              <p class="role-company"><a href="https://www.psu.ac.th/en/" target="_blank" rel="noopener noreferrer">Prince of Songkla University</a> · Hat Yai Campus, Thailand</p>
+              <p class="role-summary">Supported Python and robotics workshops at Programming Camp.</p>
+              <ul class="role-list">
+                <li>Supported workshops for 50+ students.</li>
+                <li>Assisted participants with debugging, problem-solving and logic development.</li>
+              </ul>
+              <div class="tag-row"><span>Python</span><span>Robotics</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="record-section" id="projects" aria-labelledby="projectsTitle">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="section-index">03 / SELECTED SYSTEMS</p>
+          <h2 id="projectsTitle">Selected systems</h2>
+          <p class="section-meta">06 FEATURED · 07 MORE</p>
+        </div>
+
+        <div class="project-grid">
+
+          <article class="project-card" id="project-leavebot">
+            <div class="project-top"><p class="project-num">01</p><p class="project-year">2026</p></div>
+            <h3>Leave Bot — Telegram Leave System</h3>
+            <p class="project-sub">MinebeaMitsumi Inc. · Internal system</p>
+            <div class="project-visual" aria-hidden="true">
+              <span class="visual-stamp">LB</span>
+              <span class="visual-lines"><i></i><i></i><i></i><i></i></span>
+              <span class="visual-caption">TELEGRAM · EN / KH · POSTGRESQL</span>
+            </div>
+            <p class="project-summary">A leave system for factory staff and admins. Staff send leave in a Telegram group or in a Mini App, in English or Khmer. Admins approve it in Telegram or in the Mini App. Everything is saved in PostgreSQL.</p>
+            <ul class="project-list">
+              <li>Reads normal chat messages, including typos, changed field order, spelled-out months and Khmer wording, and checks leave type, dates, half days, Sunday off and daily limits.</li>
+              <li>Blocks duplicate requests and handles changes such as “half day more”, “cancel” or “I will come this afternoon”.</li>
+              <li>Approval rules: admins cannot approve their own leave, a reminder arrives after two hours, and a request is approved automatically after five hours if nobody answers.</li>
+              <li>Mini App pages for On Leave, Dashboard, Approvals, Admins, Report, My Requests and Feedback, with access set per person.</li>
+              <li>Retry queue if PostgreSQL is down, nightly backups with a restore test, and backup-first updates with automatic rollback.</li>
+            </ul>
+            <div class="tag-row">
+              <span>Python</span><span>Flask</span><span>PostgreSQL</span><span>SQLite</span><span>Telegram Bot API</span><span>Telegram Mini App</span><span>Chart.js</span><span>Docker Compose</span><span>Caddy</span><span>Cloudflare Tunnel</span>
+            </div>
+            <div class="project-links"><span class="project-note">Internal system · no public demo</span></div>
+            <details class="record-details">
+              <summary>Full technical record</summary>
+              <div class="details-body">
+                <p>Reliability includes startup checks, a health page, nightly database backups, a script that tests a restore, a retry queue for new requests and approve/reject decisions, and a fix for a duplicate-save race when two requests arrived together. Access uses Super Admin, Admin and limited roles, with per-person page access checked on the server, a per-user rate limit, and a signature check for Mini App login. The project has 72 test files, GitHub Actions on every push, health checks, and auto-rollback updates.</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="project-card" id="project-factory">
+            <div class="project-top"><p class="project-num">02</p><p class="project-year">2026</p></div>
+            <h3>Factory Website — Production Lines, Attendance and Leave Dashboard</h3>
+            <p class="project-sub">MinebeaMitsumi Inc. · Internal system</p>
+            <div class="project-visual alt" aria-hidden="true">
+              <span class="visual-stamp">FW</span>
+              <span class="visual-lines"><i></i><i></i><i></i><i></i></span>
+              <span class="visual-caption">LIVE LINES · ROSTER · LEAVE SYNC</span>
+            </div>
+            <p class="project-summary">A website for a plant in Cambodia. It shows each production line, who is at work, who is on leave, and which line needs people.</p>
+            <ul class="project-list">
+              <li>Live line view with worker photos and status colours (present, vacant, borrowed, on leave), updated in real time with Socket.IO.</li>
+              <li>Daily roster for Day and Night shift, with filters and a button to mark an area present.</li>
+              <li>Worker borrowing between lines in one database transaction (half day, OT, full day or custom dates), with automatic return and exportable history.</li>
+              <li>Member list with photos, Excel import and export, and Resign / Re-activate instead of delete.</li>
+              <li>Gets approved leave from the Telegram leave system every minute and sends the member list back after each change.</li>
+              <li>Leave dashboard with a heat calendar, trend line and top leave takers with period, skill and position filters.</li>
+            </ul>
+            <div class="tag-row">
+              <span>NestJS</span><span>Prisma</span><span>Socket.IO</span><span>PostgreSQL</span><span>React</span><span>Vite</span><span>TypeScript</span><span>Tailwind CSS</span><span>Docker</span><span>nginx</span>
+            </div>
+            <div class="project-links"><span class="project-note">Internal system · no public demo</span></div>
+            <details class="record-details">
+              <summary>Full technical record</summary>
+              <div class="details-body">
+                <p>The roster is created automatically at 00:05 Cambodia time for Day and Night shift. The leave sync never guesses: an unclear half day is skipped, and it only marks people on leave, never absent. A line builder handles areas, lines and stations; a full-screen list lets an admin drag or tap a person onto a line; a display board and a short-staff page support daily operations. Admin monitoring includes an audit log of leave edits, a read-only feedback inbox, a startup secrets check, and cached member-photo links. The project has 141 backend specs, GitHub Actions CI, and automatic server updates with rollback.</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="project-card" id="project-teeth">
+            <div class="project-top"><p class="project-num">03</p><p class="project-year">2026</p></div>
+            <h3><a class="project-link" href="https://github.com/ChornChhery/Production-Plan" target="_blank" rel="noopener noreferrer">Teeth — Two-Laptop Production Counter</a></h3>
+            <p class="project-sub">MinebeaMitsumi Inc. · Repository</p>
+            <div class="project-visual" aria-hidden="true">
+              <span class="visual-stamp">TH</span>
+              <span class="visual-lines"><i></i><i></i><i></i><i></i></span>
+              <span class="visual-caption">IN / OUT · DAY / NIGHT · EXCEL LOG</span>
+            </div>
+            <p class="project-summary">A Windows tool that counts units IN and OUT of a production line for each Day and Night shift, without disturbing the existing print software.</p>
+            <ul class="project-list">
+              <li>Laptop 1 listens to the key button and sends +1 IN over a cable; laptop 2 reads the barcode scanner for OUT and shows the shift totals, with an Excel log of every shift.</li>
+              <li>Uses a second USB-to-Ethernet adapter on a private network, so the built-in port used by printing is never changed. If the cable is out, counts wait in a file and are sent later.</li>
+              <li>One-click setup and self-repair (Teeth Doctor, PowerShell): sets the IP, opens firewall rules, installs .NET 4.8 if missing, checks the time zone, restarts closed programs, and re-checks every five minutes.</li>
+              <li>113 automated checks in a simulator; the network, scanner, key button and printing were proven on the real laptops.</li>
+            </ul>
+            <div class="tag-row">
+              <span>C#</span><span>.NET Framework 4.8</span><span>PowerShell</span><span>SQLite</span><span>Excel</span><span>TCP sockets</span><span>Windows firewall</span><span>Scheduled tasks</span>
+            </div>
+            <div class="project-links"><a class="project-link" href="https://github.com/ChornChhery/Production-Plan" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+            <details class="record-details">
+              <summary>Full technical record</summary>
+              <div class="details-body">
+                <p>Wrote a quick visual guide, a 17-page reference, a troubleshooting guide and a rollout kit. The setup tool repairs itself every five minutes with no window, so non-technical staff can install and maintain the counter.</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="project-card" id="project-chatbotrag">
+            <div class="project-top"><p class="project-num">04</p><p class="project-year">2026</p></div>
+            <h3><a class="project-link" href="https://github.com/ChornChhery/RAG-" target="_blank" rel="noopener noreferrer">ChatBotRAG — Document Question Answering Chatbot</a></h3>
+            <p class="project-sub">Personal project · Repository</p>
+            <div class="shot-grid">
+              <button class="shot" type="button" data-gallery="chatbotrag" data-src="ChatbotRag.png" data-alt="ChatBotRAG chat interface showing a document-grounded answer and its source file."><img src="ChatbotRag.png" alt="ChatBotRAG chat interface showing a document-grounded answer and its source file." loading="lazy" width="1903" height="1037"></button>
+              <button class="shot" type="button" data-gallery="chatbotrag" data-src="ChatbotRag1.png" data-alt="ChatBotRAG document library with uploaded PDF files."><img src="ChatbotRag1.png" alt="ChatBotRAG document library with uploaded PDF files." loading="lazy" width="1901" height="1032"></button>
+              <button class="shot" type="button" data-gallery="chatbotrag" data-src="ChatbotRag2.png" data-alt="ChatBotRAG evaluation tab with BLEU, GLEU, F1 and LLM Judge scores."><img src="ChatbotRag2.png" alt="ChatBotRAG evaluation tab with BLEU, GLEU, F1 and LLM Judge scores." loading="lazy" width="1908" height="1037"></button>
+              <button class="shot" type="button" data-gallery="chatbotrag" data-src="ChatbotRag3.png" data-alt="ChatBotRAG settings panel for chunking, retrieval and model options."><img src="ChatbotRag3.png" alt="ChatBotRAG settings panel for chunking, retrieval and model options." loading="lazy" width="1900" height="1033"></button>
+            </div>
+            <p class="project-summary">A full-stack RAG chatbot built with .NET 10, Blazor WebAssembly and SignalR. Upload PDF, TXT or Markdown files and chat with them in real time using local Ollama models — no cloud dependency, full privacy.</p>
+            <ul class="project-list">
+              <li>Built a full-stack web application using Blazor WebAssembly and ASP.NET Core with token-by-token streaming chat via SignalR.</li>
+              <li>Implemented hybrid search (vector + BM25, default 70/30) with source chunks shown under each reply.</li>
+              <li>Moved all embeddings to a Qdrant vector store behind an interface. SQL Server keeps documents, chunk text, chats and messages. An upload writes vectors first; if Qdrant is down, the upload is marked Failed.</li>
+              <li>Supported three chunking strategies (FixedSize, ContentAware, Semantic) with English, Thai and Khmer tokenization.</li>
+              <li>Built a RAG evaluation tab that scores answer quality with BLEU, GLEU, F1 and an LLM Judge. Every run is saved and comparable.</li>
+              <li>Added JWT login with an admin role, and a chat sidebar with pin, rename, delete, and light, dark or system theme.</li>
+            </ul>
+            <div class="tag-row">
+              <span>.NET 10</span><span>Blazor WebAssembly</span><span>ASP.NET Core</span><span>SignalR</span><span>EF Core</span><span>JWT / Identity</span><span>Ollama</span><span>Qdrant</span><span>SQL Server</span><span>PdfPig</span><span>Markdig</span><span>Docker Compose</span>
+            </div>
+            <div class="project-links"><a class="project-link" href="https://github.com/ChornChhery/RAG-" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+            <details class="record-details">
+              <summary>Full technical record</summary>
+              <div class="details-body">
+                <p>Upload splits a document into chunks using the selected strategy; each chunk becomes a 1024-dim vector via mxbai-embed-large and is stored in Qdrant. A query embeds the question, runs vector and BM25 search, fuses the scores, retrieves the top passages above the minimum score, and sends them to llama3.2:3b as context. The response streams token by token over SignalR. The evaluation pipeline generates a reference answer from retrieved chunks, generates the RAG answer, compares both with BLEU, GLEU and F1, and adds an LLM Judge score. Pure NLP evaluators are kept separate from DI services and exposed through a REST API. Changing the embedding model requires a new Qdrant collection name and a re-upload.</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="project-card" id="project-skincare">
+            <div class="project-top"><p class="project-num">05</p><p class="project-year">2025</p></div>
+            <h3><a class="project-link" href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank" rel="noopener noreferrer">Jamoon Skincare Store — Online Shop + POS with Automatic KHQR Payments</a></h3>
+            <p class="project-sub">Personal project · Repository and live demo</p>
+            <div class="shot-grid two">
+              <button class="shot" type="button" data-gallery="skincare" data-src="skincare.png" data-alt="Jamoon Skincare storefront with product filters and a product grid."><img src="skincare.png" alt="Jamoon Skincare storefront with product filters and a product grid." loading="lazy" width="1910" height="1037"></button>
+              <button class="shot" type="button" data-gallery="skincare" data-src="skincare1.png" data-alt="Jamoon Skincare product detail page with reviews and purchase options."><img src="skincare1.png" alt="Jamoon Skincare product detail page with reviews and purchase options." loading="lazy" width="1917" height="1044"></button>
+            </div>
+            <p class="project-summary">A complete English and Khmer skincare shop in one small system: customer website, admin panel, counter POS and automatic KHQR (Bakong) payments. The website and the staff POS share the same products, stock, orders and reports.</p>
+            <ul class="project-list">
+              <li>Built the storefront: catalogue with skin-type filter and search, reviews, wishlist, cart, coupons, guest checkout, order tracking, saved addresses, printable receipts and an installable PWA.</li>
+              <li>Integrated automatic KHQR payments through Bakong. Each order gets its own QR with the exact amount and a 15-minute expiry; orders confirm by page polling and a server sweep every 20 seconds. A wrong-amount payment goes to admin review.</li>
+              <li>Built a counter POS with barcode scanner support, discounts, a cash change calculator, mandatory payment photos for bank or QR sales, printable receipts and sales history.</li>
+              <li>Added owner-only cost and profit tracking, with costs frozen onto every order line; a smoke test scans every public response to prove no cost leaks.</li>
+              <li>Built the admin panel: dashboard, fulfilment board, returns and refunds, inventory, coupons, reviews, an Excel/CSV Export Center (9 workbooks) and Excel product import.</li>
+              <li>Added four staff roles, Telegram alerts for new orders, payments, low stock and stuck orders, e-mailed password reset, and full English/Khmer copy (2,484 strings each).</li>
+              <li>Backed by 968 automated checks (684 API smoke, 254 frontend, 30 dashboard and Bakong tests).</li>
+            </ul>
+            <div class="tag-row">
+              <span>Next.js 15</span><span>React 19</span><span>TypeScript</span><span>Tailwind CSS 4</span><span>Node.js</span><span>Express</span><span>SQLite</span><span>Bakong KHQR</span><span>ExcelJS</span><span>Nodemailer</span><span>Telegram Bot API</span><span>Vitest</span><span>Vercel</span><span>Caddy</span><span>Cloudflare</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/ChornChhery/Ecommerce-Skincare" target="_blank" rel="noopener noreferrer">View repository ↗</a>
+              <a class="project-link" href="https://jameskincare.vercel.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+            </div>
+            <details class="record-details">
+              <summary>Full technical record</summary>
+              <div class="details-body">
+                <p>The website never touches the database; it only calls the REST API. Prices, stock, totals, coupons and admin rights are decided in the backend. Every request passes helmet and CORS, a rate limit, JWT auth, permission checks on admin routes, and zod validation before the business rules run. Backend layers go one way: routes → lib → db. The frontend has its own enforced layer order, checked by an architecture script. One status table governs every order change, whether from a click, a bulk action or an automatic payment. Cancelling puts items back in stock and releases the coupon. The SQLite database has 19 tables, created and upgraded automatically on start.</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="project-card" id="project-datapilot">
+            <div class="project-top"><p class="project-num">06</p><p class="project-year">2025</p></div>
+            <h3><a class="project-link" href="https://github.com/ChornChhery/DataPilot_AI" target="_blank" rel="noopener noreferrer">DataPilot AI — Autonomous Data Scientist Agent Platform</a></h3>
+            <p class="project-sub">Personal project · Repository</p>
+            <div class="shot-grid">
+              <button class="shot" type="button" data-gallery="datapilot" data-src="Datapilot1.png" data-alt="DataPilot AI upload screen for selecting a CSV and target column."><img src="Datapilot1.png" alt="DataPilot AI upload screen for selecting a CSV and target column." loading="lazy" width="1902" height="1035"></button>
+              <button class="shot" type="button" data-gallery="datapilot" data-src="Datapilot2.png" data-alt="DataPilot AI processing screen with pipeline progress."><img src="Datapilot2.png" alt="DataPilot AI processing screen with pipeline progress." loading="lazy" width="1910" height="1040"></button>
+              <button class="shot" type="button" data-gallery="datapilot" data-src="Datapilot3.png" data-alt="DataPilot AI results dashboard comparing trained models."><img src="Datapilot3.png" alt="DataPilot AI results dashboard comparing trained models." loading="lazy" width="1907" height="1033"></button>
+              <button class="shot" type="button" data-gallery="datapilot" data-src="Datapilot4.png" data-alt="DataPilot AI feature importance and correlation heatmap."><img src="Datapilot4.png" alt="DataPilot AI feature importance and correlation heatmap." loading="lazy" width="1910" height="1037"></button>
+            </div>
+            <p class="project-summary">A zero-code AutoML platform. Upload a CSV, select a target column, and the system cleans data, trains multiple ML models, selects the best one, and delivers a visual dashboard with a downloadable PDF report and cleaned dataset.</p>
+            <ul class="project-list">
+              <li>Built a full-stack web application using React and FastAPI that runs a six-stage ML pipeline: data understanding, cleaning, feature engineering, statistical analysis, model training and evaluation.</li>
+              <li>Trained three models simultaneously (Logistic Regression, Random Forest, Gradient Boosting) for classification and regression, selecting the best by cross-validation score.</li>
+              <li>Developed an interactive results dashboard with model comparison bar charts, feature importance and a Pearson correlation heatmap built in pure SVG.</li>
+              <li>Implemented PDF report generation in the browser with jsPDF: a full A4 report with metrics, feature importance bars and a correlation heatmap, without server-side rendering.</li>
+            </ul>
+            <div class="tag-row">
+              <span>React 19</span><span>Vite 7</span><span>Recharts</span><span>Axios</span><span>jsPDF</span><span>Python 3.12</span><span>FastAPI</span><span>Uvicorn</span><span>scikit-learn</span><span>Pandas</span><span>NumPy</span><span>SciPy</span><span>MongoDB</span><span>Docker Compose</span><span>Kubernetes</span><span>nginx</span>
+            </div>
+            <div class="project-links"><a class="project-link" href="https://github.com/ChornChhery/DataPilot_AI" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+            <details class="record-details">
+              <summary>Full technical record</summary>
+              <div class="details-body">
+                <p>The backend detects column types, null percentages and the problem type, removes duplicates, fills numeric nulls with the median and categorical nulls with the mode, applies LabelEncoder, and scales numeric features with StandardScaler. It computes descriptive statistics and a Pearson correlation matrix, trains all three models on the full training set, runs k-fold cross-validation, evaluates on a held-out test set, extracts feature importances, and selects the best model by highest CV mean score. The frontend polls the status endpoint every two seconds during processing. The correlation heatmap is pure SVG. The cleaned CSV is streamed back from the backend. The whole stack runs with Docker Compose, and Kubernetes manifests are included.</p>
+              </div>
+            </details>
+          </article>
+        </div>
+
+        <div class="more-head">
+          <h3>More records</h3>
+          <p>Additional verified projects and internal systems.</p>
+        </div>
+
+        <div class="more-grid">
+          <article class="mini-record">
+            <div class="mini-top"><p class="mini-num">07</p><p class="mini-year">2025</p></div>
+            <h4><a class="project-link" href="https://github.com/ChornChhery/ChatBot-with-React-Python" target="_blank" rel="noopener noreferrer">ChatBotRagPy — RAG Chatbot with FastAPI + React</a></h4>
+            <p>A full-stack RAG chatbot built with FastAPI and React. Upload documents and chat with them in real time using local Ollama models, with English, Thai and Khmer support.</p>
+            <ul>
+              <li>WebSocket streaming and intelligent RAG routing with a 0.65 confidence threshold.</li>
+              <li>Three chunking strategies, pythainlp and Khmer trigram tokenization.</li>
+              <li>BLEU, GLEU, F1 and LLM Judge evaluation, plus an in-memory embedding cache.</li>
+            </ul>
+            <div class="tag-row"><span>React</span><span>Vite</span><span>FastAPI</span><span>WebSocket</span><span>Ollama</span><span>SQL Server</span><span>pythainlp</span></div>
+            <div class="project-links"><a class="project-link" href="https://github.com/ChornChhery/ChatBot-with-React-Python" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+          </article>
+
+          <article class="mini-record">
+            <div class="mini-top"><p class="mini-num">08</p><p class="mini-year">2025</p></div>
+            <h4><a class="project-link" href="https://github.com/ChornChhery/Rag-AI-Agent" target="_blank" rel="noopener noreferrer">RAG App — Document Question Answering System</a></h4>
+            <p>A RAG application for intelligent question answering over uploaded PDF documents using local AI models.</p>
+            <ul>
+              <li>FastAPI backend for document upload, ingestion and query APIs.</li>
+              <li>PDF parsing, chunking and embeddings with LlamaIndex; Ollama nomic-embed-text and Qdrant.</li>
+              <li>Streamlit interface and Docker-managed vector database.</li>
+            </ul>
+            <div class="tag-row"><span>Python</span><span>FastAPI</span><span>LlamaIndex</span><span>Ollama</span><span>Qdrant</span><span>Streamlit</span><span>Docker</span></div>
+            <div class="project-links"><a class="project-link" href="https://github.com/ChornChhery/Rag-AI-Agent" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+          </article>
+
+          <article class="mini-record">
+            <div class="mini-top"><p class="mini-num">09</p><p class="mini-year">2026</p></div>
+            <h4><a class="project-link" href="https://github.com/ChornChhery/Monitoring-PC" target="_blank" rel="noopener noreferrer">Server Monitoring Dashboards</a></h4>
+            <p>Grafana dashboards for the leave system and the factory website, running on the same server in Docker.</p>
+            <ul>
+              <li>Four dashboards: server health, leave counts, leave-system speed and website speed.</li>
+              <li>Read-only Python exporter, localhost-only services, memory limits and 30 days of data.</li>
+              <li>Privacy: a read-only database role, no names, IP addresses or cookies stored.</li>
+            </ul>
+            <div class="tag-row"><span>Grafana</span><span>Prometheus</span><span>node_exporter</span><span>cAdvisor</span><span>Python</span><span>Docker Compose</span></div>
+            <div class="project-links"><a class="project-link" href="https://github.com/ChornChhery/Monitoring-PC" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+          </article>
+
+          <article class="mini-record">
+            <div class="mini-top"><p class="mini-num">10</p><p class="mini-year">2026</p></div>
+            <h4>Production-Line Counter on Raspberry Pi</h4>
+            <p>A full-screen counter for a production line. It shows the plan, the target and the real count for each shift.</p>
+            <ul>
+              <li>Reads input, output and a red-light stop signal through GPIO and ignores false pulses.</li>
+              <li>Counts a unit only when two signals are three to four seconds apart, after removing stopped time.</li>
+              <li>Day and Night schedule editor, PIN-protected corrections and a simulation mode.</li>
+            </ul>
+            <div class="tag-row"><span>Python</span><span>Tkinter</span><span>Raspberry Pi GPIO</span><span>JSON</span></div>
+            <div class="project-links"><span class="project-note">Internal system · no public demo</span></div>
+          </article>
+
+          <article class="mini-record">
+            <div class="mini-top"><p class="mini-num">11</p><p class="mini-year">2024</p></div>
+            <h4><a class="project-link" href="https://github.com/ChornChhery/Chicken-Farm-IOT" target="_blank" rel="noopener noreferrer">IoT-Based Chicken Farm Monitoring System</a></h4>
+            <p>Automated farm monitoring with data streaming, validation and intelligent alerting.</p>
+            <ul>
+              <li>Real-time IoT ingestion into MongoDB and a validation pipeline for sensor readings.</li>
+              <li>Shiny and Plotly analytics dashboard with trend visualization.</li>
+              <li>LINE notifications for growth anomalies.</li>
+            </ul>
+            <div class="tag-row"><span>MongoDB</span><span>Ubuntu Server</span><span>Shiny</span><span>Plotly</span><span>IoT sensors</span><span>LINE Notify API</span></div>
+            <div class="project-links"><a class="project-link" href="https://github.com/ChornChhery/Chicken-Farm-IOT" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+          </article>
+
+          <article class="mini-record">
+            <div class="mini-top"><p class="mini-num">12</p><p class="mini-year">2024</p></div>
+            <h4><a class="project-link" href="https://github.com/ChornChhery/Laundry-Management-System" target="_blank" rel="noopener noreferrer">Jamoon Laundry Management System</a></h4>
+            <p>A web-based laundry management system for student-run laundry services with real-time machine availability, booking and administrative analytics.</p>
+            <ul>
+              <li>Real-time machine status with AJAX, without page reloads.</li>
+              <li>Smart-Reservation with a 30-minute activation window and server-side cancellation.</li>
+              <li>Admin ERP dashboard with revenue analytics and usage reporting.</li>
+            </ul>
+            <div class="tag-row"><span>PHP</span><span>JavaScript</span><span>AJAX</span><span>MySQL</span><span>Chart.js</span></div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/ChornChhery/Laundry-Management-System" target="_blank" rel="noopener noreferrer">View repository ↗</a>
+              <a class="project-link" href="https://jamoon.free.nf/" target="_blank" rel="noopener noreferrer">View website ↗</a>
+            </div>
+          </article>
+
+          <article class="mini-record">
+            <div class="mini-top"><p class="mini-num">13</p><p class="mini-year">2025</p></div>
+            <h4><a class="project-link" href="https://github.com/ChornChhery/Jame" target="_blank" rel="noopener noreferrer">Jame — Inventory &amp; Sales Management App</a></h4>
+            <p>An end-to-end mobile point-of-sale system with an analytics dashboard and inventory management.</p>
+            <ul>
+              <li>Real-time barcode scanning and automated PDF receipt generation.</li>
+              <li>Revenue, stock, best-seller and profit-margin analytics.</li>
+              <li>Barcode-based stock updates and low-stock alerts.</li>
+            </ul>
+            <div class="tag-row"><span>Flutter</span><span>Dart</span><span>SQLite</span><span>MySQL</span><span>Barcode scanner</span><span>PDF generation</span></div>
+            <div class="project-links"><a class="project-link" href="https://github.com/ChornChhery/Jame" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="record-section" id="skills" aria-labelledby="skillsTitle">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="section-index">04 / STACK</p>
+          <h2 id="skillsTitle">Technical stack</h2>
+          <p class="section-meta">VERIFIED SKILLS</p>
+        </div>
+
+        <div class="stack-grid">
+          <div class="stack-col">
+            <h3>Languages</h3>
+            <ul><li>Python</li><li>TypeScript</li><li>C#</li><li>SQL</li><li>JavaScript</li><li>Go (basic)</li></ul>
+          </div>
+          <div class="stack-col">
+            <h3>Backend &amp; APIs</h3>
+            <ul><li>NestJS</li><li>Express</li><li>Flask</li><li>FastAPI</li><li>ASP.NET Core</li><li>SignalR</li><li>WebSocket</li><li>Socket.IO</li></ul>
+          </div>
+          <div class="stack-col">
+            <h3>Frontend</h3>
+            <ul><li>React</li><li>Next.js</li><li>Blazor WebAssembly</li><li>Tailwind CSS</li><li>HTMX</li></ul>
+          </div>
+          <div class="stack-col">
+            <h3>Data</h3>
+            <ul><li>PostgreSQL</li><li>SQL Server</li><li>SQLite</li><li>Redis</li><li>Qdrant</li><li>MongoDB</li><li>Prisma</li></ul>
+          </div>
+          <div class="stack-col">
+            <h3>AI / RAG</h3>
+            <ul><li>Hybrid vector + BM25</li><li>Ollama / local models</li><li>Embeddings</li><li>BLEU / GLEU / F1</li><li>scikit-learn</li></ul>
+          </div>
+          <div class="stack-col">
+            <h3>DevOps &amp; integrations</h3>
+            <ul><li>Docker Compose</li><li>Ubuntu</li><li>nginx</li><li>Caddy</li><li>Cloudflare Tunnel</li><li>Grafana</li><li>Prometheus</li><li>GitHub Actions</li><li>Telegram Bot API</li><li>Bakong KHQR</li></ul>
+          </div>
+          <div class="stack-col">
+            <h3>Testing</h3>
+            <ul><li>xUnit</li><li>Jest</li><li>Vitest</li></ul>
+          </div>
+          <div class="stack-col">
+            <h3>Also used</h3>
+            <ul><li>PHP</li><li>Java</li><li>C / C++</li><li>Dart / Flutter</li><li>MySQL</li><li>XGBoost</li><li>K-Means</li><li>Decision Tree</li><li>Raspberry Pi GPIO</li><li>Azure DevOps</li></ul>
+          </div>
+        </div>
+
+        <div class="stack-foot">
+          <div>
+            <h3>Communication languages</h3>
+            <p>Khmer (native) · Thai (advanced) · English (intermediate)</p>
+          </div>
+          <div>
+            <h3>Working style</h3>
+            <p>Build the whole path — UI, API, data, deployment, monitoring and the documentation that lets someone else run it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="record-section" id="education" aria-labelledby="educationTitle">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="section-index">05 / EDUCATION</p>
+          <h2 id="educationTitle">Education &amp; activities</h2>
+          <p class="section-meta">PSU · 2022—2026</p>
+        </div>
+
+        <div class="edu-grid">
+          <article class="edu-card">
+            <p class="card-kicker">DEGREE RECORD</p>
+            <h3><a class="project-link" href="https://www.psu.ac.th/en/" target="_blank" rel="noopener noreferrer">Prince of Songkla University</a>, Pattani Campus</h3>
+            <p class="edu-degree">Bachelor of Mathematics and Computer Science</p>
+            <p class="edu-major">Major: <a class="project-link" href="https://www.facebook.com/MCSPSUPattani/" target="_blank" rel="noopener noreferrer">Data Science</a></p>
+            <dl class="record-rows">
+              <div><dt>PERIOD</dt><dd>July 2022 — April 2026</dd></div>
+              <div><dt>GPA</dt><dd>3.68 / 4.0</dd></div>
+              <div><dt>HONORS</dt><dd>First Class Honors</dd></div>
+              <div><dt>GRADUATED</dt><dd>April 2026</dd></div>
+            </dl>
+            <a class="text-link" href="transcript.pdf" target="_blank" rel="noopener noreferrer">View transcript ↗</a>
+          </article>
+
+          <article class="edu-card activity-card">
+            <p class="card-kicker">ACTIVITY RECORD</p>
+            <h3>International English Exchange Program</h3>
+            <p class="edu-degree">Universiti Malaysia Kelantan</p>
+            <p class="edu-major">Kelantan, Malaysia · 08—14 September 2025</p>
+            <ul class="role-list">
+              <li>Enhanced English communication skills through international workplace training.</li>
+              <li>Led group discussions and team projects to build mutual understanding and effective participation.</li>
+              <li>Built international relationships while representing Cambodian culture.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="record-section contact-section" id="contact" aria-labelledby="contactTitle">
+      <div class="section-inner">
+        <div class="contact-panel">
+          <div class="contact-copy">
+            <p class="section-index">06 / CONTACT</p>
+            <h2 id="contactTitle">Open a channel</h2>
+            <p class="contact-lede">For work, collaboration or a question about a project, email is the most direct route.</p>
+            <a class="contact-email" href="mailto:chherychorn@gmail.com">chherychorn@gmail.com</a>
+            <p class="contact-note">Based in Phnom Penh, Cambodia. No form, no tracking — just direct links.</p>
+          </div>
+          <div class="contact-links">
+            <a href="https://github.com/ChornChhery" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/chhery-chorn/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span aria-hidden="true">↗</span></a>
+            <a href="https://t.me/chornchhery" target="_blank" rel="noopener noreferrer"><span>Telegram</span><span aria-hidden="true">↗</span></a>
+            <a href="ChornChhery_Resume.pdf" download="ChornChhery_Resume.pdf"><span>Full resume</span><span aria-hidden="true">↓</span></a>
+            <a href="ChornChhery_Resume_1page.pdf" download="ChornChhery_Resume_1page.pdf"><span>One-page resume</span><span aria-hidden="true">↓</span></a>
+            <a href="transcript.pdf" target="_blank" rel="noopener noreferrer"><span>Transcript</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-name">Chorn Chhery</p>
+        <p class="footer-role">IT Programmer · MinebeaMitsumi Inc. · Phnom Penh</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Back to top ↑</a>
+        <a href="mailto:chherychorn@gmail.com">Email</a>
+        <a href="ChornChhery_Resume.pdf" download="ChornChhery_Resume.pdf">Resume ↓</a>
+        <a href="transcript.pdf" target="_blank" rel="noopener noreferrer">Transcript ↗</a>
+      </div>
+      <p class="footer-meta">Static site · no trackers · 2026</p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Project image viewer">
+    <div class="lightbox-bar">
+      <span class="lightbox-counter" id="lbCounter">01 / 04</span>
+      <button class="lightbox-close" id="lbClose" type="button" aria-label="Close image viewer">×</button>
+    </div>
+    <button class="lightbox-nav prev" id="lbPrev" type="button" aria-label="Previous image">←</button>
+    <img id="lbImage" src="ChatbotRag.png" alt="Project image" width="1903" height="1037">
+    <button class="lightbox-nav next" id="lbNext" type="button" aria-label="Next image">→</button>
+  </dialog>
+
+  <script src="app.js"></script>
 </body>
 </html>
