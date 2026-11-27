@@ -291,17 +291,16 @@
   const lightboxClose = $("#lbClose");
   const lightboxPrev = $("#lbPrev");
   const lightboxNext = $("#lbNext");
-  const galleries = new Map();
-
-  $$(".shot").forEach((button) => {
-    const name = button.dataset.gallery || "default";
-    if (!galleries.has(name)) galleries.set(name, []);
-    galleries.get(name).push({
-      src: button.dataset.src,
-      alt: button.dataset.alt || "",
-      caption: button.dataset.caption || button.dataset.alt || "",
-    });
-  });
+  const PICS = ".shot, .pic";
+  // Build the list at open time so a filtered wall only steps through visible photos.
+  const galleryItems = (name) =>
+    $$(PICS)
+      .filter((b) => (b.dataset.gallery || "default") === name && !b.closest("[hidden], .is-hidden"))
+      .map((b) => ({
+        src: b.dataset.src,
+        alt: b.dataset.alt || "",
+        caption: b.dataset.caption || b.dataset.alt || "",
+      }));
 
   let gallery = [];
   let galleryIndex = 0;
@@ -316,7 +315,7 @@
   }
 
   function openLightbox(button) {
-    gallery = galleries.get(button.dataset.gallery || "default") || [];
+    gallery = galleryItems(button.dataset.gallery || "default");
     galleryIndex = gallery.findIndex((item) => item.src === button.dataset.src);
     if (galleryIndex < 0) galleryIndex = 0;
     renderLightbox();
@@ -340,7 +339,7 @@
     renderLightbox();
   }
 
-  $$(".shot").forEach((button) => {
+  $$(PICS).forEach((button) => {
     button.addEventListener("click", () => openLightbox(button));
   });
 
@@ -365,4 +364,64 @@
       stepLightbox(-1);
     }
   });
+
+  /* ── Pointer tilt (fine pointers only, never with reduced motion) ── */
+
+  const canTilt = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+  function bindTilt(el, max) {
+    let frame = 0;
+    el.addEventListener("pointermove", (event) => {
+      if (!canTilt.matches || reducedMotion.matches) return;
+      const box = el.getBoundingClientRect();
+      const px = (event.clientX - box.left) / box.width;
+      const py = (event.clientY - box.top) / box.height;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        el.classList.add("is-live");
+        el.style.setProperty("--ry", `${((px - 0.5) * 2 * max).toFixed(2)}deg`);
+        el.style.setProperty("--rx", `${((0.5 - py) * 2 * max).toFixed(2)}deg`);
+        el.style.setProperty("--gx", `${(px * 100).toFixed(0)}%`);
+        el.style.setProperty("--gy", `${(py * 100).toFixed(0)}%`);
+      });
+    });
+    el.addEventListener("pointerleave", () => {
+      cancelAnimationFrame(frame);
+      el.classList.remove("is-live");
+      el.style.setProperty("--rx", "0deg");
+      el.style.setProperty("--ry", "0deg");
+    });
+  }
+
+  $$(".lead-card.tilt").forEach((el) => bindTilt(el, 5));
+  $$(".tile.tilt").forEach((el) => bindTilt(el, 7));
+
+  /* ── Life wall filter ───────────────────────────────── */
+
+  const wallTabs = $$(".wall-tab");
+  const wallTiles = $$(".tile");
+
+  wallTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const filter = tab.dataset.filter;
+      wallTabs.forEach((other) => {
+        const on = other === tab;
+        other.classList.toggle("is-on", on);
+        other.setAttribute("aria-pressed", String(on));
+      });
+      let shown = 0;
+      wallTiles.forEach((tile) => {
+        const match = filter === "all" || tile.dataset.group === filter;
+        tile.classList.toggle("is-hidden", !match);
+        tile.classList.remove("is-in");
+        if (match) {
+          tile.style.setProperty("--i", String(Math.min(shown, 10)));
+          shown += 1;
+          void tile.offsetWidth; // restart the entrance animation
+          tile.classList.add("is-in");
+        }
+      });
+    });
+  });
+
 })();
