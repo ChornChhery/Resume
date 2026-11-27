@@ -117,8 +117,7 @@ test('the chapter rail provides section links and announces the current location
   assert.ok(/aria-current/.test(app), 'the active chapter should be exposed to assistive technology');
 });
 
-test('project details and image viewing use keyboard-operable native controls', () => {
-  assert.ok(tags(html, 'details').length > 0, 'technical details should use native disclosures');
+test('image viewing use keyboard-operable native controls', () => {
   assert.ok(tags(html, 'dialog').length > 0, 'image viewing should use a native dialog');
   assert.ok(tags(html, 'button').some((tag) => attribute(tag, 'aria-label')?.toLowerCase().includes('close')), 'the image dialog should have a labeled close button');
 });

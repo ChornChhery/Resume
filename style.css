@@ -1979,55 +1979,6 @@ main {
   object-position: center 34%;
 }
 
-.story-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.5fr);
-  gap: clamp(20px, 4vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(24px, 4vw, 42px);
-}
-
-.story-intro .statement {
-  max-width: 62ch;
-}
-
-.story-note {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  line-height: 1.6;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-.story-feature {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.story-feature .shot {
-  aspect-ratio: 4 / 5;
-}
-
-.story-grid {
-  columns: 3;
-  column-gap: 10px;
-}
-
-.story-grid .shot {
-  width: 100%;
-  margin: 0 0 10px;
-  aspect-ratio: auto;
-  break-inside: avoid;
-}
-
-.story-grid .shot img {
-  height: auto;
-  object-fit: contain;
-}
-
 .archive-head {
   display: flex;
   flex-wrap: wrap;
@@ -2054,7 +2005,7 @@ main {
 .archive-head > p {
   max-width: 34ch;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   line-height: 1.6;
   text-transform: uppercase;
@@ -2063,7 +2014,7 @@ main {
 
 .archive-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(14px, 2vw, 24px);
 }
 
@@ -2085,7 +2036,7 @@ main {
 
 .archive-kicker {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--rust);
@@ -2115,6 +2066,14 @@ main {
 
 .archive-shots.mobile-shots .shot {
   aspect-ratio: 9 / 16;
+}
+
+.archive-shots.wide-shots .shot {
+  aspect-ratio: 16 / 9;
+}
+
+.archive-shots.wide-shots .shot img {
+  object-position: left top;
 }
 
 .archive-shots.mobile-shots .shot img {
@@ -2810,15 +2769,6 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .story-intro,
-  .story-feature {
-    grid-template-columns: 1fr;
-  }
-
-  .story-grid {
-    columns: 2;
-  }
-
   .role {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -2999,3 +2949,288 @@ main {
     animation: none;
   }
 }
+
+/* Story: three chapters, three different layouts */
+
+.story-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px 32px;
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+
+.story-intro .statement {
+  max-width: 46ch;
+  text-wrap: pretty;
+}
+
+.story-note {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.chapter {
+  --rust-text: #9a4320;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: clamp(52px, 7vw, 96px);
+}
+
+.story-intro + .chapter {
+  margin-top: 0;
+}
+
+.chapter-head {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px 40px;
+  padding-top: 14px;
+  margin-bottom: 8px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.chapter-head h3 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.chapter-note {
+  max-width: 42ch;
+}
+
+.chapter-note p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+.chapter-note .chapter-meta {
+  margin-bottom: 4px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust-text);
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  margin: 0;
+}
+
+.frame .shot {
+  flex: 1 1 auto;
+  aspect-ratio: var(--ar, 16 / 10);
+}
+
+.frame .shot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame figcaption {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+.frame-no {
+  flex: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--rust-text);
+}
+
+/* 01 Campus: staggered 4/8 then 7/5, row heights set by the wide frames */
+
+.f-expo {
+  grid-column: 1 / span 4;
+}
+
+.f-presentation {
+  grid-column: 5 / span 8;
+  --ar: 1280 / 746;
+}
+
+.f-cohort {
+  grid-column: 1 / span 7;
+  --ar: 1280 / 746;
+}
+
+.f-robotics {
+  grid-column: 8 / span 5;
+}
+
+.f-expo .shot,
+.f-robotics .shot {
+  aspect-ratio: auto;
+  min-height: 0;
+}
+
+.f-expo .shot img {
+  object-position: 78% 30%;
+}
+
+.f-robotics .shot img {
+  object-position: 72% 50%;
+}
+
+/* 02 The desk: one dark strip, every frame the same height, nothing cropped */
+
+.desk-strip {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 9fr 12fr 9fr 12fr;
+  gap: 12px;
+  padding: clamp(12px, 2vw, 22px);
+  background: var(--forest-deep);
+  border-radius: 3px;
+}
+
+.desk-strip .frame figcaption {
+  color: var(--paper-2);
+}
+
+.desk-strip .frame-no {
+  color: var(--acid);
+}
+
+.f-library,
+.f-build {
+  --ar: 9 / 16;
+}
+
+.f-repair,
+.f-coffee {
+  --ar: 3 / 4;
+}
+
+.desk-strip .shot {
+  flex: none;
+}
+
+/* 03 Away from the screen: pictures left, words right */
+
+.chapter-away {
+  padding-top: 14px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.chapter-away .chapter-head {
+  grid-column: 9 / -1;
+  grid-row: 1;
+  align-self: end;
+  display: block;
+  margin-bottom: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.chapter-away .chapter-head h3 {
+  margin-bottom: 14px;
+}
+
+.f-angkor {
+  grid-column: 1 / span 5;
+  grid-row: 1;
+  --ar: 3 / 4;
+}
+
+.f-portrait {
+  grid-column: 6 / span 3;
+  grid-row: 1;
+  align-self: end;
+  --ar: 9 / 16;
+}
+
+.f-angkor .shot,
+.f-portrait .shot {
+  flex: none;
+}
+
+@media (max-width: 900px) {
+  .chapter-away .chapter-head {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  .chapter-away .chapter-head h3 {
+    margin-bottom: 0;
+  }
+
+  .f-angkor {
+    grid-column: 1 / span 7;
+    grid-row: 2;
+  }
+
+  .f-portrait {
+    grid-column: 8 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 720px) {
+  .f-expo,
+  .f-presentation,
+  .f-cohort,
+  .f-robotics {
+    grid-column: 1 / -1;
+  }
+
+  .f-expo .shot {
+    aspect-ratio: 4 / 5;
+  }
+
+  .f-robotics .shot {
+    aspect-ratio: 16 / 10;
+  }
+
+  .desk-strip {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .desk-strip .frame {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .desk-strip .shot {
+    height: min(58vh, 380px);
+    width: auto;
+  }
+}
+
+/* freelance + activities additions */
+.activity-card h3{margin-bottom:.35rem}
+.activity-card .project-summary{margin:.6rem 0 1rem}
+.project-top .project-year{letter-spacing:.04em}
+.edu-grid{align-items:start}
