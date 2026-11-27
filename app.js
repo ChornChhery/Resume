@@ -92,7 +92,7 @@
       text: "— a full-stack RAG chatbot with hybrid search, source chunks and a saved evaluation tab.",
       note: "Public repository",
       link: "https://github.com/ChornChhery/RAG-",
-      image: "ChatbotRag.png",
+      image: "assets/showcase/rag-chat.png",
       imageAlt: "ChatBotRAG chat interface showing a document-grounded answer and its source file.",
       label: "CASE FILE · CHATBOTRAG",
       record: null,
@@ -108,7 +108,7 @@
       text: "— an English and Khmer storefront with counter POS, automatic KHQR payments and owner-only profit tracking.",
       note: "Live demo and repository",
       link: "https://github.com/ChornChhery/Ecommerce-Skincare",
-      image: "skincare.png",
+      image: "assets/showcase/shop-home.png",
       imageAlt: "Jamoon Skincare storefront with product filters and a product grid.",
       label: "CASE FILE · JAMOON SKINCARE",
       record: null,
@@ -124,7 +124,7 @@
       text: "— a zero-code AutoML platform that cleans a CSV, trains three models and returns a visual report.",
       note: "Public repository",
       link: "https://github.com/ChornChhery/DataPilot_AI",
-      image: "Datapilot1.png",
+      image: "assets/showcase/data-upload.png",
       imageAlt: "DataPilot AI upload screen for selecting a CSV and target column.",
       label: "CASE FILE · DATAPILOT AI",
       record: null,
@@ -403,6 +403,7 @@
   const dialog = $("#lightbox");
   const lightboxImage = $("#lbImage");
   const lightboxCounter = $("#lbCounter");
+  const lightboxCaption = $("#lbCaption");
   const lightboxClose = $("#lbClose");
   const lightboxPrev = $("#lbPrev");
   const lightboxNext = $("#lbNext");
@@ -414,6 +415,7 @@
     galleries.get(name).push({
       src: button.dataset.src,
       alt: button.dataset.alt || "",
+      caption: button.dataset.caption || button.dataset.alt || "",
     });
   });
 
@@ -426,6 +428,7 @@
     lightboxImage.src = item.src;
     lightboxImage.alt = item.alt;
     lightboxCounter.textContent = `${pad(galleryIndex + 1)} / ${pad(gallery.length)}`;
+    if (lightboxCaption) lightboxCaption.textContent = item.caption;
   }
 
   function openLightbox(button) {
