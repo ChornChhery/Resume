@@ -1666,12 +1666,6 @@ main {
   gap: clamp(16px, 2.5vw, 28px);
 }
 
-.project-grid.single {
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 680px;
-  margin-inline: auto;
-}
-
 .project-card {
   display: flex;
   flex-direction: column;
@@ -3542,3 +3536,25 @@ main {
 .lead-dates li b { color: var(--acid); font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 6px; }
 @media (max-width: 1000px) { .res-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .res-item:nth-child(n) { padding-left: 22px; border-left: 1px solid var(--line-strong); } .res-item:nth-child(odd) { padding-left: 0; border-left: 0; } }
 @media (max-width: 640px) { .res-grid { grid-template-columns: 1fr; } .res-item:nth-child(n) { padding: 0 0 18px; border-left: 0; } }
+
+/* ── Responsive safety: let grid/flex children shrink so rows scroll inside themselves ── */
+.timeline, .role, .role-body, .project-card, .project-body, .project-main, .lead-card, .lead-copy, .ed-plate, .res-item { min-width: 0; }
+.role-body, .project-card { max-width: 100%; }
+.shot-rail { max-width: 100%; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.doc-row { max-width: 100%; }
+.doc-link { max-width: 100%; white-space: normal; }
+.proj-video { max-width: 100%; }
+img, video { max-width: 100%; }
+html, body { overflow-x: clip; }
+
+@media (max-width: 640px) {
+  .fan { width: 86%; margin-inline: auto; }
+  .wall-tabs { scroll-snap-type: x proximity; }
+  .doc-row > span { width: 100%; }
+  .shot-rail .shot { height: 170px; }
+  .role-body .shot-rail .shot { height: 150px; }
+  .stack .pic:hover { transform: none; }
+}
+@media (hover: none) { .tilt { transform: none !important; } }
+
+.shot-rail { scrollbar-width: thin; scrollbar-color: var(--rust) transparent; }
