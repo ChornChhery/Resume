@@ -1666,6 +1666,12 @@ main {
   gap: clamp(16px, 2.5vw, 28px);
 }
 
+.project-grid.single {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 680px;
+  margin-inline: auto;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -3519,3 +3525,20 @@ main {
 .doc-link:hover, .doc-link:focus-visible { background: var(--acid); border-color: var(--acid-deep); }
 .proj-video { display: block; width: 100%; max-height: 360px; margin-top: 14px; background: #000; border-radius: 4px; }
 .role-list li b { font-weight: 650; }
+
+.rail-title { margin: 18px 0 8px; color: var(--muted); font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+.lead-wide { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: clamp(20px, 4vw, 48px); }
+.lead-wide .stack { flex: 0 0 min(42%, 420px); aspect-ratio: 16 / 10; }
+.lead-wide .lead-copy { flex: 1; }
+@media (max-width: 640px) { .lead-wide { flex-direction: column; align-items: stretch; } .lead-wide .stack { flex: none; width: 100%; } }
+
+/* ── added content blocks ── */
+.res-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 30px; }
+.res-item:nth-child(3n+1) { padding-left: 0; border-left: 0; }
+.res-item:nth-child(3n+2), .res-item:nth-child(3n) { padding-left: 22px; border-left: 1px solid var(--line-strong); }
+.lead-text { justify-content: flex-start; }
+.lead-dates { margin: 4px 0 12px; padding: 0; list-style: none; }
+.lead-dates li { padding: 7px 0; border-top: 1px solid rgba(250, 248, 241, 0.14); color: rgba(250, 248, 241, 0.86); font-size: 0.9rem; line-height: 1.45; }
+.lead-dates li b { color: var(--acid); font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 6px; }
+@media (max-width: 1000px) { .res-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .res-item:nth-child(n) { padding-left: 22px; border-left: 1px solid var(--line-strong); } .res-item:nth-child(odd) { padding-left: 0; border-left: 0; } }
+@media (max-width: 640px) { .res-grid { grid-template-columns: 1fr; } .res-item:nth-child(n) { padding: 0 0 18px; border-left: 0; } }
